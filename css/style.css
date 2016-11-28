@@ -1,0 +1,104 @@
+body{
+	color: #ffffff;
+	font-family: Lato, Arial, sans-serif;
+}
+.clear{
+	clear:both;
+}
+.vcenter {
+  height: 85vh;
+  position: relative;
+}
+#header{
+	height: 15vh;
+	min-height: 50px;	
+}
+.home-wraper{
+	background-color: #000000;
+	height: 100vh;
+}
+.lang-box{
+	float:right;
+}
+li{
+	display: inline-block;
+	margin: 0 5px;
+}
+.logo p{
+	font-family: Coca, Arial, sans-serif;
+	font-size: 24px;
+	float:left;
+}
+.logo span{
+	color: #fcac45;
+}
+.nav-wraper{
+	float:right;
+	position: relative;
+}
+.nav-wraper li{
+	display: inline-block;
+	padding: 10px 5px;
+	border-bottom: 3px solid transparent;
+}
+.nav-wraper .activ{
+	border: none;
+}
+.nav-wraper .activ:before{
+	content: '';
+	width: 50%;
+	height: 3px;
+	position: absolute;
+	bottom: -3px;
+	left: 0px;
+	background-color: #292929;
+	border-left: 1px solid #3c3c3c;
+}
+.nav-wraper .activ:after{
+	content: '';
+	width: 50%;
+	height: 3px;
+	position: absolute;
+	bottom: -3px;
+	right: 0px;
+	background-color:#fcac45;
+	border-right: 1px solid #d3913c;
+}
+.my-present{
+	position: absolute;
+	top: 40%;
+}
+.my-present p{
+	color: #d5d5d5;
+	font-family: OpenSans, Arial, sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	margin-bottom: 0px;
+	font-size:20px; 
+}
+.my-present h1{
+	font-family: OpenSans, Arial, sans-serif;
+	color: #999999;
+	font-weight: 100;
+	margin-top: 20px;
+	font-size: 44px;
+}
+.bottom-down-box{
+	position: absolute;
+    bottom: 85px;
+    left: 50%;
+}
+.arrow-bot {
+	background: url(../image/arrow-bottom.png) center;
+	width: 13px;
+	height: 14px;
+	display: inline-block;
+}
+.bottom-down{
+	width: 50px;
+	height: 50px;
+	border-radius: 25px;
+	border: 2px solid #c3c3c3;
+	text-align: center;
+	line-height: 50px;
+}
