@@ -1,74 +1,58 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Yurishinec Mike Portfolio</title>
-
-    <link rel="shortcut icon" href="image/favicon.png" type="image/png">
-    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/fonts.css">
-    <link rel="stylesheet" href="css/style.css">
-
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-</head>
-<body>
-    <div class="site-wrapper">
-        <div class="home-wraper">
-       		<div id="header">
-        		<div class="container">
-        			<div class="row">
-        			    <div class="col-md-3 col-md-offset-9">
-                            <div class="lang-box">
-                                <ul class="language">
-                                    <li id="ua"><a href="">ua</a></li>
-                                    <li id="ru"><a href="">ru</a></li>
-                                    <li id="eng"><a href="">eng</a></li>
-                                </ul>
+<?php require_once("parts/header.php") ?>
+<?php require_once("parts/home.php") ?>
+        
+        <section id="servis">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="servis-wrap">
+                            <div class="servis-title-wrap">
+                                <h1 class="servis-title">Обратите внимание на мои <strong>услуги</strong></h1>
+                                <div class="first-line"></div>
+                                <div class="second-line"></div>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid rem quo labore, corporis cumque natus, optio explicabo distinctio, consectetur officiis eveniet a animi? Soluta molestiae nemo nisi cumque, nihil incidunt.</p>
+                            </div><!--.servis-wrap-->
+                            <div class="servis-item-wrap">
+                                <div class="servis-item">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                           <div class="item-wraper">
+                                               <div class="item-logo"></div>
+                                               <div class="item-title">site</div>
+                                               <div class="item-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum, ipsam.</div>
+                                           </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="servis-item">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="item-wraper">
+                                                <div class="item-logo"></div>
+                                                <div class="item-title">site</div>
+                                                <div class="item-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, voluptas.</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="servis-item">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                           <div class="item-wraper">
+                                               <div class="item-logo"></div>
+                                               <div class="item-title">site</div>
+                                               <div class="item-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, reprehenderit.</div>
+                                           </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-        			    </div>
-        				<div class="col-md-12">
-    	    				<div class="logo-wraper">
-    	    					<div class="logo">
-    	    						<p> <a href="">Mike <span>Yuryshynets</span></a></p>
-    	    					</div>
-    	    					<div id="nav-wraper">
-    	    						<ul class="nav">
-    	    							<li><a href="#" class="activ">Главная</a></li>
-                                        <li><a href="#">Услуги</a></li>
-    	    							<li><a href="#">Резюме</a></li>
-    	    							<li><a href="#">Портфолио</a></li>
-    	    							<li><a href="#">Отзывы</a></li>
-    	    							<li><a href="#">Контакты</a></li>
-    	    						</ul>
-    	    					</div>
-                                <div class="clear"></div>
-    	    				</div>
-        				</div>
+                        </div><!--.servis-title-wrap-->
                     </div>
-        		</div><!--.container-->
-        	</div><!--#header-->
-            <div class="home">
-                <div class="container">
-                    <div class="row vcenter">
-                        <div class="col-md-12 text-center my-present">
-                            <p>Здравствуйте, меня зовут Михаил Юришинец, я</p>
-                            <h1>FRONT-END DEWELOPER</h1>
-                        </div>
-                    <div class="col-md-12 text-center bottom-down-box">
-                        <div class="bottom-down">
-                            <span class="arrow-box"></span>
-                        </div>
-                    </div>
-                    </div> <!--.row-->
-                </div><!--.container-->
-            </div><!--.home--> 
-        </div><!--.home-wraper-->
+
+                </div><!--.row-->
+            </div><!--.container-->
+        </section><!--section#servis-->
     </div><!--.site-wrapper-->
 
 
