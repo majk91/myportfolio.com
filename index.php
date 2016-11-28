@@ -4,8 +4,9 @@
 	<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>MikeYuri Portfolio</title>
+    <title>Yurishinec Mike Portfolio</title>
 
+    <link rel="shortcut icon" href="image/favicon.png" type="image/png">
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/style.css">
@@ -22,28 +23,28 @@
        		<div id="header">
         		<div class="container">
         			<div class="row">
-        			    <div class="col-md-2 col-md-offset-10">
+        			    <div class="col-md-3 col-md-offset-9">
                             <div class="lang-box">
                                 <ul class="language">
-                                    <li id="ru">ru</li>
-                                    <li id="ua">ua</li>
-                                    <li id="eng">eng</li>
+                                    <li id="ua"><a href="">ua</a></li>
+                                    <li id="ru"><a href="">ru</a></li>
+                                    <li id="eng"><a href="">eng</a></li>
                                 </ul>
                             </div>
         			    </div>
         				<div class="col-md-12">
     	    				<div class="logo-wraper">
     	    					<div class="logo">
-    	    						<p>Mike <span>Yuryshynets</span></p>
+    	    						<p> <a href="">Mike <span>Yuryshynets</span></a></p>
     	    					</div>
-    	    					<div class="nav-wraper">
+    	    					<div id="nav-wraper">
     	    						<ul class="nav">
-    	    							<li class="activ">Главная</li>
-    	    							<li>Услуги</li>
-    	    							<li>Навыки</li>
-    	    							<li>Портфолио</li>
-    	    							<li>Отзывы</li>
-    	    							<li>Контакты</li>
+    	    							<li><a href="#" class="activ">Главная</a></li>
+                                        <li><a href="#">Услуги</a></li>
+    	    							<li><a href="#">Резюме</a></li>
+    	    							<li><a href="#">Портфолио</a></li>
+    	    							<li><a href="#">Отзывы</a></li>
+    	    							<li><a href="#">Контакты</a></li>
     	    						</ul>
     	    					</div>
                                 <div class="clear"></div>
@@ -59,12 +60,12 @@
                             <p>Здравствуйте, меня зовут Михаил Юришинец, я</p>
                             <h1>FRONT-END DEWELOPER</h1>
                         </div>
-                    </div> <!--.row-->
-                    <div class="bottom-down-box">
+                    <div class="col-md-12 text-center bottom-down-box">
                         <div class="bottom-down">
-                            <span class="arrow-bot"></span>
+                            <span class="arrow-box"></span>
                         </div>
                     </div>
+                    </div> <!--.row-->
                 </div><!--.container-->
             </div><!--.home--> 
         </div><!--.home-wraper-->
@@ -73,5 +74,6 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
+   <!-- <script src="js/function.js"></script>-->
 </body>
 </html>
