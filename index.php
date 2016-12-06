@@ -13,43 +13,39 @@
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid rem quo labore, corporis cumque natus, optio explicabo distinctio, consectetur officiis eveniet a animi? Soluta molestiae nemo nisi cumque, nihil incidunt.</p>
                             </div><!--.servis-wrap-->
                             <div class="servis-item-wrap">
-                                <div class="servis-item">
-                                    <div class="row">
-                                        <div class="col-md-4">
-                                           <div class="item-wraper">
-                                               <div class="item-logo"></div>
-                                               <div class="item-title">site</div>
-                                               <div class="item-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum, ipsam.</div>
-                                           </div>
+                                <div class="row">
+                                    <div class="col-md-3 servis-item">
+                                        <div class="item-wraper">
+                                            <div class="item-logo"><span class="glyphicon glyphicon-list-alt"></span></div>
+                                            <div class="item-title">site</div>
+                                            <div class="item-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum, ipsam.</div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="servis-item">
-                                    <div class="row">
-                                        <div class="col-md-4">
-                                            <div class="item-wraper">
-                                                <div class="item-logo"></div>
-                                                <div class="item-title">site</div>
-                                                <div class="item-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, voluptas.</div>
-                                            </div>
+                                    <div class="col-md-3 servis-item">
+                                        <div class="item-wraper">
+                                            <div class="item-logo"><span class="glyphicon glyphicon-envelope"></span></div>
+                                            <div class="item-title">site</div>
+                                            <div class="item-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, voluptas.</div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="servis-item">
-                                    <div class="row">
-                                        <div class="col-md-4">
-                                           <div class="item-wraper">
-                                               <div class="item-logo"></div>
-                                               <div class="item-title">site</div>
-                                               <div class="item-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, reprehenderit.</div>
-                                           </div>
+                                    <div class="col-md-3 servis-item">
+                                        <div class="item-wraper">
+                                            <div class="item-logo"><span class="glyphicon glyphicon-fullscreen"></span></div>
+                                            <div class="item-title">site</div>
+                                            <div class="item-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, reprehenderit.</div>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                        </div><!--.servis-title-wrap-->
+                                    <div class="col-md-3 servis-item">
+                                        <div class="item-wraper">
+                                            <div class="item-logo"><span class="glyphicon glyphicon-inbox"></span></div>
+                                            <div class="item-title">site</div>
+                                            <div class="item-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, reprehenderit.</div>
+                                        </div>
+                                    </div>
+                                </div><!--.row-->
+                            </div><!--.servis-item-wrap-->
+                        </div><!--.servis-wrap-->
                     </div>
-
                 </div><!--.row-->
             </div><!--.container-->
         </section><!--section#servis-->

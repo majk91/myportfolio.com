@@ -171,7 +171,7 @@ li{
 	background: #fdc57c;
 }
 .servis-title-wrap h1{
-	font-weight: 100;
+	font-weight: 300;
 }
 .servis-title-wrap strong{
 	font-weight: 700;
@@ -181,4 +181,21 @@ li{
 	text-transform: none;
 	font-style: 16px;
 	margin-bottom: 100px;
+}
+.servis-item{
+	color: #000;
+	display: inline-block;
+	border: 2px solid red;
+}
+.item-logo{
+	width: 120px;
+	height: 120px;
+	border-radius: 50%;
+	border: 5px solid #fcac45;
+	margin: 0 auto;
+	text-align:center;
+}
+.item-logo>.glyphicon{
+	line-height: 110px;
+	font-size:40px;
 }
