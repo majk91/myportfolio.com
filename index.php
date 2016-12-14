@@ -1,54 +1,80 @@
 <?php require_once("parts/header.php") ?>
 <?php require_once("parts/home.php") ?>
-        
-        <section id="servis">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="servis-wrap">
-                            <div class="servis-title-wrap">
-                                <h1 class="servis-title">Обратите внимание на мои <strong>услуги</strong></h1>
-                                <div class="first-line"></div>
-                                <div class="second-line"></div>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid rem quo labore, corporis cumque natus, optio explicabo distinctio, consectetur officiis eveniet a animi? Soluta molestiae nemo nisi cumque, nihil incidunt.</p>
-                            </div><!--.servis-wrap-->
-                            <div class="servis-item-wrap">
-                                <div class="row">
-                                    <div class="col-md-3 servis-item">
-                                        <div class="item-wraper">
-                                            <div class="item-logo"><span class="glyphicon glyphicon-list-alt"></span></div>
-                                            <div class="item-title">site</div>
-                                            <div class="item-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum, ipsam.</div>
+<?php require_once("parts/servis.php") ?>
+
+    <section id="clients">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="all-title-wrap">
+                        <h2 class="servis-title">Некоторые из моих <strong>клиентов</strong></h2>
+                        <div class="first-line"></div>
+                        <div class="second-line"></div>
+                        <div class="client-slider">
+
+                            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                            <!-- Indicators -->
+                                <ol class="carousel-indicators">
+                                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                                    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                                    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                                </ol>
+
+                                <!-- Wrapper for slides -->
+                                <div class="carousel-inner">
+                                    <div class="item active">
+                                        <div class="logo-client-box">
+                                            <ul class="logo-client1">
+                                                <li class="one"></li>
+                                                <li class="two"></li>
+                                                <li class="three"></li>
+                                                <li class="four"></li>
+                                            </ul>
+                                        </div>
+                                        <div class="carousel-caption">
                                         </div>
                                     </div>
-                                    <div class="col-md-3 servis-item">
-                                        <div class="item-wraper">
-                                            <div class="item-logo"><span class="glyphicon glyphicon-envelope"></span></div>
-                                            <div class="item-title">site</div>
-                                            <div class="item-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, voluptas.</div>
+                                    <div class="item">
+                                        <div class="logo-client-box">
+                                            <ul class="logo-client2">
+                                                <li class="one"></li>
+                                                <li class="two"></li>
+                                                <li class="three"></li>
+                                                <li class="four"></li>
+                                            </ul>
+                                        </div>
+                                        <div class="carousel-caption">
                                         </div>
                                     </div>
-                                    <div class="col-md-3 servis-item">
-                                        <div class="item-wraper">
-                                            <div class="item-logo"><span class="glyphicon glyphicon-fullscreen"></span></div>
-                                            <div class="item-title">site</div>
-                                            <div class="item-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, reprehenderit.</div>
+                                        <div class="item">
+                                        <div class="logo-client-box">
+                                            <ul class="logo-client3">
+                                                <li class="one"></li>
+                                                <li class="two"></li>
+                                                <li class="three"></li>
+                                                <li class="four"></li>
+                                            </ul>
+                                        </div>
+                                        <div class="carousel-caption">
                                         </div>
                                     </div>
-                                    <div class="col-md-3 servis-item">
-                                        <div class="item-wraper">
-                                            <div class="item-logo"><span class="glyphicon glyphicon-inbox"></span></div>
-                                            <div class="item-title">site</div>
-                                            <div class="item-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, reprehenderit.</div>
-                                        </div>
-                                    </div>
-                                </div><!--.row-->
-                            </div><!--.servis-item-wrap-->
-                        </div><!--.servis-wrap-->
-                    </div>
-                </div><!--.row-->
-            </div><!--.container-->
-        </section><!--section#servis-->
+                                </div>
+
+                            <!-- Controls -->
+                                <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                                    <span class="glyphicon glyphicon-chevron-left"></span>
+                                </a>
+                                <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                                    <span class="glyphicon glyphicon-chevron-right"></span>
+                                </a>
+                            </div><!--.carousel-example-generic-->
+
+                        </div><!--.client-slider-->
+                    </div><!--.all-title-wrap-->
+                </div>
+            </div><!--.row-->
+        </div><!--.container-->
+    </section><!--#clients-->
     </div><!--.site-wrapper-->
 
 
