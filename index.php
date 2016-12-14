@@ -25,37 +25,55 @@
                                     <div class="item active">
                                         <div class="logo-client-box">
                                             <ul class="logo-client1">
-                                                <li class="one"></li>
-                                                <li class="two"></li>
-                                                <li class="three"></li>
-                                                <li class="four"></li>
+                                                <li class="one">
+                                                    <a href="#"></a>
+                                                </li>
+                                                <li class="two">
+                                                    <a href="#"></a>
+                                                </li>
+                                                <li class="three">
+                                                    <a href="#"></a>
+                                                </li>
+                                                <li class="four">
+                                                    <a href="#"></a>
+                                                </li>
                                             </ul>
-                                        </div>
-                                        <div class="carousel-caption">
                                         </div>
                                     </div>
                                     <div class="item">
                                         <div class="logo-client-box">
                                             <ul class="logo-client2">
-                                                <li class="one"></li>
-                                                <li class="two"></li>
-                                                <li class="three"></li>
-                                                <li class="four"></li>
+                                                <li class="one">
+                                                    <a href="#"></a>
+                                                </li>
+                                                <li class="two">
+                                                    <a href="#"></a>
+                                                </li>
+                                                <li class="three">
+                                                    <a href="#"></a>
+                                                </li>
+                                                <li class="four">
+                                                    <a href="#"></a>
+                                                </li>
                                             </ul>
-                                        </div>
-                                        <div class="carousel-caption">
                                         </div>
                                     </div>
                                         <div class="item">
                                         <div class="logo-client-box">
                                             <ul class="logo-client3">
-                                                <li class="one"></li>
-                                                <li class="two"></li>
-                                                <li class="three"></li>
-                                                <li class="four"></li>
+                                                <li class="one">
+                                                    <a href="#"></a>
+                                                </li>
+                                                <li class="two">
+                                                    <a href="#"></a>
+                                                </li>
+                                                <li class="three">
+                                                    <a href="#"></a>
+                                                </li>
+                                                <li class="four">
+                                                    <a href="#"></a>
+                                                </li>
                                             </ul>
-                                        </div>
-                                        <div class="carousel-caption">
                                         </div>
                                     </div>
                                 </div>

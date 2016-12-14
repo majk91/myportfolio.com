@@ -241,3 +241,11 @@ li{
 	height: 140px;
     padding: 50px 0;
 }
+.carousel-indicators{
+	bottom: -20px;
+}
+.logo-client-box a{
+	height: 100%;
+	display: block;
+	width: 100%
+}
