@@ -69,9 +69,9 @@ function Slider(settings) {
 
 		showSlides(1);
 
-		if(settings.infinite == 0){
-			$(".slider-button-next").attr('disabled', true);
-		}
+	//	if(settings.infinite == 0){
+	//		$(".slider-button-next").attr('disabled', true);
+	//	}
 		for(var i = 0; i < sliderButtons.length; i++){
 			sliderButtons.eq(i).on('click', function(){
 				self['move_' + $(this).attr('data-action')]();
