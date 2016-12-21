@@ -48,13 +48,18 @@ function Slider(settings) {
 //Функция запускает прокрутку в слайдере
 	function reiteration() {
 		for(var i = 0; i < sliderItems.length; i++){
-			if(parseFloat(sliderItems.eq(0).css('left')) > 0){
-				sliderItems.eq(sliderItems.length - (i + 1)).css('left', singleSlideWidth * i);
-			}
-			
+			if(parseFloat(sliderItems.eq(i).css('left')).toFixed(1) == (singleSlideWidth * (sliderItems.length)).toFixed(1)){
+				console.log(22);
+				sliderItems.eq(i).css('left', 0 + "px");
+			};
+			if(parseFloat(sliderItems.eq(i).css('left')).toFixed(1) == (singleSlideWidth * (settings.slidesToShow-sliderItems.length)).toFixed(1)){
+				console.log(21);
+
+				sliderItems.eq(i).css('left', (singleSlideWidth * (settings.slidesToShow)) + "px");
+			};
+
 		}
 	}
-
 
 	var init = function (){
 		if(!settings.slidesToShow || isNaN(+settings.slidesToShow)){
@@ -64,6 +69,9 @@ function Slider(settings) {
 
 		showSlides(1);
 
+		if(settings.infinite == 0){
+			$(".slider-button-next").attr('disabled', true);
+		}
 		for(var i = 0; i < sliderButtons.length; i++){
 			sliderButtons.eq(i).on('click', function(){
 				self['move_' + $(this).attr('data-action')]();
