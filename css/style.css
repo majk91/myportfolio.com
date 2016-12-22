@@ -224,37 +224,6 @@ li{
 #clients .second-line{
 	background: #b47c34;	
 }
-
-
-
-/*.logo-client-box li{
-	display: inline-block;
-	width: 170px;
-	height: 50px;
-	background-image: url('../image/logo-client.png');
-}
-.logo-client-box .two{
-	background-position: -190px;
-}
-.logo-client-box .three{
-	background-position:  -390px;
-}
-.logo-client-box .four{
-	background-position: -580px;
-}
-.carousel{
-	height: 140px;
-    padding: 50px 0;
-}
-.carousel-indicators{
-	bottom: -20px;
-}
-.logo-client-box a{
-	height: 100%;
-	display: block;
-	width: 100%
-}*/
-
 .slider{
 	position: relative;
 	padding: 0 50px;
@@ -272,28 +241,42 @@ li{
 	background: gray;
 }
 .slider-button{
-	position: absolute;
+	width: 80px;
 	top: 50%;
+	position: absolute;
 	transform: translateY(-50%);
-	background: white;
-	border-radius: 50px;
 	text-align: center;
 	line-height: 20px;
 	cursor: pointer;
 	outline: none;
+	height: 50%;
+	background: none;
+    border: none;
+	background-size: 80%;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 .slider-button-prev{
-	left: 0px;
+	left: -10px;
+	background-image: url('../image/button-left-BG.png');
 }
 .slider-button-next{
-	right: 0px;
+	right: -10px;
+	background-image: url('../image/button-right-BG.png');
 }
+
+
+.no-activ{
+	opasity: 0.3;
+}
+
+
+
 .slider-button.disabled{
 	background: gray;
 	border: gray;
 	opasity: 0.5;
 }
-
 .slider-content{
 	height:300px;
 }
