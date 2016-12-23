@@ -1,0 +1,88 @@
+		<section id="myWorks">
+			<div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="all-title-wrap">
+                                <h2 class="servis-title">Примеры некоторых моих <strong>работ</strong></h2>
+                                <div class="first-line"></div>
+                                <div class="second-line"></div>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid rem quo labore, corporis cumque natus, optio explicabo distinctio, consectetur officiis eveniet a animi? Soluta molestiae nemo nisi cumque, nihil incidunt.</p>
+                        </div><!--.all-title-wrap-->
+                    </div>
+                    <div class="col-md-12">
+						<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+							<!-- Indicators -->
+							<ol class="carousel-indicators">
+								<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+								<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+								<li data-target="#carousel-example-generic" data-slide-to="2"></li>
+							</ol>
+							<!-- Wrapper for slides -->
+							<div class="carousel-inner">
+								<div class="item active">
+									<div class="myWork-item">
+										<div class="row">
+											<div class="col-md-3">
+												<p><a href="#"><img src="" alt=""></a></p>
+											</div>
+											<div class="col-md-3">
+												<p><a href="#"><img src="" alt=""></a></p>
+											</div>
+											<div class="col-md-3">
+												<p><a href="#"><img src="" alt=""></a></p>
+											</div>
+											<div class="col-md-3">
+												<p><a href="#"><img src="" alt=""></a></p>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="item">
+									<div class="myWork-item">
+										<div class="row">
+											<div class="col-md-3">
+												<p><a href="#"><img src="" alt=""></a></p>
+											</div>
+											<div class="col-md-3">
+												<p><a href="#"><img src="" alt=""></a></p>
+											</div>
+											<div class="col-md-3">
+												<p><a href="#"><img src="" alt=""></a></p>
+											</div>
+											<div class="col-md-3">
+												<p><a href="#"><img src="" alt=""></a></p>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="item">
+									<div class="myWork-item">
+										<div class="row">
+											<div class="col-md-3">
+												<p><a href="#"><img src="" alt=""></a></p>
+											</div>
+											<div class="col-md-3">
+												<p><a href="#"><img src="" alt=""></a></p>
+											</div>
+											<div class="col-md-3">
+												<p><a href="#"><img src="" alt=""></a></p>
+											</div>
+											<div class="col-md-3">
+												<p><a href="#"><img src="" alt=""></a></p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- Controls -->
+							<a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+							  <span class="but-work-right"></span>
+							</a>
+							<a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+							  <span class="but-work-left"></span>
+							</a>
+						</div>
+                    </div><!--.col-md-12-->
+                </div>
+            </div>
+		</section>

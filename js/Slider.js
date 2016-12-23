@@ -21,43 +21,41 @@ function Slider(settings) {
 	}
 
 	this.move_left = function(){	
-		showSlides(-1);
-	}
-	this.move_right = function(){
 		showSlides(1);
 	}
-
+	this.move_right = function(){
+		showSlides(-1);
+	}
 
 //ПРОВЕРКА НА ПОСЛЕДНИЙ ЭЛЕМЕНТ КОЛЕКЦИИ
-//если после элемент последний то кнопка блокируется и добавляеться оформление
+//если элемент последний то кнопка блокируется и добавляеться оформление
 	function inspectLast(){
 		for(var i = 0; i < sliderButtons.length; i++){
 			sliderButtons.eq(i).attr('disabled', false);
+			sliderButtons.eq(i).removeClass("no-activ-left").removeClass("no-activ-right");
 		}
 		if($(event.target).attr('data-action') == "left"){
-			if(parseFloat(sliderItems.eq(sliderItems.length - 1).css('left')) < sliderWidth){
-				$(event.target).attr('disabled', true);
-			}
-		}else{
 			if(parseFloat(sliderItems.eq(0).css('left')) >= 0 - singleSlideWidth){
 				$(event.target).attr('disabled', true);
+				$(event.target).addClass("no-activ-left");
+			}
+		}else{
+			if(parseFloat(sliderItems.eq(sliderItems.length - 1).css('left')) < sliderWidth){
+				$(event.target).attr('disabled', true);
+				$(event.target).addClass("no-activ-right");
 			}
 		}
 	}
-
-//Функция запускает прокрутку в слайдере
+	
+	//Функция запускает прокрутку в слайдере
 	function reiteration() {
 		for(var i = 0; i < sliderItems.length; i++){
 			if(parseFloat(sliderItems.eq(i).css('left')).toFixed(1) == (singleSlideWidth * (sliderItems.length)).toFixed(1)){
-				console.log(22);
 				sliderItems.eq(i).css('left', 0 + "px");
 			};
 			if(parseFloat(sliderItems.eq(i).css('left')).toFixed(1) == (singleSlideWidth * (settings.slidesToShow-sliderItems.length)).toFixed(1)){
-				console.log(21);
-
 				sliderItems.eq(i).css('left', (singleSlideWidth * (settings.slidesToShow)) + "px");
 			};
-
 		}
 	}
 
@@ -70,8 +68,10 @@ function Slider(settings) {
 		showSlides(1);
 
 		if(settings.infinite == 0){
-			$(".slider-button-next").attr('disabled', true);
+			$(".slider-button-prev").attr('disabled', true);
+			$(".slider-button-prev").addClass("no-activ-left");
 		}
+
 		for(var i = 0; i < sliderButtons.length; i++){
 			sliderButtons.eq(i).on('click', function(){
 				self['move_' + $(this).attr('data-action')]();
@@ -83,6 +83,5 @@ function Slider(settings) {
 			});
 		}
 	}
-
 	init();
 }

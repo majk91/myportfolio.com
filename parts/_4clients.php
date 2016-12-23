@@ -7,11 +7,7 @@
                         <div class="first-line"></div>
                         <div class="second-line"></div>
                         <div class="client-slider">
-
-<!--Old slider-->
-<?php require_once("parts/apps/mySlider.php") ?>
-
-
+                            <?php require_once("parts/apps/mySlider.php") ?>
                         </div><!--.client-slider-->
                     </div><!--.all-title-wrap-->
                 </div>
