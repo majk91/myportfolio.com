@@ -26,6 +26,6 @@
 	var s1 = new Slider({
 		sliderId: 'slider1',
 		slidesToShow: 3,
-		infinite: 0
+		infinite: 1
 	});
 </script>

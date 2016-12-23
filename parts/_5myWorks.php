@@ -23,16 +23,40 @@
 									<div class="myWork-item">
 										<div class="row">
 											<div class="col-md-3">
-												<p><a href="#"><img src="" alt=""></a></p>
+												<p><a href="#"><img src="#" alt="mySite">item</a></p>
 											</div>
 											<div class="col-md-3">
-												<p><a href="#"><img src="" alt=""></a></p>
+												<p><a href="#"><img src="#" alt="mySite">item</a></p>
 											</div>
 											<div class="col-md-3">
-												<p><a href="#"><img src="" alt=""></a></p>
+												<p><a href="#"><img src="#" alt="mySite">item</a></p>
 											</div>
 											<div class="col-md-3">
-												<p><a href="#"><img src="" alt=""></a></p>
+												<p><a href="#"><img src="#" alt="mySite">item</a></p>
+											</div>
+											<div class="col-md-3">
+												<p><a href="#"><img src="#" alt="mySite">item</a></p>
+											</div>
+											<div class="col-md-3">
+												<p><a href="#"><img src="#" alt="mySite">item</a></p>
+											</div>
+											<div class="col-md-3">
+												<p><a href="#"><img src="#" alt="mySite">item</a></p>
+											</div>
+											<div class="col-md-3">
+												<p><a href="#"><img src="#" alt="mySite">item</a></p>
+											</div>
+											<div class="col-md-3">
+												<p><a href="#"><img src="#" alt="mySite">item</a></p>
+											</div>
+											<div class="col-md-3">
+												<p><a href="#"><img src="#" alt="mySite">item</a></p>
+											</div>
+											<div class="col-md-3">
+												<p><a href="#"><img src="#" alt="mySite">item</a></p>
+											</div>
+											<div class="col-md-3">
+												<p><a href="#"><img src="#" alt="mySite">item</a></p>
 											</div>
 										</div>
 									</div>
@@ -41,34 +65,40 @@
 									<div class="myWork-item">
 										<div class="row">
 											<div class="col-md-3">
-												<p><a href="#"><img src="" alt=""></a></p>
+												<p><a href="#"><img src="#" alt="mySite">item</a></p>
 											</div>
 											<div class="col-md-3">
-												<p><a href="#"><img src="" alt=""></a></p>
+												<p><a href="#"><img src="#" alt="mySite">item</a></p>
 											</div>
 											<div class="col-md-3">
-												<p><a href="#"><img src="" alt=""></a></p>
+												<p><a href="#"><img src="#" alt="mySite">item</a></p>
 											</div>
 											<div class="col-md-3">
-												<p><a href="#"><img src="" alt=""></a></p>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="item">
-									<div class="myWork-item">
-										<div class="row">
-											<div class="col-md-3">
-												<p><a href="#"><img src="" alt=""></a></p>
+												<p><a href="#"><img src="#" alt="mySite">item</a></p>
 											</div>
 											<div class="col-md-3">
-												<p><a href="#"><img src="" alt=""></a></p>
+												<p><a href="#"><img src="#" alt="mySite">item</a></p>
 											</div>
 											<div class="col-md-3">
-												<p><a href="#"><img src="" alt=""></a></p>
+												<p><a href="#"><img src="#" alt="mySite">item</a></p>
 											</div>
 											<div class="col-md-3">
-												<p><a href="#"><img src="" alt=""></a></p>
+												<p><a href="#"><img src="#" alt="mySite">item</a></p>
+											</div>
+											<div class="col-md-3">
+												<p><a href="#"><img src="#" alt="mySite">item</a></p>
+											</div>
+											<div class="col-md-3">
+												<p><a href="#"><img src="#" alt="mySite">item</a></p>
+											</div>
+											<div class="col-md-3">
+												<p><a href="#"><img src="#" alt="mySite">item</a></p>
+											</div>
+											<div class="col-md-3">
+												<p><a href="#"><img src="#" alt="mySite">item</a></p>
+											</div>
+											<div class="col-md-3">
+												<p><a href="#"><img src="#" alt="mySite">item</a></p>
 											</div>
 										</div>
 									</div>
