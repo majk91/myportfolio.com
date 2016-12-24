@@ -14,6 +14,6 @@
 
 
     <script src="bootstrap/js/bootstrap.min.js"></script>
-   <!-- <script src="js/function.js"></script>-->
+   <script src="js/function.js"></script>
 </body>
 </html>

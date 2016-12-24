@@ -303,8 +303,27 @@ li{
 }
 .myWork-item{
 	width: 100%;
-	height: 450px;
+	height: 435px;
 }
+.filter-wrap{
+	color: #000000;
+}
+.filter-title{
+	float: left;
+}
+.filter-nav{
+	float: right;
+}
+.filter-nav li{
+	border-left: 1px solid #000000;
+	text-align: center;
+	margin: 0;
+	padding: 0 5px 0 5px;
+}
+.filter-nav li:first-child{
+	border: 0;
+}
+
 .carousel-control{
 	width: 10%;
 }
@@ -333,8 +352,30 @@ li{
 .carousel-control.left:hover{
 	background-image: linear-gradient(to right,rgba(0,0,0,.2) 0, rgba(0,0,0,.0001) 100%);
 }
-.myWork-item .col-md-3{
-	background-color:yellow;
+.myWork-item .row>div{
+	padding-right: 7.5px;
+    padding-left: 7.5px;
+}
+.myWork-item .myWork-item-wrap{
+	background-color: #999999;
 	height:150px;
+	margin-bottom:15px; 
+}
+.myWork-item-wrap{
+	overflow: hidden;
+}
+.myWork-item-wrap img{
+	width: 100%;
+}
+.myWork-item-wrap a{
+	display: block;
+	height: 100%;
+	text-align: center;
+}
+.carousel-indicators li{
+	border-color: #fcac45
+}
+.carousel-indicators .active{
+	background-color: #fcac45;
 }
 /*----------------------------#myWorks end----------------------*/
