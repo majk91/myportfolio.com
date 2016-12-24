@@ -6,8 +6,15 @@
 
 <?php require_once("parts/_4clients.php") ?>
 
-<?php require_once("parts/_5myWorks.php") ?>
+<?php /*require_once("parts/_5rezume.php")*/ ?>
 
+<?php require_once("parts/_6myWorks.php") ?>
+
+<?php require_once("parts/_7reviews.php") ?>
+
+<?php require_once("parts/_8contact.php") ?>
+
+		<section id="myWorks">
 
     </div><!--.site-wrapper-->
 

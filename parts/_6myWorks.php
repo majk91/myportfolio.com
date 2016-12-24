@@ -1,9 +1,9 @@
-		<section id="myWorks">
+		<section id="myWorks" class="two">
 			<div class="container">
                 <div class="row">
                     <div class="col-md-12">
                         <div class="all-title-wrap">
-                                <h2 class="servis-title">Примеры некоторых моих <strong>работ</strong></h2>
+                                <h2 class="servis-title">Примеры некоторых <strong>работ</strong></h2>
                                 <div class="first-line"></div>
                                 <div class="second-line"></div>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid rem quo labore, corporis cumque natus, optio explicabo distinctio, consectetur officiis eveniet a animi? Soluta molestiae nemo nisi cumque, nihil incidunt.</p>
@@ -174,4 +174,4 @@
                     </div><!--.col-md-12-->
                 </div>
             </div>
-		</section>
+		</section><!--#myWorks-->

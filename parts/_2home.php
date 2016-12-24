@@ -1,4 +1,4 @@
-            <section id="home">
+            <section id="home" class="one">
                 <div class="container">
                     <div class="row vcenter">
                         <div class="col-md-12 text-center my-present">

@@ -43,6 +43,7 @@
     	    						<ul class="nav">
     	    							<li><a href="#" class="activ">Главная</a></li>
                                         <li><a href="#">Услуги</a></li>
+                                        <li><a href="#">Клиенты</a></li>
     	    							<li><a href="#">Резюме</a></li>
     	    							<li><a href="#">Портфолио</a></li>
     	    							<li><a href="#">Отзывы</a></li>

@@ -154,7 +154,6 @@ li{
 	padding: 100px 0px;
 }
 .all-title-wrap{
-	color: #222222;
 	text-transform: uppercase;
 	text-align: center;
 }
@@ -329,11 +328,11 @@ li{
 }
 .but-work-right{
 	background-image: url('../image/button-work-left-BG.png');
-	left: 20px;
+	left: -30px;
 }
 .but-work-left{
 	background-image: url('../image/button-work-right-BG.png');
-	right: 20px;
+	right: -30px;
 }
 .but-work-right, .but-work-left{
 	position: absolute;
@@ -373,9 +372,45 @@ li{
 	text-align: center;
 }
 .carousel-indicators li{
-	border-color: #fcac45
+	background-color:#ffffff;
+	border-color: #fcac45;
+	border-radius: 0;
+	margin-right: 13px;
 }
 .carousel-indicators .active{
 	background-color: #fcac45;
+	margin-right: 13px;
 }
 /*----------------------------#myWorks end----------------------*/
+
+.one{
+	background-color: #000000;
+	color: #ffffff;
+}
+.two{
+	color: #222222
+}
+/*----------------------------#review start----------------------*/
+#review{
+	padding: 100px 0px;
+}
+.comment-box h3, .comment-box p{
+	text-align:center;
+	font-family: OpenSans, Arial, sans-serif;
+}
+.comment-box h3{
+	font-weight: 400;
+	font-size: 20px;
+	text-transform: uppercase;
+}
+.comment-box p{
+	color: #b2b2b2;
+	font-size: 15px;
+	margin: 30px 0px;
+	font-weight: 100;
+}
+.comment-box span{
+	color: #b2b2b2;
+	font-weight: 500;
+}
+/*----------------------------#review end----------------------*/
