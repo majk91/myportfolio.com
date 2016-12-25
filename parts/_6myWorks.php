@@ -1,7 +1,7 @@
 		<section id="myWorks" class="two">
 			<div class="container">
                 <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-xs-12 col-md-12">
                         <div class="all-title-wrap">
                                 <h2 class="servis-title">Примеры некоторых <strong>работ</strong></h2>
                                 <div class="first-line"></div>
@@ -9,7 +9,7 @@
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid rem quo labore, corporis cumque natus, optio explicabo distinctio, consectetur officiis eveniet a animi? Soluta molestiae nemo nisi cumque, nihil incidunt.</p>
                         </div><!--.all-title-wrap-->
                     </div>
-                    <div class="col-md-12">
+                    <div class="col-xs-12 col-md-12">
                     	<div class="filter-wrap">
                     		<div class="filter-title">ФИЛЬТР</div>
                     		<ul class="filter-nav">
@@ -21,7 +21,7 @@
                     		</ul>
                     	</div>
                     </div>
-                    <div class="col-md-12">
+                    <div class="col-xs-12 col-md-12">
 						<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
 							<!-- Indicators -->
 							<ol class="carousel-indicators">
@@ -33,62 +33,62 @@
 								<div class="item active">
 									<div class="myWork-item">
 										<div class="row">
-											<div class="col-md-3">
+											<div class="col-xs-3 col-md-3">
 												<div class="myWork-item-wrap">
 													<p><a href="#"><img src="image/temp/gomer-simpson-kartinka.orig.jpg" alt="mySite"></a></p>
 												</div>
 											</div>
-											<div class="col-md-3">
+											<div class="col-xs-3 col-md-3">
 												<div class="myWork-item-wrap">
 													<p><a href="#"><img src="image/temp/gomer-simpson-kartinka.orig.jpg" alt="mySite"></a></p>
 												</div>
 											</div>
-											<div class="col-md-3">
+											<div class="col-xs-3 col-md-3">
 												<div class="myWork-item-wrap">
 													<p><a href="#"><img src="image/temp/gomer-simpson-kartinka.orig.jpg" alt="mySite"></a></p>
 												</div>
 											</div>
-											<div class="col-md-3">
+											<div class="col-xs-3 col-md-3">
 												<div class="myWork-item-wrap">
 													<p><a href="#"><img src="image/temp/gomer-simpson-kartinka.orig.jpg" alt="mySite"></a></p>
 												</div>
 											</div>
-											<div class="col-md-3">
+											<div class="col-xs-3 col-md-3">
 												<div class="myWork-item-wrap">
 													<p><a href="#"><img src="image/temp/gomer-simpson-kartinka.orig.jpg" alt="mySite"></a></p>
 												</div>
 											</div>
-											<div class="col-md-3">
+											<div class="col-xs-3 col-md-3">
 												<div class="myWork-item-wrap">
 													<p><a href="#"><img src="image/temp/gomer-simpson-kartinka.orig.jpg" alt="mySite"></a></p>
 												</div>
 											</div>
-											<div class="col-md-3">
+											<div class="col-xs-3 col-md-3">
 												<div class="myWork-item-wrap">
 													<p><a href="#"><img src="image/temp/gomer-simpson-kartinka.orig.jpg" alt="mySite"></a></p>
 												</div>
 											</div>
-											<div class="col-md-3">
+											<div class="col-xs-3 col-md-3">
 												<div class="myWork-item-wrap">
 													<p><a href="#"><img src="image/temp/gomer-simpson-kartinka.orig.jpg" alt="mySite"></a></p>
 												</div>
 											</div>
-											<div class="col-md-3">
+											<div class="col-xs-3 col-md-3">
 												<div class="myWork-item-wrap">
 													<p><a href="#"><img src="image/temp/gomer-simpson-kartinka.orig.jpg" alt="mySite"></a></p>
 												</div>
 											</div>
-											<div class="col-md-3">
+											<div class="col-xs-3 col-md-3">
 												<div class="myWork-item-wrap">
 													<p><a href="#"><img src="image/temp/gomer-simpson-kartinka.orig.jpg" alt="mySite"></a></p>
 												</div>
 											</div>
-											<div class="col-md-3">
+											<div class="col-xs-3 col-md-3">
 												<div class="myWork-item-wrap">
 													<p><a href="#"><img src="image/temp/gomer-simpson-kartinka.orig.jpg" alt="mySite"></a></p>
 												</div>
 											</div>
-											<div class="col-md-3">
+											<div class="col-xs-3 col-md-3">
 												<div class="myWork-item-wrap">
 													<p><a href="#"><img src="image/temp/gomer-simpson-kartinka.orig.jpg" alt="mySite"></a></p>
 												</div>
@@ -99,62 +99,62 @@
 								<div class="item">
 									<div class="myWork-item">
 										<div class="row">
-											<div class="col-md-3">
+											<div class="col-xs-3 col-md-3">
 												<div class="myWork-item-wrap">
 													<p><a href="#"><img src="image/temp/gomer-simpson-kartinka.orig.jpg" alt="mySite"></a></p>
 												</div>
 											</div>
-											<div class="col-md-3">
+											<div class="col-xs-3 col-md-3">
 												<div class="myWork-item-wrap">
 													<p><a href="#"><img src="image/temp/gomer-simpson-kartinka.orig.jpg" alt="mySite"></a></p>
 												</div>
 											</div>
-											<div class="col-md-3">
+											<div class="col-xs-3 col-md-3">
 												<div class="myWork-item-wrap">
 													<p><a href="#"><img src="image/temp/gomer-simpson-kartinka.orig.jpg" alt="mySite"></a></p>
 												</div>
 											</div>
-											<div class="col-md-3">
+											<div class="col-xs-3 col-md-3">
 												<div class="myWork-item-wrap">
 													<p><a href="#"><img src="image/temp/gomer-simpson-kartinka.orig.jpg" alt="mySite"></a></p>
 												</div>
 											</div>
-											<div class="col-md-3">
+											<div class="col-xs-3 col-md-3">
 												<div class="myWork-item-wrap">
 													<p><a href="#"><img src="image/temp/gomer-simpson-kartinka.orig.jpg" alt="mySite"></a></p>
 												</div>
 											</div>
-											<div class="col-md-3">
+											<div class="col-xs-3 col-md-3">
 												<div class="myWork-item-wrap">
 													<p><a href="#"><img src="image/temp/gomer-simpson-kartinka.orig.jpg" alt="mySite"></a></p>
 												</div>
 											</div>
-											<div class="col-md-3">
+											<div class="col-xs-3 col-md-3">
 												<div class="myWork-item-wrap">
 													<p><a href="#"><img src="image/temp/gomer-simpson-kartinka.orig.jpg" alt="mySite"></a></p>
 												</div>
 											</div>
-											<div class="col-md-3">
+											<div class="col-xs-3 col-md-3">
 												<div class="myWork-item-wrap">
 													<p><a href="#"><img src="image/temp/gomer-simpson-kartinka.orig.jpg" alt="mySite"></a></p>
 												</div>
 											</div>
-											<div class="col-md-3">
+											<div class="col-xs-3 col-md-3">
 												<div class="myWork-item-wrap">
 													<p><a href="#"><img src="image/temp/gomer-simpson-kartinka.orig.jpg" alt="mySite"></a></p>
 												</div>
 											</div>
-											<div class="col-md-3">
+											<div class="col-xs-3 col-md-3">
 												<div class="myWork-item-wrap">
 													<p><a href="#"><img src="image/temp/gomer-simpson-kartinka.orig.jpg" alt="mySite"></a></p>
 												</div>
 											</div>
-											<div class="col-md-3">
+											<div class="col-xs-3 col-md-3">
 												<div class="myWork-item-wrap">
 													<p><a href="#"><img src="image/temp/gomer-simpson-kartinka.orig.jpg" alt="mySite"></a></p>
 												</div>
 											</div>
-											<div class="col-md-3">
+											<div class="col-xs-3 col-md-3">
 												<div class="myWork-item-wrap">
 													<p><a href="#"><img src="image/temp/gomer-simpson-kartinka.orig.jpg" alt="mySite"></a></p>
 												</div>
@@ -171,7 +171,7 @@
 							  <span class="but-work-left"></span>
 							</a>
 						</div><!--#carousel-example-generic-->
-                    </div><!--.col-md-12-->
+                    </div><!--.col-xs-3 col-md-12-->
                 </div>
             </div>
 		</section><!--#myWorks-->

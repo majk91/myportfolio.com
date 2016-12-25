@@ -3,9 +3,6 @@ body{
 	font-family: Lato, Arial, sans-serif;
 	background: #ffffff;
 }
-.clear{
-	clear:both;
-}
 .vcenter {
   height: 85vh;
   position: relative;
@@ -23,9 +20,11 @@ a{
 }
 .lang-box{
 	float:right;
+	min-height: 30px;
 }
 .language{
 	margin-bottom: 0px;
+	display: none;
 }
 .language a{
 	text-decoration: none;
@@ -53,8 +52,11 @@ li{
 	color: #fcac45;
 }
 #nav-wraper{
-	float:right;
 	position: relative;
+}
+#nav-wraper .nav{
+	float:right;
+
 }
 #nav-wraper li{
 	display: inline-block;
@@ -96,6 +98,13 @@ li{
 	bottom: -3px;
 	right: 0px;
 	background-color:#fcac45;
+}
+#home{
+	padding-bottom: 0px;
+}
+#menu-btn{
+	font-size: 40px;
+    color: #fcac45;
 }
 .my-present{
 	position: absolute;
@@ -150,10 +159,8 @@ li{
     transform:  translateY(5px);
     transition: all 0.2s;
 }
-.servis-wrap{
-	padding: 100px 0px;
-}
 .all-title-wrap{
+	padding: 60px 0px 20px 0px;
 	text-transform: uppercase;
 	text-align: center;
 }
@@ -165,7 +172,7 @@ li{
 }
 .second-line{
 	height: 3px;
-	margin: 0 auto 40px auto;
+	margin: 0 auto 20px auto;
 	width: 65px;
 	background: #fdc57c;
 }
@@ -178,8 +185,7 @@ li{
 .all-title-wrap p{
 	font-style:italic;
 	text-transform: none;
-	font-style: 16px;
-	margin-bottom: 100px;
+	font-size: 16px;
 }
 .servis-item{
 	color: #000;
@@ -211,7 +217,6 @@ li{
 
 #clients{
 	background: #000000;
-    padding: 100px 0px;
 
 }
 #clients h2{
@@ -297,9 +302,6 @@ li{
 /*----------------------------#clients end----------------------*/
 
 /*----------------------------#myWorks start----------------------*/
-#myWorks{
-	padding: 100px 0;
-}
 .myWork-item{
 	width: 100%;
 	height: 435px;
@@ -383,6 +385,9 @@ li{
 }
 /*----------------------------#myWorks end----------------------*/
 
+.one, .two{
+	padding-bottom: 60px;
+}
 .one{
 	background-color: #000000;
 	color: #ffffff;
@@ -391,8 +396,8 @@ li{
 	color: #222222
 }
 /*----------------------------#review start----------------------*/
-#review{
-	padding: 100px 0px;
+#review .all-title-wrap{
+	padding-bottom: 20px;
 }
 .comment-box h3, .comment-box p{
 	text-align:center;
@@ -414,3 +419,87 @@ li{
 	font-weight: 500;
 }
 /*----------------------------#review end----------------------*/
+
+/*----------------------------#contact start----------------------*/
+
+#contact p{
+	margin: 10px 0 0px;
+}
+#contact input{
+	height: 25px;
+}
+#contact p, #contact input, #contact textarea{
+	width: 100%;
+	padding: 0 0 0 1%;
+}
+#contact sup{
+	color: red;
+}
+#contact p.warning{
+	padding-top: 0px;
+	margin-top: 0px;
+	color: #fcac45;
+}
+.form-wrap button{
+	float: right;
+	background-color: #fcac45;
+	border: 0px;
+	text-transform: uppercase;
+	color: #ffffff;
+	width:165px;
+	height: 40px;
+}
+/*----------------------------#contact end----------------------*/
+
+/*----------------------------#footer start----------------------*/
+#footer{
+	color: #b2b2b2;
+	padding: 30px 0;
+}
+#footer .nav>li>a {
+	padding: 0px;
+	color: inherit;
+}
+#footer p{
+    margin: 0 0 5px;
+}
+.social-box{
+	margin-bottom: 0px;
+}
+.social-box a{
+	display: block;
+	height: 100%;
+	text-align: center;
+	font-size: 37px;
+	text-decoration: none;
+	color: inherit;
+	font-weight: 900;
+}
+.social-item{
+	height: 50px;
+	width: 50px;
+	border-radius: 50%;
+	border: 3px solid #b2b2b2;
+	margin: 0 10px 10px 0; 
+}
+.social-item{
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
+.fb{
+	background-image: url('../image/facebook_bg.png');
+}
+.vk{
+	background-image: url('../image/vk-bg.png');
+}
+.google{
+	background-image: url('../image/google-bg.png');
+}
+.in{
+	background-image: url('../image/linkedin-logo-button_318-84979.png');
+}
+.tw{
+	background-image: url('../image/Twitter-bg.png');
+}
+/*----------------------------#footer end----------------------*/

@@ -1,7 +1,7 @@
     <section id="clients" class="one">
         <div class="container">
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-xs-12 col-md-12">
                     <div class="all-title-wrap">
                         <h2 class="servis-title">Некоторые из моих <strong>клиентов</strong></h2>
                         <div class="first-line"></div>

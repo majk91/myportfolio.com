@@ -1,11 +1,11 @@
             <section id="home" class="one">
                 <div class="container">
                     <div class="row vcenter">
-                        <div class="col-md-12 text-center my-present">
+                        <div class="col-xs-12 col-md-12 text-center my-present">
                             <p>Здравствуйте, меня зовут Михаил, я</p>
                             <h1>FRONT-END DEWELOPER</h1>
                         </div>
-                    <div class="col-md-12 text-center bottom-down-box">
+                    <div class="col-xs-12 col-md-12 text-center bottom-down-box">
                         <div class="bottom-down">
                             <span class="arrow-box"></span>
                         </div>

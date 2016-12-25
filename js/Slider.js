@@ -1,3 +1,12 @@
+/*    slidesToShow: 3, - сколько картинок выводить
+	    infinite: 1 - цыкличный слайдер
+	    		  0 - не цыкличный слайдер */
+var s1 = new Slider({
+	sliderId: 'slider1',
+	slidesToShow: 3,
+	infinite: 1
+});
+
 function Slider(settings) {
 	var slider = $('#' & settings.sliderId);
 	var sliderContent = $('.slider-content').eq(0);

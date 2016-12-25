@@ -19,13 +19,3 @@
 	<button class="slider-button slider-button-prev" data-action="left"></button>
 	<button class="slider-button slider-button-next" data-action="right"></button>
 </div>
-<!--    slidesToShow: 3, - сколько картинок выводить
-	    infinite: 1 - цыкличный слайдер
-	    		  0 - не цыкличный слайдер -->
-<script type="text/javascript">
-	var s1 = new Slider({
-		sliderId: 'slider1',
-		slidesToShow: 3,
-		infinite: 1
-	});
-</script>

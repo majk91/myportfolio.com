@@ -10,8 +10,7 @@
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="js/Slider.js"></script>
+
 
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -25,7 +24,7 @@
        		<div id="header">
         		<div class="container">
         			<div class="row">
-        			    <div class="col-md-3 col-md-offset-9">
+        			    <div class=" col-xs-3 col-sm-3 col-md-3 col-xs-offset-9 col-sm-offset-3 col-md-offset-9">
                             <div class="lang-box">
                                 <ul class="language">
                                     <li id="ua"><a href="">ua</a></li>
@@ -34,23 +33,29 @@
                                 </ul>
                             </div>
         			    </div>
-        				<div class="col-md-12">
+        				<div class="col-xs-12 col-sm-12 col-md-12">
     	    				<div class="logo-wraper">
-    	    					<div class="logo">
-    	    						<p> <a href="">Mike <span>Yuryshynets</span></a></p>
-    	    					</div>
-    	    					<div id="nav-wraper">
-    	    						<ul class="nav">
-    	    							<li><a href="#" class="activ">Главная</a></li>
-                                        <li><a href="#">Услуги</a></li>
-                                        <li><a href="#">Клиенты</a></li>
-    	    							<li><a href="#">Резюме</a></li>
-    	    							<li><a href="#">Портфолио</a></li>
-    	    							<li><a href="#">Отзывы</a></li>
-    	    							<li><a href="#">Контакты</a></li>
-    	    						</ul>
-    	    					</div>
-                                <div class="clear"></div>
+                                <div class="row">
+                                    <div class="col-xs-10 col-sm-12 col-md-3">
+            	    					<div class="logo">
+            	    						<p> <a href="">Mike <span>Yuryshynets</span></a></p>
+            	    					</div>
+                                    </div>
+                                    <div id="nav-wraper" class="col-xs-2 col-sm-12 col-md-9">
+                                        <ul class="nav hidden-xs">
+                                            <li><a href="#" class="activ">Главная</a></li>
+                                            <li><a href="#">Услуги</a></li>
+                                            <li><a href="#">Клиенты</a></li>
+                                            <li><a href="#">Резюме</a></li>
+                                            <li><a href="#">Портфолио</a></li>
+                                            <li><a href="#">Отзывы</a></li>
+                                            <li><a href="#">Контакты</a></li>
+                                        </ul>
+                                        <div class="visible-xs">
+                                            <span id="menu-btn" class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
+                                        </div>
+                                    </div>
+                                </div>
     	    				</div>
         				</div>
                     </div>
