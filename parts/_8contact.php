@@ -13,23 +13,18 @@
                         		<div class="row">
 	                        		<div class="col-xs-6 col-md-6">
 	                        			<p>ФИО: <sup>*</sup></p>
-										<input type="text" class="form-item" name="name" placeholder="Джон Доу">
+										<input type="text" class="form-item" name="name" placeholder="Иванов Иван">
 	                        		</div>
 	                        		<div class="col-xs-6 col-md-6">
-	                        			<p>Телефон в формате 2xxx-xxx: <sup>*</sup></p>  
-										<input type="tel" name="tel" pattern="2[0-9]{3}-[0-9]{3}" placeholder="+380123456789">
+	                        			<p>Телефон: <sup>*</sup></p>  
+										<input type="tel" name="tel" placeholder="+380123456789">
 	                        		</div>
 	                        		<div class="col-xs-6 col-md-6">
 	                        			<p>E-mail: <sup>*</sup></p>
 										<input type="text" class="form-item" name="email" placeholder="abcd@example.com">
 	                        		</div>
 	                        		<div class="col-xs-6 col-md-6">
-	              		          		<div class="warning-box">
-		                        	<!--		<p class="warning">Ошибка!</p>
-		                        			<p class="warning">Все поля отмечены звездочкой должны быть заполнены</p>
-		                        			<p class="warning">Проверьте правельность ввода номера</p>
-		                        			<p class="warning">Проверьте правельность ввода электронной почты</p> -->
-		                        		</div><!--.warning-box-->
+	              		          		<div class="warning-box"></div><!--.warning-box-->
 	                        		</div><!--.col-md-6-->
                         		</div><!--.row-->
                         		<p>Комментарии:</p>

@@ -3,17 +3,17 @@
                 <div class="row">
                     <div class="col-xs-12 col-md-12">
                         <div class="all-title-wrap">
-                                <h2 class="servis-title">Примеры некоторых <strong>работ</strong></h2>
+                                <h2 class="servis-title">Примеры последних <strong>работ</strong></h2>
                                 <div class="first-line"></div>
                                 <div class="second-line"></div>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid rem quo labore, corporis cumque natus, optio explicabo distinctio, consectetur officiis eveniet a animi? Soluta molestiae nemo nisi cumque, nihil incidunt.</p>
+                                <p class="hidden-xs">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid rem quo labore, corporis cumque natus, optio explicabo distinctio, consectetur officiis eveniet a animi? Soluta molestiae nemo nisi cumque, nihil incidunt.</p>
                         </div><!--.all-title-wrap-->
                     </div>
                     <div class="col-xs-12 col-md-12">
                     	<div class="filter-wrap">
                     		<div class="filter-title">ФИЛЬТР</div>
                     		<ul class="filter-nav">
-                    			<li>Все</li>
+                    			<li class="activ">Все</li>
                     			<li>Визитки</li>
                     			<li>Сайты</li>
                     			<li>Cтраницы посадки</li>
@@ -33,62 +33,47 @@
 								<div class="item active">
 									<div class="myWork-item">
 										<div class="row">
-											<div class="col-xs-3 col-md-3">
+											<div class="col-xs-4 col-md-4">
 												<div class="myWork-item-wrap">
 													<p><a href="#"><img src="image/temp/gomer-simpson-kartinka.orig.jpg" alt="mySite"></a></p>
 												</div>
 											</div>
-											<div class="col-xs-3 col-md-3">
+											<div class="col-xs-4 col-md-4">
 												<div class="myWork-item-wrap">
 													<p><a href="#"><img src="image/temp/gomer-simpson-kartinka.orig.jpg" alt="mySite"></a></p>
 												</div>
 											</div>
-											<div class="col-xs-3 col-md-3">
+											<div class="col-xs-4 col-md-4">
 												<div class="myWork-item-wrap">
 													<p><a href="#"><img src="image/temp/gomer-simpson-kartinka.orig.jpg" alt="mySite"></a></p>
 												</div>
 											</div>
-											<div class="col-xs-3 col-md-3">
+											<div class="col-xs-4 col-md-4">
 												<div class="myWork-item-wrap">
 													<p><a href="#"><img src="image/temp/gomer-simpson-kartinka.orig.jpg" alt="mySite"></a></p>
 												</div>
 											</div>
-											<div class="col-xs-3 col-md-3">
+											<div class="col-xs-4 col-md-4">
 												<div class="myWork-item-wrap">
 													<p><a href="#"><img src="image/temp/gomer-simpson-kartinka.orig.jpg" alt="mySite"></a></p>
 												</div>
 											</div>
-											<div class="col-xs-3 col-md-3">
+											<div class="col-xs-4 col-md-4">
 												<div class="myWork-item-wrap">
 													<p><a href="#"><img src="image/temp/gomer-simpson-kartinka.orig.jpg" alt="mySite"></a></p>
 												</div>
 											</div>
-											<div class="col-xs-3 col-md-3">
+											<div class="col-xs-4 col-md-4">
 												<div class="myWork-item-wrap">
 													<p><a href="#"><img src="image/temp/gomer-simpson-kartinka.orig.jpg" alt="mySite"></a></p>
 												</div>
 											</div>
-											<div class="col-xs-3 col-md-3">
+											<div class="col-xs-4 col-md-4">
 												<div class="myWork-item-wrap">
 													<p><a href="#"><img src="image/temp/gomer-simpson-kartinka.orig.jpg" alt="mySite"></a></p>
 												</div>
 											</div>
-											<div class="col-xs-3 col-md-3">
-												<div class="myWork-item-wrap">
-													<p><a href="#"><img src="image/temp/gomer-simpson-kartinka.orig.jpg" alt="mySite"></a></p>
-												</div>
-											</div>
-											<div class="col-xs-3 col-md-3">
-												<div class="myWork-item-wrap">
-													<p><a href="#"><img src="image/temp/gomer-simpson-kartinka.orig.jpg" alt="mySite"></a></p>
-												</div>
-											</div>
-											<div class="col-xs-3 col-md-3">
-												<div class="myWork-item-wrap">
-													<p><a href="#"><img src="image/temp/gomer-simpson-kartinka.orig.jpg" alt="mySite"></a></p>
-												</div>
-											</div>
-											<div class="col-xs-3 col-md-3">
+											<div class="col-xs-4 col-md-4">
 												<div class="myWork-item-wrap">
 													<p><a href="#"><img src="image/temp/gomer-simpson-kartinka.orig.jpg" alt="mySite"></a></p>
 												</div>
@@ -99,62 +84,47 @@
 								<div class="item">
 									<div class="myWork-item">
 										<div class="row">
-											<div class="col-xs-3 col-md-3">
+											<div class="col-xs-4 col-md-4">
 												<div class="myWork-item-wrap">
 													<p><a href="#"><img src="image/temp/gomer-simpson-kartinka.orig.jpg" alt="mySite"></a></p>
 												</div>
 											</div>
-											<div class="col-xs-3 col-md-3">
+											<div class="col-xs-4 col-md-4">
 												<div class="myWork-item-wrap">
 													<p><a href="#"><img src="image/temp/gomer-simpson-kartinka.orig.jpg" alt="mySite"></a></p>
 												</div>
 											</div>
-											<div class="col-xs-3 col-md-3">
+											<div class="col-xs-4 col-md-4">
 												<div class="myWork-item-wrap">
 													<p><a href="#"><img src="image/temp/gomer-simpson-kartinka.orig.jpg" alt="mySite"></a></p>
 												</div>
 											</div>
-											<div class="col-xs-3 col-md-3">
+											<div class="col-xs-4 col-md-4">
 												<div class="myWork-item-wrap">
 													<p><a href="#"><img src="image/temp/gomer-simpson-kartinka.orig.jpg" alt="mySite"></a></p>
 												</div>
 											</div>
-											<div class="col-xs-3 col-md-3">
+											<div class="col-xs-4 col-md-4">
 												<div class="myWork-item-wrap">
 													<p><a href="#"><img src="image/temp/gomer-simpson-kartinka.orig.jpg" alt="mySite"></a></p>
 												</div>
 											</div>
-											<div class="col-xs-3 col-md-3">
+											<div class="col-xs-4 col-md-4">
 												<div class="myWork-item-wrap">
 													<p><a href="#"><img src="image/temp/gomer-simpson-kartinka.orig.jpg" alt="mySite"></a></p>
 												</div>
 											</div>
-											<div class="col-xs-3 col-md-3">
+											<div class="col-xs-4 col-md-4">
 												<div class="myWork-item-wrap">
 													<p><a href="#"><img src="image/temp/gomer-simpson-kartinka.orig.jpg" alt="mySite"></a></p>
 												</div>
 											</div>
-											<div class="col-xs-3 col-md-3">
+											<div class="col-xs-4 col-md-4">
 												<div class="myWork-item-wrap">
 													<p><a href="#"><img src="image/temp/gomer-simpson-kartinka.orig.jpg" alt="mySite"></a></p>
 												</div>
 											</div>
-											<div class="col-xs-3 col-md-3">
-												<div class="myWork-item-wrap">
-													<p><a href="#"><img src="image/temp/gomer-simpson-kartinka.orig.jpg" alt="mySite"></a></p>
-												</div>
-											</div>
-											<div class="col-xs-3 col-md-3">
-												<div class="myWork-item-wrap">
-													<p><a href="#"><img src="image/temp/gomer-simpson-kartinka.orig.jpg" alt="mySite"></a></p>
-												</div>
-											</div>
-											<div class="col-xs-3 col-md-3">
-												<div class="myWork-item-wrap">
-													<p><a href="#"><img src="image/temp/gomer-simpson-kartinka.orig.jpg" alt="mySite"></a></p>
-												</div>
-											</div>
-											<div class="col-xs-3 col-md-3">
+											<div class="col-xs-4 col-md-4">
 												<div class="myWork-item-wrap">
 													<p><a href="#"><img src="image/temp/gomer-simpson-kartinka.orig.jpg" alt="mySite"></a></p>
 												</div>

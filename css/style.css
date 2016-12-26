@@ -15,7 +15,7 @@ a{
 	min-height: 50px;	
 }
 .home-wraper{
-	background-color: #000000;
+	background-color: #111111;
 	height: 100vh;
 }
 .lang-box{
@@ -226,7 +226,7 @@ li{
 /*-----------------------#clients start-----------------------*/
 
 #clients{
-	background: #000000;
+	background: #111111;
 
 }
 #clients h2{
@@ -248,7 +248,7 @@ li{
 }
 .slider-item{
 	position: absolute;
-	border: 1px solid black;
+	border: 1px solid #111111;
 	width: 100%;
 	height: 100%;
 	box-sizing: border-box;
@@ -314,7 +314,7 @@ li{
 /*----------------------------#myWorks start----------------------*/
 .myWork-item{
 	width: 100%;
-	height: 435px;
+/*	height: 435px;   */
 }
 .filter-wrap{
 	color: #000000;
@@ -334,7 +334,6 @@ li{
 .filter-nav li:first-child{
 	border: 0;
 }
-
 .carousel-control{
 	width: 10%;
 }
@@ -369,11 +368,13 @@ li{
 }
 .myWork-item .myWork-item-wrap{
 	background-color: #999999;
-	height:150px;
 	margin-bottom:15px; 
 }
 .myWork-item-wrap{
 	overflow: hidden;
+}
+.myWork-item-wrap p{
+	margin: 0px;
 }
 .myWork-item-wrap img{
 	width: 100%;
@@ -387,11 +388,20 @@ li{
 	background-color:#ffffff;
 	border-color: #fcac45;
 	border-radius: 0;
+	border: 0;
 	margin-right: 13px;
 }
 .carousel-indicators .active{
 	background-color: #fcac45;
 	margin-right: 13px;
+}
+#myWorks .row>div{
+	padding-right: 20px;
+    padding-left: 20px;
+}
+.filter-wrap li.activ{
+    font-weight: 900;
+    background-color: darkgray;
 }
 /*----------------------------#myWorks end----------------------*/
 
@@ -399,7 +409,7 @@ li{
 	padding-bottom: 60px;
 }
 .one{
-	background-color: #000000;
+	background-color: #111111;
 	color: #ffffff;
 }
 .two{
@@ -428,6 +438,12 @@ li{
 	color: #b2b2b2;
 	font-weight: 500;
 }
+#carousel-example-generic1{
+	clear: both;
+}
+.slider2-indicat{
+	bottom: -10px;
+}
 /*----------------------------#review end----------------------*/
 
 /*----------------------------#contact start----------------------*/
@@ -436,11 +452,11 @@ li{
 	margin: 10px 0 0px;
 }
 #contact input{
-	height: 25px;
+	height: 30px;
 }
 #contact p, #contact input, #contact textarea{
 	width: 100%;
-	padding: 0 0 0 1%;
+	padding: 0 0 0 2%;
 }
 #contact sup{
 	color: red;
@@ -513,3 +529,15 @@ li{
 	background-image: url('../image/Twitter-bg.png');
 }
 /*----------------------------#footer end----------------------*/
+
+
+
+
+
+
+@media (max-width: 1199px){
+	.social-item {
+	    width: 44px;
+	    height: 44px;
+	}
+}
