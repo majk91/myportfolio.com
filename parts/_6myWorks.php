@@ -10,15 +10,19 @@
                         </div><!--.all-title-wrap-->
                     </div>
                     <div class="col-xs-12 col-md-12">
-                    	<div class="filter-wrap">
-                    		<div class="filter-title">ФИЛЬТР</div>
-                    		<ul class="filter-nav">
-                    			<li class="activ">Все</li>
-                    			<li>Визитки</li>
-                    			<li>Сайты</li>
-                    			<li>Cтраницы посадки</li>
-                    			<li>Интернет магазины</li>
-                    		</ul>
+                    	<div class="row filter-wrap">
+                    		<div class="col-xs-12 col-md-1">
+                    			<div class="filter-title">ФИЛЬТР:</div>
+                    		</div>
+                    		<div class="col-xs-12 col-md-11 filter-menu-box">
+	                    		<ul class="filter-nav">
+	                    			<li class="activ">Все</li>
+	                    			<li>Визитки</li>
+	                    			<li>Сайты</li>
+	                    			<li>Cтраницы посадки</li>
+	                    			<li>Магазины</li>
+	                    		</ul>
+	                    	</div>
                     	</div>
                     </div>
                     <div class="col-xs-12 col-md-12">
@@ -135,10 +139,14 @@
 							</div>
 							<!-- Controls -->
 							<a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
-							  <span class="but-work-right"></span>
+							  <span class="but-work-right">
+							  	<img src="image/button-work-left-BG.png" alt="">
+							  </span>
 							</a>
 							<a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
-							  <span class="but-work-left"></span>
+							  <span class="but-work-left">
+							  	<img src="image/button-work-right-BG.png" width="100%" alt="">
+							  </span>
 							</a>
 						</div><!--#carousel-example-generic-->
                     </div><!--.col-xs-3 col-md-12-->
