@@ -49,7 +49,7 @@
                                             <li><a href="#">Резюме</a></li>
                                             <li><a href="#">Портфолио</a></li>
                                             <li><a href="#">Отзывы</a></li>
-                                            <li><a href="#">Контакты</a></li>
+                                            <li><a href="/clock/index.php">Контакты</a></li>
                                         </ul>
                                         <div class="visible-xs">
                                             <div class="dropdown">
