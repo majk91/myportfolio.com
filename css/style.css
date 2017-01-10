@@ -16,12 +16,24 @@ a{
 }
 #header{
 	height: 15vh;
-	min-height: 50px;	
+	min-height: 100px;	
 }
+
+
+
+@media only screen and (min-width: 768px) {
+    .home-wraper{ {
+    	min-height: 562px;
+    }
+}
+
+
+
 .home-wraper{
 	overflow: hidden;/*временно*/
 	background-color: #111111;
 	height: 100vh;
+	min-height: 562px;
 }
 .lang-box{
 	float:right;
@@ -185,7 +197,24 @@ li{
 	left: -25px;
 	color: #fcac45;
 }
-
+.clock svg{
+	width: 100%;
+	height: 215px;
+}
+.main-contact-wrap span.viber, .main-contact-wrap span.viber{
+	left: -27px;
+}
+.skype{
+	background: url(../image/skype-img.png) no-repeat;
+}
+.viber{
+	background: url(../image/viber-img.png) no-repeat;
+}
+.viber, .skype{
+    width: 18px;
+    height: 18px;
+    background-size: 100%;
+}
 /*-----------------------------#home end---------------------------*/
 /*-----------------------------#servis start---------------------------*/
 

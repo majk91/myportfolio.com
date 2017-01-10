@@ -6,25 +6,25 @@
                                 <img src="image/my-photo.png" alt="Mike my-photo">
                             </div>
                         </div>
-                        <div class="col-xs-12 col-md-4 col-md-offset-3 main-contact-wrap">
+                        <div class="col-xs-12 col-md-3 col-md-offset-3 main-contact-wrap">
                             <div class="phone-box">
                                 <span class="glyphicon glyphicon-earphone"></span>
                                 <p>+38(093)2164930</p>
                             </div>
                             <div class="viber-box">
-                                <span class="glyphicon glyphicon-earphone"></span>
+                                <span class="viber"></span>
                                 <p>+38(093)2164930</p>
                             </div>
                             <div class="skype-box">
-                                <span class="glyphicon glyphicon-earphone"></span>
+                                <span class="skype"></span>
                                 <p>majk_05</p>
                             </div>
                             <div class="mail-box">
-                                <span class="glyphicon glyphicon-earphone"></span>
+                                <span class="glyphicon glyphicon-envelope"></span>
                                 <p>yuryshynets.m@gmail.com</p> 
                             </div>
                         </div>
-                        <div class="hidden-xs col-md-2 text-center">
+                        <div class="hidden-xs col-md-3 text-center clock">
                             <?php require_once("parts/apps/clock.php") ?>
                         </div>
 
