@@ -19,10 +19,7 @@
                     </div>
                     <div class="col-xs-12 col-sm-3 col-md-3">
                         <p class="contacts hidden-xs">Контакты:</p>
-                        <p class="phone">+380 93 216 49 30</p>
-                        <p class="mail">yuryshynets.m@gmail.com</p>
-                        <p class="skype">majk_05</p>
-                        <p class="viber">+380 93 216 49 30</p>
+                        <?php require("_9g_contact-box.php") ?>
                     </div>
                     <div class="col-xs-12 col-sm-4 col-md-3 center-block">
                         <ul class="social-box">

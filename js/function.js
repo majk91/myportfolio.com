@@ -2,6 +2,15 @@ $( document ).ready(function() {
     setMarginSlider()
 	// вешаю событие на кнопку формы
 	$('#send-btn').on('click', sendForm);
+	$( ".bottom-down" ).on( "click", lowBottom);
+});
+
+$( window ).scroll(function(){
+	bottomShow();
+});
+
+$( window ).resize(function(){
+	bottomShow();
 });
 
 
@@ -38,3 +47,14 @@ function checkSend(data){
 	$(".warning-box").append("<p class='warning'>Ошибка!</p> <p class='warning'>Все поля отмечены звездочкой должны быть заполнены</p> <p class='warning'>Проверьте правельность ввода номера</p> <p class='warning'>Проверьте правельность ввода электронной почты</p>");
 }
 
+function lowBottom(){
+	var hSkroll = $("#header").height();
+	$( ".bottom-down").css('display','none');
+	$('body, html').scrollTop(hSkroll);
+};
+
+function bottomShow(){
+	if($(window).scrollTop() == 0){
+		$(".bottom-down").css('display','block');
+	}
+};
