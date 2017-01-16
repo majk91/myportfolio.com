@@ -19,15 +19,11 @@ a{
 	min-height: 100px;	
 }
 
-
-
 @media only screen and (min-width: 768px) {
     .home-wraper{ {
     	min-height: 562px;
     }
 }
-
-
 
 .home-wraper{
 	overflow: hidden;/*временно*/
@@ -214,6 +210,10 @@ li{
     width: 18px;
     height: 18px;
     background-size: 100%;
+}
+.my-photo-box img{
+	width: 100%;
+	opacity: 0.3;
 }
 /*-----------------------------#home end---------------------------*/
 /*-----------------------------#servis start---------------------------*/
