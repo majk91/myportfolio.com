@@ -38,18 +38,18 @@
                                 <div class="row">
                                     <div class="col-xs-8 col-sm-12 col-md-3">
             	    					<div class="logo">
-            	    						<p> <a href="">Mike <span>Yuryshynets</span></a></p>
+            	    						<p> <a href="" name="top">Mike <span>Yuryshynets</span></a></p>
             	    					</div>
                                     </div>
                                     <div id="nav-wraper" class="col-xs-4 col-sm-12 col-md-9">
                                         <ul class="nav hidden-xs">
                                             <li><a href="#" class="activ">Главная</a></li>
-                                            <li><a href="#">Услуги</a></li>
-                                            <li><a href="#">Клиенты</a></li>
-                                            <li><a href="#">Резюме</a></li>
-                                            <li><a href="#">Портфолио</a></li>
-                                            <li><a href="#">Отзывы</a></li>
-                                            <li><a href="/clock/index.php">Контакты</a></li>
+                                            <li><a href="#servis">Услуги</a></li>
+                                            <li><a href="#clients">Клиенты</a></li>
+                                        <!--    <li><a href="#">Резюме</a></li> -->
+                                            <li><a href="#myWorks">Портфолио</a></li>
+                                            <li><a href="#reviews">Отзывы</a></li>
+                                            <li><a href="#contact">Контакты</a></li>
                                         </ul>
                                         <div class="visible-xs">
                                             <div class="dropdown">
@@ -58,12 +58,12 @@
                                                 </button>
                                                 <ul class="dropdown-menu dropdown-menu-righ dropdownMenu1-item" aria-labelledby="dropdownMenu1">
                                                     <li><a href="#" class="activ">Главная</a></li>
-                                                    <li><a href="#">Услуги</a></li>
-                                                    <li><a href="#">Клиенты</a></li>
-                                                    <li><a href="#">Резюме</a></li>
-                                                    <li><a href="#">Портфолио</a></li>
-                                                    <li><a href="#">Отзывы</a></li>
-                                                    <li><a href="#">Контакты</a></li>
+                                                    <li><a href="#servis">Услуги</a></li>
+                                                    <li><a href="#clients">Клиенты</a></li>
+                                                <!--    <li><a href="#">Резюме</a></li>   -->
+                                                    <li><a href="#myWorks">Портфолио</a></li>
+                                                    <li><a href="#reviews">Отзывы</a></li>
+                                                    <li><a href="#contact">Контакты</a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -72,5 +72,8 @@
     	    				</div>
         				</div>
                     </div>
+                    <div class="button-up show-scroll">
+                        <a href="#top"><img src="image/my_Rocket.png" alt="top-button"></a>
+                    </div> <!--.button-up-->
         		</div><!--.container-->
         	</div><!--#header-->

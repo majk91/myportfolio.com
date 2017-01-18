@@ -1,4 +1,5 @@
 		<section id="contact" class="two">
+			<a name="contact"></a>
 			<div class="container">
                 <div class="row">
                     <div class="col-xs-8 col-md-8 col-xs-offset-2 col-md-offset-2">

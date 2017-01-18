@@ -1,11 +1,7 @@
 /*    slidesToShow: 3, - сколько картинок выводить
 	    infinite: 1 - цыкличный слайдер
 	    		  0 - не цыкличный слайдер */
-var s1 = new Slider({
-	sliderId: 'slider1',
-	slidesToShow: 3,
-	infinite: 1
-});
+
 
 function Slider(settings) {
 	var slider = $('#' & settings.sliderId);
@@ -36,8 +32,8 @@ function Slider(settings) {
 		showSlides(-1);
 	}
 
-//ПРОВЕРКА НА ПОСЛЕДНИЙ ЭЛЕМЕНТ КОЛЕКЦИИ
-//если элемент последний то кнопка блокируется и добавляеться оформление
+	//ПРОВЕРКА НА ПОСЛЕДНИЙ ЭЛЕМЕНТ КОЛЕКЦИИ
+	//если элемент последний то кнопка блокируется и добавляеться оформление
 	function inspectLast(){
 		for(var i = 0; i < sliderButtons.length; i++){
 			sliderButtons.eq(i).attr('disabled', false);
@@ -72,6 +68,11 @@ function Slider(settings) {
 		if(!settings.slidesToShow || isNaN(+settings.slidesToShow)){
 			settings.slidesToShow = 1;
 		}
+		//задает 1 слайд при малом расширении экрана
+		if($(window).width() <= '767'){
+			settings.slidesToShow = 1;
+		}
+
 		singleSlideWidth = sliderWidth/settings.slidesToShow;
 
 		showSlides(1);

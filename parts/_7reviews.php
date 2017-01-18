@@ -1,4 +1,5 @@
     <section id="review" class="one">
+        <a name="reviews"></a>
         <div class="container">
             <div class="row">
                 <div class="col-xs-12 col-md-12">

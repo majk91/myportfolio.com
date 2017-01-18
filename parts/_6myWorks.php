@@ -1,4 +1,5 @@
 		<section id="myWorks" class="two">
+		    <a name="myWorks"></a>
 			<div class="container">
                 <div class="row">
                     <div class="col-xs-12 col-md-12">
@@ -16,24 +17,26 @@
                     		</div>
                     		<div class="col-xs-12 col-md-11 filter-menu-box">
 	                    		<ul class="filter-nav">
-	                    			<li class="activ">Все</li>
-	                    			<li>Визитки</li>
-	                    			<li>Сайты</li>
-	                    			<li>Cтраницы посадки</li>
-	                    			<li>Магазины</li>
+	                    			<li class="activ"><p>Все</p></li>
+	                    			<li><p>Визитки</p></li>
+	                    			<li><p>Сайты</p></li>
+	                    			<li><p>Cтраницы посадки</p></li>
+	                    			<li><p>Магазины</p></li>
 	                    		</ul>
 	                    	</div>
                     	</div>
                     </div>
                     <div class="col-xs-12 col-md-12">
-						<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-							<!-- Indicators -->
-							<ol class="carousel-indicators">
+
+
+						<div id="carousel-example-generic" class="carousel slide hidden-xs" data-ride="carousel">
+							<!-- Indicators desktop-->
+							<ol class="carousel-indicators hidden-xs">
 								<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
 								<li data-target="#carousel-example-generic" data-slide-to="1"></li>
 							</ol>
-							<!-- Wrapper for slides -->
-							<div class="carousel-inner">
+							<!-- Wrapper for slides desktop -->
+							<div class="carousel-inner ">
 								<div class="item active">
 									<div class="myWork-item">
 										<div class="row">
@@ -137,6 +140,7 @@
 									</div>
 								</div>
 							</div>
+
 							<!-- Controls -->
 							<a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
 							  <span class="but-work-right">
@@ -149,6 +153,91 @@
 							  </span>
 							</a>
 						</div><!--#carousel-example-generic-->
+
+
+
+
+						<div id="carousel-example-generic-mobile" class="carousel slide visible-xs" data-ride="carousel">
+
+							<!-- Wrapper for slides mobile -->
+							<div class="carousel-inner">
+								<div class="item active">
+									<div class="myWork-item">
+										<div class="row">
+											<div class="col-xs-12">
+												<div class="myWork-item-wrap">
+													<p><a href="#"><img src="image/temp/gomer-simpson-kartinka.orig.jpg" alt="mySite"></a></p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="item">
+									<div class="myWork-item">
+										<div class="row">
+											<div class="col-xs-12">
+												<div class="myWork-item-wrap">
+													<p><a href="#"><img src="image/temp/gomer-simpson-kartinka.orig.jpg" alt="mySite"></a></p> 
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="item">
+									<div class="myWork-item">
+										<div class="row">
+											<div class="col-xs-12">
+												<div class="myWork-item-wrap">
+													<p><a href="#"><img src="image/temp/gomer-simpson-kartinka.orig.jpg" alt="mySite"></a></p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="item">
+									<div class="myWork-item">
+										<div class="row">
+											<div class="col-xs-12">
+												<div class="myWork-item-wrap">
+													<p><a href="#"><img src="image/temp/gomer-simpson-kartinka.orig.jpg" alt="mySite"></a></p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="item">
+									<div class="myWork-item">
+										<div class="row">
+											<div class="col-xs-12">
+												<div class="myWork-item-wrap">
+													<p><a href="#"><img src="image/temp/gomer-simpson-kartinka.orig.jpg" alt="mySite"></a></p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- Controls -->
+							<a class="left carousel-control" href="#carousel-example-generic-mobile" data-slide="prev">
+							  <span class="but-work-right">
+							  	<img src="image/button-work-left-BG.png" alt="">
+							  </span>
+							</a>
+							<a class="right carousel-control" href="#carousel-example-generic-mobile" data-slide="next">
+							  <span class="but-work-left">
+							  	<img src="image/button-work-right-BG.png" width="100%" alt="">
+							  </span>
+							</a>
+						</div><!--#carousel-example-generic-mobile-->
+
+
+
+
+
+
+
+
+
                     </div><!--.col-xs-3 col-md-12-->
                 </div>
             </div>
