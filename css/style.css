@@ -19,15 +19,22 @@ a{
 	min-height: 100px;	
 }
 
-
+.one, .two{
+	padding-bottom: 60px;
+}
+.one{
+	background-color: #111111;
+	color: #ffffff;
+}
+.two{
+	color: #222222
+}
 
 @media only screen and (min-width: 768px) {
-    .home-wraper{ {
+    .home-wraper{
     	min-height: 562px;
     }
 }
-
-
 
 .home-wraper{
 	overflow: hidden;/*временно*/
@@ -453,16 +460,7 @@ li{
 }
 /*----------------------------#myWorks end----------------------*/
 
-.one, .two{
-	padding-bottom: 60px;
-}
-.one{
-	background-color: #111111;
-	color: #ffffff;
-}
-.two{
-	color: #222222
-}
+
 /*----------------------------#review start----------------------*/
 #review .all-title-wrap{
 	padding-bottom: 20px;

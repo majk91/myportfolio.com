@@ -1,4 +1,4 @@
-<?php require_once("parts/_1header.php") ?> 
+<?php require_once("parts/_1header.php") ?>
 
 <?php require_once("parts/_2home.php") ?>
 
@@ -15,6 +15,7 @@
 <?php require_once("parts/_8contact.php") ?>
 
 <?php require_once("parts/_9footer.php") ?>
+
 
 
     </div><!--.site-wrapper-->
