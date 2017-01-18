@@ -3,7 +3,8 @@ $( document ).ready(function() {
 	// вешаю событие на кнопку формы
 	$('#send-btn').on('click', sendForm);
 	$( ".bottom-down" ).on( "click", lowBottom);
-	$('.my-photo-box img').mouseOver(changeBgImg);
+//	$('.my-photo-box img').mouseOver(changeBgImg);
+	$('.button-up').on('click', hiddenUpBut);
 });
 
 $( window ).scroll(function(){
@@ -158,8 +159,17 @@ function lowBottom(){
 function bottomShow(){
 	if($(window).scrollTop() == 0){
 		$(".bottom-down").css('display','block');
-	}
+		$(".button-up").css('display','none');
+
+	}else if($(window).scrollTop() > $("#header").height()){
+		$(".button-up").css('display','block');
+	};
 };
 function changeBgImg(){
 
+}
+function hiddenUpBut(){
+	$(window).scrollTop(0);
+	$(".button-up").css('display','none');
+	console.log("top");
 }

@@ -72,8 +72,7 @@
     	    				</div>
         				</div>
                     </div>
-                    <div class="button-up show-scroll">
-                        <a href="#top"><img src="image/my_Rocket.png" alt="top-button"></a>
+                    <div class="button-up hidden-xs">
                     </div> <!--.button-up-->
         		</div><!--.container-->
         	</div><!--#header-->

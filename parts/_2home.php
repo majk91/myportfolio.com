@@ -1,17 +1,17 @@
             <section id="home" class="one">
                 <div class="container">
                     <div class="row vcenter">
-                        <div class="hidden-xs col-md-3 text-center">
+                        <div class="hidden-sm col-md-3 text-center">
                             <div class="my-photo-box">
                                 <img src="image/my-photo-v1.png" alt="Mike my-photo">
                             </div>
                         </div>
-                        <div class="col-xs-8 col-xs-offset-2 col-md-3 col-md-offset-3">
+                        <div class="col-xs-8 col-xs-offset-2 col-sm-5 col-sm-offset-1 col-md-3 col-md-offset-3">
 
                             <?php require("_9g_contact-box.php") ?>
 
                         </div>
-                        <div class="hidden-xs col-md-3 text-center clock">
+                        <div class="hidden-xs col-md-3 col-sm-5 text-center clock">
                             <?php require_once("parts/apps/clock.php") ?>
                         </div>
 
