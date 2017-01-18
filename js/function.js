@@ -3,6 +3,7 @@ $( document ).ready(function() {
 	// вешаю событие на кнопку формы
 	$('#send-btn').on('click', sendForm);
 	$( ".bottom-down" ).on( "click", lowBottom);
+	$('.my-photo-box img').mouseOver(changeBgImg);
 });
 
 $( window ).scroll(function(){
@@ -25,7 +26,6 @@ function setMarginSlider(){
 			for(var j = 8; i<=parent.eq(0).find(".myWork-item-wrap").length; i++){
 				parent.eq(0).find(".myWork-item-wrap").eq(j).css("margin-bottom", 0);
 			}	
-			
 		}
 	}
 }
@@ -58,3 +58,6 @@ function bottomShow(){
 		$(".bottom-down").css('display','block');
 	}
 };
+function changeBgImg(){
+
+}

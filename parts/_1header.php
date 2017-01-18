@@ -19,7 +19,7 @@
 
 </head>
 <body>
-    <div class="site-wrapper one">
+    <div class="site-wrapper">
         <div class="home-wraper">
        		<div id="header">
         		<div class="container">

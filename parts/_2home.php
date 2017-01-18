@@ -3,10 +3,10 @@
                     <div class="row vcenter">
                         <div class="hidden-xs col-md-3 text-center">
                             <div class="my-photo-box">
-                                <img src="image/my-photo.png" alt="Mike my-photo">
+                                <img src="image/my-photo-v1.png" alt="Mike my-photo">
                             </div>
                         </div>
-                        <div class="col-xs-12 col-md-3 col-md-offset-3">
+                        <div class="col-xs-8 col-xs-offset-2 col-md-3 col-md-offset-3">
 
                             <?php require("_9g_contact-box.php") ?>
 
@@ -16,7 +16,7 @@
                         </div>
 
                         <div class="col-xs-12 col-md-12 text-center my-present">
-                            <p>Здравствуйте, меня зовут Михаил, я</p>
+                            <p>Michail Yuryshynets</p>
                             <h1>FRONT-END DEWELOPER</h1>
                         </div>
                         <div class="col-xs-12 col-md-12 text-center bottom-down-box">
