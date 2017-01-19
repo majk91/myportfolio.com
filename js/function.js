@@ -2,17 +2,18 @@ $( document ).ready(function() {
     setMarginSlider()
 	// вешаю событие на кнопку формы
 	$('#send-btn').on('click', sendForm);
-	$( ".bottom-down" ).on( "click", lowBottom);
+
+	$( ".bottom-down" ).on( "click", hideTopBtn);
 //	$('.my-photo-box img').mouseOver(changeBgImg);
 	$('.button-up').on('click', hideUpBut);
 });
 
 $( window ).scroll(function(){
-	bottomShow();
+	bottomUpDown();
 });
 
 $( window ).resize(function(){
-	bottomShow();
+	bottomUpDown();
 });
 
 	new Slider({
@@ -150,29 +151,39 @@ function checkSend(data){
 }
 
 //для кнопки опускает прокрутку ниже с главной
-function lowBottom(){
-	var hSkroll = $("#header").height();
+function hideTopBtn(){
+	var hSkroll = $("#header").height()*2;
+	animatedUpOrDown(hSkroll);
 	$( ".bottom-down").css('display','none');
-	$('body, html').scrollTop(hSkroll);
 };
 
 //показывает либо скрывает кнопки переходов "в верх", "в низ"
-function bottomShow(){
+function bottomUpDown(){
 	if($(window).scrollTop() == 0){
 		$(".bottom-down").css('display','block');
-		$(".button-up").css('display','none');
-
-	}else if($(window).scrollTop() > $("#header").height()){
+	}else if($(window).scrollTop() >= $("#header").height()*2){
 		$(".button-up").css('display','block');
+		$(".bottom-down").css('display','none');
+	}else{
+		$(".button-up").css('display','none');
 	};
 };
+//анимация для перемещения по сайту с помощью кнопок
+function animatedUpOrDown(scrollPosition) {
+	$("html, body").animate({ scrollTop: scrollPosition }, 500);
+}
 
 function changeBgImg(){
 
 }
 
 function hideUpBut(){
-	$(window).scrollTop(0);
 	$(".button-up").css('display','none');
-	console.log("top");
+	animatedUpOrDown(0);
 }
+
+//подключаю вкладки для админки
+$('#myTab a').click(function (e) {
+  e.preventDefault()
+  $(this).tab('show')
+})

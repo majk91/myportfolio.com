@@ -636,6 +636,19 @@ li{
 /*----------------------------#footer end----------------------*/
 
 
+/*----------------------------admin.php start----------------------*/
+.tab-content>div{
+	color:  black;
+}
+.admin-my-portfilio{
+	margin: 10px 0 10px 0;
+}
+#admin-wrap p, #admin-wrap button{
+	margin: 10px 0 0 0;
+}
+/*----------------------------admin.php end----------------------*/
+
+
 /*----------------------------@media start----------------------*/
 
 @media (max-width: 1199px){

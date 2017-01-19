@@ -21,9 +21,9 @@
     </div><!--.site-wrapper-->
 
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="bootstrap/js/bootstrap.min.js"></script>
-/*    <script src="js/Slider.js"></script>*/
-    <script src="js/function.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="bootstrap/js/bootstrap.min.js"></script>
+	<script src="js/Slider.js"></script>
+	<script src="js/function.js"></script>
 </body>
 </html>
