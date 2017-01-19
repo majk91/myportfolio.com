@@ -4,7 +4,7 @@ $( document ).ready(function() {
 	$('#send-btn').on('click', sendForm);
 	$( ".bottom-down" ).on( "click", lowBottom);
 //	$('.my-photo-box img').mouseOver(changeBgImg);
-	$('.button-up').on('click', hiddenUpBut);
+	$('.button-up').on('click', hideUpBut);
 });
 
 $( window ).scroll(function(){
@@ -13,8 +13,6 @@ $( window ).scroll(function(){
 
 $( window ).resize(function(){
 	bottomShow();
-
-	
 });
 
 	new Slider({
@@ -23,7 +21,7 @@ $( window ).resize(function(){
 		infinite: 1
 	});
 
-	//мой слайдер клиентов
+	//мой слайдер клиентов для вывода клиентов
 	function Slider(settings) {
 		var slider = $('#' & settings.sliderId);
 		var sliderContent = $('.slider-content').eq(0);
@@ -144,18 +142,21 @@ function sendForm(){
 		checkSend
 	);
 }	
+//Функция выводит ошибки формы обратной связи
 function checkSend(data){
 	console.log(data);
 	$(".warning-box").empty()
 	$(".warning-box").append("<p class='warning'>Ошибка!</p> <p class='warning'>Все поля отмечены звездочкой должны быть заполнены</p> <p class='warning'>Проверьте правельность ввода номера</p> <p class='warning'>Проверьте правельность ввода электронной почты</p>");
 }
 
+//для кнопки опускает прокрутку ниже с главной
 function lowBottom(){
 	var hSkroll = $("#header").height();
 	$( ".bottom-down").css('display','none');
 	$('body, html').scrollTop(hSkroll);
 };
 
+//показывает либо скрывает кнопки переходов "в верх", "в низ"
 function bottomShow(){
 	if($(window).scrollTop() == 0){
 		$(".bottom-down").css('display','block');
@@ -165,10 +166,12 @@ function bottomShow(){
 		$(".button-up").css('display','block');
 	};
 };
+
 function changeBgImg(){
 
 }
-function hiddenUpBut(){
+
+function hideUpBut(){
 	$(window).scrollTop(0);
 	$(".button-up").css('display','none');
 	console.log("top");
