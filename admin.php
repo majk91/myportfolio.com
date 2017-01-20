@@ -32,9 +32,36 @@
 					</ul>
 					<div class="tab-content">
 						<div class="tab-pane active" id="home">
-							<p>
-							home
-							</p>
+							<form class="admin-main">
+                        		<div class="row">
+	                        		<div class="col-md-12">
+			                        	<p>Несколько языков на сайте?</p>
+			                        	<input type="radio" class="form-item" name="lang" value="true" checked> Да
+			                        	<input type="radio" class="form-item" name="lang" value="false"> Нет
+			                        </div>
+                        			<div class="col-md-12">
+	                        			<p>Добавить логотип: <sup>*</sup></p>
+                        			</div>
+	                        		<div class="col-md-12">
+	                        			<p>Фото:</p>
+	                        			<input type="file" class="form-item" name="my-photo-logo">
+	                        			<p>Текст Logo:</p>
+	                        			<input type="text" name="my-logo-name" placeholder="Что-то!">
+	                        		</div>
+	                        		<div class="col-md-12">
+	                        			<p>Имя: <sup>*</sup></p>  
+										<input type="text" name="my-name" placeholder="Иванов">
+	                        		</div>
+	                        		<div class="col-md-12">
+	                        			<p>Проффесия: <sup>*</sup></p>  
+										<input type="text" name="name" placeholder="WEB DEWELOPER">
+	                        		</div>
+									<button id="send-my-main">Отправить</button>
+		                        	<div class="col-md-12">
+		              		        	<div class="warning-box"></div><!--.warning-box-->
+		                        	</div><!--.col-md-12-->
+                        		</div><!--.row-->
+							</form><!--.input-box-->
 						</div>
 						<div class="tab-pane" id="main-content">
                         	<form class="admin-my-portfilio">

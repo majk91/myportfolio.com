@@ -28,7 +28,7 @@
                             <div class="lang-box">
                                 <ul class="language">
                                     <li id="ua"><a href="">ua</a></li>
-                                    <li id="ru"><a href="">ru</a></li>
+                                    <li id="ru" class="activ-lan"><a href="">ru</a></li>
                                     <li id="eng"><a href="">eng</a></li>
                                 </ul>
                             </div>

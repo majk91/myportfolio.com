@@ -61,6 +61,9 @@ li{
 	display: inline-block;
 	margin: 0 5px;
 }
+li.activ-lan a{
+	color: #fcac45;
+}
 .logo p{
 	font-family: Coca, Arial, sans-serif;
 	font-size: 24px;

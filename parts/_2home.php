@@ -1,7 +1,7 @@
             <section id="home" class="one">
                 <div class="container">
                     <div class="row vcenter">
-                        <div class="hidden-sm col-md-3 text-center">
+                        <div class="hidden-xs hidden-sm col-md-3 text-center">
                             <div class="my-photo-box">
                                 <img src="image/my-photo-v1.png" alt="Mike my-photo">
                             </div>
