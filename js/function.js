@@ -6,6 +6,15 @@ $( document ).ready(function() {
 	$( ".bottom-down" ).on( "click", hideTopBtn);
 //	$('.my-photo-box img').mouseOver(changeBgImg);
 	$('.button-up').on('click', hideUpBut);
+
+$( "#header li a"  ).click(function(event) {
+	event.preventDefault();
+	var data = $( this ).attr('data-name');
+	var value = $("#"+data).position()['top'];
+ 	animatedUpOrDown(value);
+});
+
+
 });
 
 $( window ).scroll(function(){
@@ -168,14 +177,14 @@ function bottomUpDown(){
 		$(".button-up").css('display','none');
 	};
 };
+
+//---------------обеденить
 //анимация для перемещения по сайту с помощью кнопок
 function animatedUpOrDown(scrollPosition) {
 	$("html, body").animate({ scrollTop: scrollPosition }, 500);
 }
 
-function changeBgImg(){
 
-}
 
 function hideUpBut(){
 	$(".button-up").css('display','none');
@@ -184,6 +193,6 @@ function hideUpBut(){
 
 //подключаю вкладки для админки
 $('#myTab a').click(function (e) {
-  e.preventDefault()
-  $(this).tab('show')
+	e.preventDefault()
+	$(this).tab('show')
 })

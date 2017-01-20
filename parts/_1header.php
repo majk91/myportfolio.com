@@ -24,7 +24,7 @@
        		<div id="header">
         		<div class="container">
         			<div class="row">
-        			    <div class=" col-xs-3 col-sm-3 col-md-3 col-xs-offset-9 col-sm-offset-3 col-md-offset-9">
+        			    <div class=" col-xs-12 col-sm-3 col-md-3 col-sm-offset-3 col-md-offset-9">
                             <div class="lang-box">
                                 <ul class="language">
                                     <li id="ua"><a href="">ua</a></li>
@@ -43,13 +43,13 @@
                                     </div>
                                     <div id="nav-wraper" class="col-xs-4 col-sm-12 col-md-9">
                                         <ul class="nav hidden-xs">
-                                            <li><a href="#" class="activ">Главная</a></li>
-                                            <li><a href="#servis">Услуги</a></li>
-                                            <li><a href="#clients">Клиенты</a></li>
+                                            <li><a href="" class="activ" data-name="header">Главная</a></li>
+                                            <li><a href="" data-name="servis">Услуги</a></li>
+                                            <li><a href="" data-name="clients">Клиенты</a></li>
                                         <!--    <li><a href="#">Резюме</a></li> -->
-                                            <li><a href="#myWorks">Портфолио</a></li>
-                                            <li><a href="#reviews">Отзывы</a></li>
-                                            <li><a href="#contact">Контакты</a></li>
+                                            <li><a href="" data-name="myWorks">Портфолио</a></li>
+                                            <li><a href="" data-name="review">Отзывы</a></li>
+                                            <li><a href="" data-name="contact">Контакты</a></li>
                                         </ul>
                                         <div class="visible-xs">
                                             <div class="dropdown">
@@ -57,13 +57,13 @@
                                                     <span id="menu-btn" class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
                                                 </button>
                                                 <ul class="dropdown-menu dropdown-menu-righ dropdownMenu1-item" aria-labelledby="dropdownMenu1">
-                                                    <li><a href="#" class="activ">Главная</a></li>
-                                                    <li><a href="#servis">Услуги</a></li>
-                                                    <li><a href="#clients">Клиенты</a></li>
+                                                    <li><a href="" class="activ" data-name="header">Главная</a></li>
+                                                    <li><a href="" data-name="servis">Услуги</a></li>
+                                                    <li><a href="" data-name="clients">Клиенты</a></li>
                                                 <!--    <li><a href="#">Резюме</a></li>   -->
-                                                    <li><a href="#myWorks">Портфолио</a></li>
-                                                    <li><a href="#reviews">Отзывы</a></li>
-                                                    <li><a href="#contact">Контакты</a></li>
+                                                    <li><a href="" data-name="myWorks">Портфолио</a></li>
+                                                    <li><a href="" data-name="reviews">Отзывы</a></li>
+                                                    <li><a href="" data-name="contact">Контакты</a></li>
                                                 </ul>
                                             </div>
                                         </div>
