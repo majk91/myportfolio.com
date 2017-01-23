@@ -1,6 +1,8 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "myPortfolio-db";
+    
+define('SERVERNAME', 'localhost');
+define('USERNAME', 'root');
+define('PASSWORD', '');
+define('DBNAME', 'myPortfolio_db');
+
 ?>

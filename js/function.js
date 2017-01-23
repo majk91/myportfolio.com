@@ -4,32 +4,35 @@ $( document ).ready(function() {
 	$('#send-btn').on('click', sendForm);
 
 	$( ".bottom-down" ).on( "click", hideTopBtn);
+
 //	$('.my-photo-box img').mouseOver(changeBgImg);
 	$('.button-up').on('click', hideUpBut);
 
-$( "#header li a"  ).click(function(event) {
-	event.preventDefault();
-	var data = $( this ).attr('data-name');
-	var value = $("#"+data).position()['top'];
- 	animatedUpOrDown(value);
-});
+	//Удаляем или добавляем текстовые  поля
+	$('.contact-send-box .add').on('click', addContaktInput);
+	$('.contact-send-box .dell').on('click', dellContaktInput);
 
+	$( "#header li a"  ).click(function(event) {
+		event.preventDefault();
+		var data = $( this ).attr('data-name');
+		var value = $("#"+data).position()['top'];
+	 	animatedUpOrDown(value);
+	});
 
-});
+	$( window ).scroll(function(){
+		bottomUpDown();
+	});
 
-$( window ).scroll(function(){
-	bottomUpDown();
-});
-
-$( window ).resize(function(){
-	bottomUpDown();
-});
+	$( window ).resize(function(){
+		bottomUpDown();
+	});
 
 	new Slider({
 		sliderId: 'slider1',
 		slidesToShow: 3,
 		infinite: 1
 	});
+});
 
 	//мой слайдер клиентов для вывода клиентов
 	function Slider(settings) {
@@ -196,3 +199,71 @@ $('#myTab a').click(function (e) {
 	e.preventDefault()
 	$(this).tab('show')
 })
+
+
+//------------------------------------admin functions  (start)---------------//
+function addContaktInput() {
+	switch($(this).attr("id")){
+	case 'add-phone':
+		$elem=$(this);
+		addInput($elem);
+	break;
+	case 'add-viber':
+		$elem=$(this);
+		addInput($elem);
+	break;
+	case 'add-viber':
+		$elem=$(this);
+		addInput($elem);
+	break;
+	case 'add-skype':
+		$elem=$(this);
+		addInput($elem);
+	break;
+	case 'add-e-mail':
+		$elem=$(this);
+		addInput($elem);
+	break;
+	}
+}
+	function addInput(a) {
+		$className =a.parent().find('input').eq('0').attr('name');
+		$placehol =a.parent().find('input').eq('0').attr('placeholder');
+		$appendName = $className+$("."+$className).length;
+		a.parent().append("<br><input type='text' name='"+$appendName+"' class='"+$className+"' placeholder='"+$placehol+"'>");
+	}
+
+function dellContaktInput() {
+	switch($(this).attr("id")){
+	case 'del-phone':
+		$elem=$(this);
+		dellInput($elem);
+		break;
+	case 'del-viber':
+		$elem=$(this);
+		dellInput($elem);
+		break;
+	case 'del-viber':
+		$elem=$(this);
+		dellInput($elem);
+		break;
+	case 'del-skype':
+		$elem=$(this);
+		dellInput($elem);
+		break;
+	case 'del-e-mail':
+		$elem=$(this);
+		dellInput($elem);
+		break;
+	}
+}
+	function dellInput(a) {
+		$colectionLenght =a.parent().find('input').length;
+		if($colectionLenght>1){
+			$delElem=$colectionLenght-1;
+			console.log($colectionLenght);
+			console.log(a.parent().eq($delElem));
+			a.parent().find('input').eq($delElem).remove();
+			a.parent().find('br').remove();
+		}
+	}

@@ -1,7 +1,4 @@
-
-    <div class="site-wrapper">
-        <div class="home-wraper">
-       		<div id="header">
+       		<div id="header" data-number="a1">
         		<div class="container">
         			<div class="row">
         			    <div class=" col-xs-12 col-sm-3 col-md-3 col-sm-offset-3 col-md-offset-9">

@@ -1,4 +1,4 @@
-    <section id="clients" class="one">
+    <section id="clients" class="one" data-number="a4">
         <a name="clients"></a>
         <div class="container">
             <div class="row">

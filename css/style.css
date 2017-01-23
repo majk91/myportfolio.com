@@ -640,6 +640,15 @@ li.activ-lan a{
 
 
 /*----------------------------admin.php start----------------------*/
+#admin-wrap{
+	background: #111111;
+}
+#admin-wrap .container{
+	background: #ededed;
+}
+#admin-wrap .nav-tabs>li>a {
+	color: #000000;
+}
 .tab-content>div{
 	color:  black;
 }
@@ -648,6 +657,34 @@ li.activ-lan a{
 }
 #admin-wrap p, #admin-wrap button{
 	margin: 10px 0 0 0;
+}
+.form-group, .border-form{
+	margin: 10px 0 10px 0;
+    border: 1px solid gray;
+    border-radius: 1%;
+    padding: 10px;
+}
+#admin-wrap .border-bottom{
+	height: 5px;
+	width: 100%;
+	background-image: url('../image/border.png');
+}
+.contact-send-box input{
+	margin-bottom: 10px;
+	width: 50.1%;
+}
+.contact-send-box div div{
+	display: inline-block;
+	cursor: pointer;
+	width: 20px;
+	height: 20px;
+	text-align: center;
+}
+.contact-send-box .add{
+	background: green;
+}
+.contact-send-box .dell{
+	background: red;
 }
 /*----------------------------admin.php end----------------------*/
 

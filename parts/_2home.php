@@ -1,4 +1,4 @@
-            <section id="home" class="one">
+            <section id="home" class="one" data-number="a2">
                 <div class="container">
                     <div class="row vcenter">
                         <div class="hidden-xs hidden-sm col-md-3 text-center">
