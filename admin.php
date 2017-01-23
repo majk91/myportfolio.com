@@ -25,7 +25,7 @@
 				<div class="col-md-12">
 					<ul class="nav nav-tabs">
 						<li class="active"><a href="#home" data-toggle="tab">Основные настройки</a></li>
-						<li><a href="#main-content" data-toggle="tab">Контент портфолио</a></li>
+						<li><a href="#main-content" data-toggle="tab">Галерея портфолио</a></li>
 						<li><a href="#slider-content" data-toggle="tab">Настройка слайдера</a></li>
 						<li><a href="#messages" data-toggle="tab">Оповещение <span>(0)</span></a></li>
 						<li><a href="#settings" data-toggle="tab">Дополнительные настройки</a></li>
@@ -56,6 +56,18 @@
 	                        			<p>Проффесия: <sup>*</sup></p>  
 										<input type="text" name="name" placeholder="WEB DEWELOPER">
 	                        		</div>
+		                    		<div class="col-md-12">
+	                        			<p>Фото: <sup>*</sup></p>  
+										<input type="file" name="myPhoto" >
+	                        		</div>
+	                        		<div class="col-md-12">
+	                        			<p>Контакты: <sup>*</sup></p>  
+										<input type="text" name="name" placeholder="Телефон" value="+380932164930"><br>
+										<input type="text" name="name" placeholder="Viber"><br>
+										<input type="text" name="name" placeholder="Skype"><br>
+										<input type="text" name="name" placeholder="E-mail"><br>
+	                        		</div>
+
 									<button id="send-my-main">Отправить</button>
 		                        	<div class="col-md-12">
 		              		        	<div class="warning-box"></div><!--.warning-box-->
@@ -192,5 +204,6 @@
 	<script src="bootstrap/js/bootstrap.min.js"></script>
 	<script src="js/Slider.js"></script>
 	<script src="js/function.js"></script>
+	<script src="js/db-script.js"></script>
 </body>
 </html>
