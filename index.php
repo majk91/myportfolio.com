@@ -1,56 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Yurishinec Mike Portfolio</title>
+<?php 
+    require_once 'core/library/main.php';
+    require_once 'core/library/validator.php';
+    $url = strtolower($_GET['url']);
 
-    <link rel="shortcut icon" href="image/favicon1.png" type="image/png">
-    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/fonts.css">
-    <link rel="stylesheet" href="css/style.css">
+    $urlSegments = explode("/", $url);
 
+    $cntrName = (empty($urlSegments[0])) ? "main" : $urlSegments[0];
+    $actionName = (empty($urlSegments[1])) ? "action_index" : 'action_'.$urlSegments[1];
 
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    if(file_exists("core/controllers/".$cntrName.".php")){
+        require_once "core/controllers/".$cntrName.".php";
 
-</head>
-<body>
-
-    <div class="site-wrapper">
-        <div class="home-wraper">
-        
-<?php require_once("parts/_1header.php") ?>
-
-<?php require_once("parts/_2home.php") ?>
-
-        </div><!--.home-wraper-->
-
-<?php require_once("parts/_3servis.php") ?>
-
-<?php require_once("parts/_4clients.php") ?>
-
-<?php /*require_once("parts/_5rezume.php")*/ ?>
-
-<?php require_once("parts/_6myWorks.php") ?>
-
-<?php require_once("parts/_7reviews.php") ?>
-
-<?php require_once("parts/_8contact.php") ?>
-
-<?php require_once("parts/_9footer.php") ?>
-
-
-
-    </div><!--.site-wrapper-->
-
-
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-	<script src="bootstrap/js/bootstrap.min.js"></script>
-	<script src="js/Slider.js"></script>
-	<script src="js/function.js"></script>
-</body>
-</html>
+        if(function_exists($actionName)){
+            $actionName();
+        }else{
+            show404();
+        }
+    }else{
+        show404();
+    }
+?>

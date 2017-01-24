@@ -1,4 +1,6 @@
-    <!DOCTYPE html>
+<?php require("php/functions.php")   ?>
+ 
+<!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="utf-8">
@@ -6,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Yurishinec Mike Portfolio</title>
 
-    <link rel="shortcut icon" href="image/favicon1.png" type="image/png">
+    <link rel="shortcut icon" href="image/<?php echo getSetInf(main_settings, favicon) ?>" type="image/png">
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/style.css">
@@ -36,6 +38,7 @@
                         		<div class="row">
                         			<div class="col-xs-6 ">
                         				<h3 class="text-center">Настройки</h3>
+                        				<p class="help-block">Здесь Вы можете внести основную информацию о пользователе, которая будет выводиться на сайте-портфолио</p>
                         			</div>
                         			<div class="col-xs-6 ">
                         				<h3 class="text-center">Сохраненный параметры</h3>
@@ -50,23 +53,40 @@
 	                        				<div class="col-xs-6">
 			                        			<div class="form-group">
 													<label for="exampleInputFile">Добавить логотип:</label>
-													<p class="help-block">Example block-level help text here.</p>
-			                        				<p>Фото:</p>
-			                        				<input type="file" id="exampleInputFile" class="form-item" name="my-photo-logo">
 													<p>Текст Logo:</p>
-													<input type="text" class="form-control" name="my-logo-name" placeholder="Ваш личный бренд">
+													<p>Имя:</p>
+													<input type="text" class="form-control" name="my-logo-name" placeholder="Имя бренда">
+													<p>Фамилия:</p>
+													<input type="text" class="form-control" name="my-logo-lastname" placeholder="Фамилия бренда">
 												</div>
 	                        				</div>
 	                        				<div class="col-xs-6">
 		                        				<div class="border-form">
 			                        				<div class="row">
 		                        						<div class="col-xs-6">
-				                        					<p>Логотип:</p>
-				                        					<img src="image/favicon.png" width="50%" alt="logo">
-		                        						</div>
-		                        						<div class="col-xs-6">
 				                        					<p>Текст Logo:</p>
-				                        					<p>Mike Jyryshynets</p>
+				                        					<p><?php echo getSetInf(main_settings, my_name_logo) ?></p>
+				                        					<p><?php echo getSetInf(main_settings, my_lastname_logo) ?></p>
+		                        						</div>
+		                        					</div>
+		                        				</div>
+	                        				</div>
+	                        				<div class="border-bottom"></div>
+	                        			</div>
+	                        			<div class="row">
+	                        				<div class="col-xs-6">
+			                        			<div class="form-group">
+													<label for="exampleInputFile">Добавить favicon (ярлык сайта в закладках):</label>
+			                        				<p>Фото:</p>
+			                        				<input type="file" id="exampleInputFile" class="form-item btn btn-primary" name="my-photo-logo">
+												</div>
+	                        				</div>
+	                        				<div class="col-xs-6">
+		                        				<div class="border-form">
+			                        				<div class="row">
+		                        						<div class="col-xs-6">
+				                        					<p>Ярлык сайта в закладках:</p>
+				                        					<img src="image/<?php echo getSetInf(main_settings, favicon) ?>" width="20%" alt="logo">
 		                        						</div>
 		                        					</div>
 		                        				</div>
@@ -88,11 +108,11 @@
 		                        					<div class="row">
 		                        						<div class="col-xs-6">
 				                        					<p>Имя:</p>
-				                        					<p></p>
+				                        					<p><?php echo getSetInf(main_settings, my_name) ?></p>
 		                        						</div>
 		                        						<div class="col-xs-6">
 				                        					<p>Проффесия:</p>
-				                        					<p></p>
+				                        					<p><?php echo getSetInf(main_settings, profession) ?></p>
 		                        						</div>
 		                        					</div>
 		                        				</div>
@@ -104,13 +124,13 @@
 	                        					<div class="form-group">
 		                        					<label for="exampleInputFile">Большое фото на главной: </label>
 				                        			<p>Фото: </p>  
-													<input type="file" name="myPhoto" >
+													<input type="file" name="myPhoto" class="btn btn-primary" >
 		                        				</div>
 	                        				</div>
 	                        				<div class="col-xs-6">
 		                        				<div class="border-form">
 		                        					<p>Фото: </p>
-		                        					<img src="image/favicon.png" width="40%" alt="logo">
+		                        					<img src="image/<?php echo getSetInf(main_settings, my_photo) ?>" width="40%" alt="logo">
 		                        				</div>
 	                        				</div>
 	                        				<div class="border-bottom"></div>
@@ -121,25 +141,25 @@
 		                        					<label for="exampleInputFile">Контакты: </label>
 		                        					<div class="phone-form-box">
 					                        			<p>Телефон:</p>  
-														<input type="text" name="phone-number" class="phone-number" placeholder="Телефон">
+														<input type="text" name="phone-number" class="phone-number form-control" placeholder="Телефон">
 														<div id="add-phone" class="add"><span class="glyphicon glyphicon-plus"></span></div>
 														<div id="del-phone" class="dell"><span class="glyphicon glyphicon-minus"></span></div>
 		                        					</div>
 													<div class="viber-form-box">
 														<p>Viber:</p>
-														<input type="text" name="viber-number" class="viber-number" placeholder="Viber">
+														<input type="text" name="viber-number" class="viber-number form-control" placeholder="Viber">
 														<div id="add-viber" class="add"><span class="glyphicon glyphicon-plus"></span></div>
 														<div id="del-viber" class="dell"><span class="glyphicon glyphicon-minus"></span></div>
 													</div>
 													<div class="skype-form-box">
 														<p>Skype:</p>
-														<input type="text" name="skype-number" class="skype-number" placeholder="Skype">
+														<input type="text" name="skype-number" class="skype-number form-control" placeholder="Skype">
 														<div id="add-skype" class="add"><span class="glyphicon glyphicon-plus"></span></div>
 														<div id="del-skype" class="dell"><span class="glyphicon glyphicon-minus"></span></div>
 													</div>
 													<div class="E-mail-form-box">
 														<p>E-mail:</p>
-														<input type="text" name="e-mail" class="e-mail" placeholder="E-mail">
+														<input type="text" name="e-mail" class="e-mail form-control" placeholder="E-mail">
 														<div id="add-e-mail" class="add"><span class="glyphicon glyphicon-plus"></span></div>
 														<div id="del-e-mail" class="dell"><span class="glyphicon glyphicon-minus"></span></div>
 													</div>
@@ -149,16 +169,16 @@
 				                        		<div class="border-form">
 	                        						<div class="row">
 	                        							<div class="col-xs-6">
-				                        					<p><b>Телефон</b>: <input type="button" id="delDB-phone" value="Очистить"><br></p>
-				                        					<p>111111</p>
-				                        					<p><b>Viber</b>: <input type="button" id="delDB-viber" value="Очистить"><br></p>
-				                        					<p>111111</p>
+				                        					<p><b>Телефон</b>: <br></p>
+				                        					<?php echo getSetInf(contacts, phone) ?>
+				                        					<p><b>Viber</b>: <br></p>
+				                        					<?php echo getSetInf(contacts, viber) ?>
 				                        				</div>
 				                        				<div class="col-xs-6">
-				                        					<p><b>Skype</b>: <input type="button" id="delDB-skype" value="Очистить"><br></p>
-				                        					<p>sdsdsdsd</p>
-				                        					<p><b>E-mail</b>: <input type="button" id="delDB-e-mail" value="Очистить"><br></p>
-				                        					<p>sdsd@sdsd</p>
+				                        					<p><b>Skype</b>: <br></p>
+				                        					<?php echo getSetInf(contacts, skype) ?>
+				                        					<p><b>E-mail</b>: <br></p>
+				                        					<?php echo getSetInf(contacts, e_mail) ?>
 				                        				</div>
 	                        						</div>
 	                        					</div>

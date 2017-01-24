@@ -230,7 +230,7 @@ function addContaktInput() {
 		$className =a.parent().find('input').eq('0').attr('name');
 		$placehol =a.parent().find('input').eq('0').attr('placeholder');
 		$appendName = $className+$("."+$className).length;
-		a.parent().append("<br><input type='text' name='"+$appendName+"' class='"+$className+"' placeholder='"+$placehol+"'>");
+		a.parent().append("<br><input type='text' name='"+$appendName+"' class='"+$className+" form-control' placeholder='"+$placehol+"'>");
 	}
 
 function dellContaktInput() {
@@ -267,3 +267,31 @@ function dellContaktInput() {
 			a.parent().find('br').remove();
 		}
 	}
+
+//------------------------------------AJAX  (start)---------------//
+
+$(document).ready(function() {
+	$('#send-my-main').on('click', function(e){
+		e = e || window.event;
+        e.preventDefault();
+        console.log("fgfgfgf");
+        return false;
+    })
+});
+
+
+//		e.preventDefault();
+//		console.log("dfdfdfdfdfd");
+//		$.post(
+//			"../php/functions.php",
+//			$(".admin-main").serialize(),
+//			checkSend
+//		);
+//	});
+//
+//	function checkSend(data){
+//		alert(data);
+//	}
+//------------------------------------AJAX  (end)---------------//
+//------------------------------------admin functions  (end)---------------//
+	

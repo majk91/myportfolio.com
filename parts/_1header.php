@@ -1,21 +1,14 @@
        		<div id="header" data-number="a1">
         		<div class="container">
         			<div class="row">
-        			    <div class=" col-xs-12 col-sm-3 col-md-3 col-sm-offset-3 col-md-offset-9">
-                            <div class="lang-box">
-                                <ul class="language">
-                                    <li id="ua"><a href="">ua</a></li>
-                                    <li id="ru" class="activ-lan"><a href="">ru</a></li>
-                                    <li id="eng"><a href="">eng</a></li>
-                                </ul>
-                            </div>
+        			    <div class=" col-xs-12">
         			    </div>
         				<div class="col-xs-12 col-sm-12 col-md-12">
     	    				<div class="logo-wraper">
                                 <div class="row">
                                     <div class="col-xs-8 col-sm-12 col-md-3">
             	    					<div class="logo">
-            	    						<p> <a href="" name="top">Mike <span>Yuryshynets</span></a></p>
+            	    						<p> <a href="" name="top"><?php echo getSetInf(main_settings, my_name_logo) ?> <span><?php echo getSetInf(main_settings, my_lastname_logo) ?></span></a></p>
             	    					</div>
                                     </div>
                                     <div id="nav-wraper" class="col-xs-4 col-sm-12 col-md-9">
