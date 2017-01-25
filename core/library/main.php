@@ -7,4 +7,13 @@
 	function renderView($viewName, $formErrors){
 		include 'core/views/'.$viewName.'.php';
 	}
+
+	function is_auth(){
+		if(isset($_SESSION['user']['id']) and !empty($_SESSION['user']['id'])){
+			return true;
+		}
+
+		return false;
+	}
+
 ?>

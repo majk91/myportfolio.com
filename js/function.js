@@ -270,15 +270,15 @@ function dellContaktInput() {
 
 //------------------------------------AJAX  (start)---------------//
 
-$(document).ready(function() {
-	$('#send-my-main').on('click', function(e){
-		e = e || window.event;
-        e.preventDefault();
-        console.log("fgfgfgf");
-        return false;
-    })
-});
-
+//$(document).ready(function() {
+//	$('#send-my-main').on('click', function(e){
+//		e = e || window.event;
+//        e.preventDefault();
+//        console.log("fgfgfgf");
+//        return false;
+//    })
+//});
+//
 
 //		e.preventDefault();
 //		console.log("dfdfdfdfdfd");

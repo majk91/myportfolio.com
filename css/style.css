@@ -35,7 +35,17 @@ a{
     	min-height: 562px;
     }
 }
-
+.login_panel{
+	background: #111111;
+}
+.login_panel ul{
+	margin: 10px;
+	padding: 0px;
+}
+.login_panel a{
+    color: gray;
+    text-decoration: none;
+}
 .home-wraper{
 	overflow: hidden;/*временно*/
 	background-color: #111111;
@@ -716,6 +726,9 @@ input[type="file" i]::-webkit-file-upload-button, button{
 }
 .warning-box-main-set{
 	min-height: 100px;
+}
+.admin_all_box{
+	min-height: 100vh;
 }
 /*----------------------------admin.php end----------------------*/
 

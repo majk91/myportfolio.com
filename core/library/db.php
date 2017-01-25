@@ -1,10 +1,49 @@
 <?php
+	/**
+	*Функция для подключения к БД
+	*@return mysqli
+	*/
+	function connectToDb(){
+		$config = require 'core/configs/db.php';
 
-	require_once("config.php");
+		$link = @mysqli_connect($config['host'], $config['user'], $config['password'], $config['db_name']);
+
+		if(!$link){
+			//вместо echo инклюдом подключить файлик в котором красивая картинка, надпись, текст
+			echo "нужна страничка о том что нет доступа к базе данных! ";
+			die();
+		}
+		return $link;
+	}
+
+
+	function selectData($sql){
+		$link =connectToDb();
+		$res = mysqli_query($link, $sql);
+
+		if(!$res){
+			die(mysqli_error($link));
+		}
+		return $res;
+	}
+
+	function insertUpdateDelete($sql){
+		$link =connectToDb();
+		$res = mysqli_query($link, $sql);
+
+		if(!$res){
+			die(mysqli_error($link));
+		}
+		return $res;
+	}
+
+	function getSaveData($str){
+		$link = connectToDb();
+		return mysqli_real_escape_string($link, $str);
+	}
 
 //вывод страниц
 function getPage(){
-	$conn = mysqli_connect(SERVERNAME, USERNAME, PASSWORD, DBNAME);
 	if (!$conn) {
 	    die("Connection failed: " . mysqli_connect_error());
 	}
@@ -64,6 +103,24 @@ function getPage(){
 	}
 
 	mysqli_close($conn);
+}
+
+//отправка данных на сервер
+
+function push_data(){
+	echo "XXXXXXXXXXXX";
+	if($_SERVER['REQUEST_METHOD'] == 'POST'){
+		if($_FILES['set_favicon']['error'] == 0){
+			$tmpName = $_FILES['set_favicon']['tmp_name'];
+
+			if(move_uploaded_file($tmpName, 'file_upload/pic.jpg')){
+				echo "file was saved";
+			}
+		}else{
+			echo "error".$_FILES['set_favicon']['error'];
+		}
+		
+	}
 }
 
 ?>

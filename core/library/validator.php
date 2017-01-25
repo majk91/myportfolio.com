@@ -1,15 +1,21 @@
 <?php 
 	function required($data){
-		return empty($data);
+		return true;
 	}
 	function email($data){
-		return false;
+		return true;
 	}
 	function password($data){
-		return false;
+		return true;
 	}
 	function login($data){
-		return false;
+		return true;
+	}
+	function phone($data){
+		return true;
+	}
+	function descript($data){
+		return true;
 	}
 	function validateForm($dataWithRules, $data){
 		$errorForms = [];

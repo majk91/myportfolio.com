@@ -1,18 +1,18 @@
                             <div class="main-contact-wrap">
                                 <div class="phone-box">
                                     <span class="glyphicon glyphicon-earphone"></span>
-                                    <?php echo getSetInf(contacts, phone) ?>
+                                    <p>9379992</p>
                                 </div>
                                 <div class="viber-box">
                                     <span class="viber"></span>
-                                    <?php echo getSetInf(contacts, viber) ?>
+                                    <p>9379992</p>
                                 </div>
                                 <div class="skype-box">
                                     <span class="skype"></span>
-                                    <?php echo getSetInf(contacts, skype) ?>
+                                    <p>9379992</p>
                                 </div>
                                 <div class="mail-box">
                                     <span class="glyphicon glyphicon-envelope"></span>
-                                    <?php echo getSetInf(contacts, e_mail) ?>
+                                    <p>9379992</p>
                                 </div>
                             </div>
