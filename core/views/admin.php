@@ -60,7 +60,16 @@
 	                        				</div>
 	                        			</div>
 	                        			<div class="border-bottom"></div>
-	                        			<div class="row">
+	                        		</div>
+                        			<div class="col-xs-12">
+										<button id="send-my-main" formmethod="post" name="admin-main" value="admin-main" class="btn btn-success">Отправить</button>
+                        			</div>
+                        		</div><!--.row-->
+							</form><!--.admin-main-->
+							<form class="admin-contacts" method="POST" enctype="multipart/form-data">
+								<div class="row">
+									<div class="col-xs-12">
+										<div class="row">
 	                        				<div class="col-xs-6">
 	                        					<div class="form-group contact-send-box">
 	                        						<h4>Контакты:</h4>
@@ -92,12 +101,13 @@
 	                        				</div>
 	                        			</div>
 	                        			<div class="border-bottom"></div>
-	                        		</div>
-                        			<div class="col-xs-12">
-										<button id="send-my-main" class="btn btn-success">Отправить</button>
+									</div>
+	                        		<div class="col-xs-12">
+	                        			<button id="send-my-contact" formmethod="post" name="admin-contacts" value="admin-contacts" class="btn btn-success">Отправить контакты</button>
                         			</div>
-                        		</div><!--.row-->
-							</form><!--.admin-main-->
+								</div>
+							</form>
+
 							<div class="row">
 		                  		<div class="col-xs-12">
 		              	    		<div class="warning-box-main-set">
@@ -106,7 +116,7 @@
 							</div>
 						</div>
 						<div class="tab-pane" id="main-content">
-                        	<form class="admin-myPortfilio">
+                        	<form class="admin-myPortfilio" method="POST" enctype="multipart/form-data">
                         		<div class="row">
                         		    <div class="col-xs-12 ">
                         				<h3 class="text-center">Контент основного слайдера</h3>
@@ -130,46 +140,46 @@
 	                        			</div>
                         				<div class="border-bottom"></div>
                         			</div>
-                        			<div class="row">
-                        				<div class="col-xs-6">
-                        					<div class="form-group">
-                        						<h4>Дополнительные данные</h4>
-                        						<label for="set_work_name">Название:</label>
-												<input type="text" id="set_work_name" name="set_work_name" class="form-control" placeholder="Как-то..">
-				                        		<label for="set_work_url">Домен:</label>
-												<input type="text" id="set_work_url" name="set_work_url" class="form-control" placeholder="exemple.com.ua">
-				                        		<label for="set_work_date">Дата:</label>
-												<input type="text" id="set_work_date" name="set_work_date" class="form-control" placeholder="01.01.2017">
-				                        		<label for="set_work_category">Категория:</label>
-				                        		<select id="set_work_category" name="set_work_category" class="form-control"  >
-													<option value="Не определено" checked>Не определено</option>
-													<option value="Магазин">Магазин</option>
-													<option value="Визитки">Визитки</option>
-													<option value="Страниццы посадки">Страниццы посадки</option>
-												</select>
-                        					</div>
-                        				</div>
-                        				<div class="col-xs-6">
-                        					<div class="form-group">
-                        						<label for="set_client_name">Заказчик:</label>
-												<input type="text" id="set_client_name" name="set_client_name" class="form-control" placeholder="Кто-то!">
-				                        		<label for="set_client_logo">Логотип заказчика:</label>
-												<input type="file" id="set_client_logo" class="form-item btn btn-primary" name="set_client_logo">
-                        					</div>
-                        				</div>
-                        			</div>
-                        			<div class="border-bottom"></div>
                         			<div class="col-xs-12">
-										<button id="send-main-content" class="btn btn-success">Отправить</button>
+	                        			<div class="row">
+	                        				<div class="col-xs-6">
+	                        					<div class="form-group">
+	                        						<h4>Дополнительные данные</h4>
+	                        						<label for="set_work_name">Название:</label>
+													<input type="text" id="set_work_name" name="set_work_name" class="form-control" placeholder="Как-то..">
+					                        		<label for="set_work_url">Домен:</label>
+													<input type="text" id="set_work_url" name="set_work_url" class="form-control" placeholder="exemple.com.ua">
+					                        		<label for="set_work_category">Категория:</label>
+					                        		<select id="set_work_category" name="set_work_category" class="form-control"  >
+														<option value="Не определено" checked>Не определено</option>
+														<option value="Магазин">Магазин</option>
+														<option value="Визитки">Визитки</option>
+														<option value="Страниццы посадки">Страниццы посадки</option>
+													</select>
+	                        					</div>
+	                        				</div>
+	                        				<div class="col-xs-6">
+	                        					<div class="form-group">
+	                        						<label for="set_client_name">Заказчик:</label>
+													<input type="text" id="set_client_name" name="set_client_name" class="form-control" placeholder="Кто-то!">
+	                        					</div>
+	                        				</div>
+	                        			</div>
+                        				<div class="border-bottom"></div>
                         			</div>
-		                        	<div class="col-md-12">
-		              		        	<div class="warning-box"></div><!--.warning-box-->
-		                        	</div><!--.col-md-12-->
+                        			<div class="col-xs-12">
+										<button id="send-main-content" formmethod="post" name="admin-myPortfilio" value="admin-myPortfilio" class="btn btn-success">Отправить</button>
+                        			</div>
                         		</div><!--.row-->
 							</form><!--.admin-myPortfilio-->
+							<div class="row">
+		                   		<div class="col-md-12">
+		          	        		<div class="warning-box"></div><!--.warning-box-->
+		                   		</div><!--.col-md-12-->
+							</div>
 						</div>
 						<div class="tab-pane" id="slider-content">
-							<form class="admin-myClients">
+							<form class="admin-myClients" method="POST" enctype="multipart/form-data">
 								<div class="row">
 								    <div class="col-xs-12 ">
                         				<h3 class="text-center">Данные о клиентах</h3>
@@ -186,7 +196,7 @@
 			                        				<input type="file" id="set_clientComp_logo" name="set_clientComp_logo" class="form-item btn btn-primary"  >
 			                        			</div>
 			                        		</div>
-			                        		<div class="col-xs-6">
+			                        		<!--<div class="col-xs-6">
 			                        			<div class="form-group">
 			                        				<h4>Настройка слайдера:</h4>
 			                        				<label for="set_scrolling">Цыкл:</label><br>
@@ -201,7 +211,7 @@
 														<option value="5">5</option>
 													</select>
 			                    	    		</div>
-			                    	    	</div>
+			                    	    	</div> -->
 			                    	    </div>
 									</div>
 								</div>
@@ -214,25 +224,23 @@
 													<h4>Отзывы клиентов</h4>
 													<label for="set_clientTtem_name">ФИО:</label>
 													<input type="text" id="set_clientTtem_name" name="set_clientTtem_name" class="form-control" placeholder="Пупкин И.И.">
-					                        		<label for="set_client_profil">Кем работает:</label>
-					                        		<input type="text" id="set_client_profil" class="form-control" name="set_client_profil" placeholder="Как-то там.">
 					                        		<label for="set_client_work">Где работает:</label>
 					                        		<input type="text" id="set_client_work" class="form-control" name="set_client_work" placeholder="Как-то там.">
-					                        		<label for="set_client_position">Должность:</label>
+					                        		<label for="set_client_position">Кем работает::</label>
 					                        		<input type="text" id="set_client_position" class="form-control" name="set_client_position" placeholder="Директор">
 					                        	</div>
 					                        </div>
 				                        	<div class="col-xs-6">
 				                        		<div class="form-group">
 													<label for="exampleInputFile">Текст отзыва:</label><br>
-													<textarea rows="10" style="width: 100%" name="text"></textarea>
+													<textarea id="set_review" class="form-control" name="set_review" rows="10" style="width: 100%" name="text"></textarea>
 					                        	</div>
 				                        	</div>
 					                    </div>
 										<div class="border-bottom"></div>								
 									</div>
 				                    <div class="col-xs-12">
-					                	<button id="send-slider-content" class="btn btn-success">Отправить</button>
+					                	<button id="send-slider-content" formmethod="post" name="admin-myClients" value="admin-myClients" class="btn btn-success">Отправить</button>
 					                </div>
 								</div>
 							</form><!--.admin-myClients-->

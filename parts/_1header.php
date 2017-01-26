@@ -8,7 +8,7 @@
                                 <div class="row">
                                     <div class="col-xs-8 col-sm-12 col-md-3">
             	    					<div class="logo">
-            	    						<p> <a href="" name="top">Majk <span>Juryshyners</span></a></p>
+            	    						<p> <a href="" name="top"><?php echo selectItem("main_settings", "my_name_logo") ?> <span><?php echo selectItem("main_settings", "my_lastname_logo") ?></span></a></p>
             	    					</div>
                                     </div>
                                     <div id="nav-wraper" class="col-xs-4 col-sm-12 col-md-9">

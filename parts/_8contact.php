@@ -7,7 +7,7 @@
                             <h2 class="servis-title">Со мной можно <strong>связаться</strong></h2>
                             <div class="first-line"></div>
                             <div class="second-line"></div>
-                            <p class="hidden-xs">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid rem quo labore, corporis cumque natus, optio explicabo distinctio, consectetur officiis eveniet a animi? Soluta molestiae nemo nisi cumque, nihil incidunt.</p>
+                            <p class="hidden-xs"><?php echo selectItem("articles", "contact") ?></p>
                         </div>
                     </div><!--.col-md-8 .col-md-offset-2-->
                     <div class="col-xs-10 col-md-8 col-xs-offset-1 col-md-offset-2">

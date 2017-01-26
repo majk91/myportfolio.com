@@ -15,8 +15,7 @@
 
 	</head>
 	<body >
-
-
+<!--[if !IE]>-->
 		<section class="mainarea" style="background: black">
 			<div id="clock" class="active">
 				<div class="clock-container">
@@ -30,6 +29,8 @@
 			
 			</div>
 		</section>
+<!--<![endif]-->
+
 
 
 

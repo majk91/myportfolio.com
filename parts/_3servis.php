@@ -8,36 +8,36 @@
                                 <h2 class="servis-title">Обратите внимание на мои <strong>услуги</strong></h2>
                                 <div class="first-line"></div>
                                 <div class="second-line"></div>
-                                <p class="hidden-xs">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid rem quo labore, corporis cumque natus, optio explicabo distinctio, consectetur officiis eveniet a animi? Soluta molestiae nemo nisi cumque, nihil incidunt.</p>
+                                <p class="hidden-xs"><?php echo selectItem("articles", "services") ?></p>
                             </div><!--.all-title-wrap-->
                             <div class="servis-item-wrap">
                                 <div class="row">
                                     <div class="col-xs-6 col-sm-3 col-md-3 servis-item">
                                         <div class="item-wraper">
                                             <div class="item-logo"><span class="glyphicon glyphicon-list-alt"></span></div>
-                                            <div class="item-title">site</div>
-                                            <div class="item-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum, ipsam.</div>
+                                            <div class="item-title"><?php echo selectItem("settings_item", "card_title") ?></div>
+                                            <div class="item-text"><?php echo selectItem("settings_item", "card") ?></div>
                                         </div>
                                     </div>
                                     <div class="col-xs-6 col-sm-3 col-md-3 servis-item">
                                         <div class="item-wraper">
                                             <div class="item-logo"><span class="glyphicon glyphicon-envelope"></span></div>
-                                            <div class="item-title">site</div>
-                                            <div class="item-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, voluptas.</div>
+                                            <div class="item-title"><?php echo selectItem("settings_item", "lending_title") ?></div>
+                                            <div class="item-text"><?php echo selectItem("settings_item", "lending") ?></div>
                                         </div>
                                     </div>
                                     <div class="col-xs-6 col-sm-3 col-md-3 servis-item">
                                         <div class="item-wraper">
                                             <div class="item-logo"><span class="glyphicon glyphicon-fullscreen"></span></div>
-                                            <div class="item-title">site</div>
-                                            <div class="item-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, reprehenderit.</div>
+                                            <div class="item-title"><?php echo selectItem("settings_item", "store_title") ?></div>
+                                            <div class="item-text"><?php echo selectItem("settings_item", "store") ?></div>
                                         </div>
                                     </div>
                                     <div class="col-xs-6 col-sm-3 col-md-3 servis-item">
                                         <div class="item-wraper">
                                             <div class="item-logo"><span class="glyphicon glyphicon-inbox"></span></div>
-                                            <div class="item-title">site</div>
-                                            <div class="item-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, reprehenderit.</div>
+                                            <div class="item-title"><?php echo selectItem("settings_item", "seo_title") ?></div>
+                                            <div class="item-text"><?php echo selectItem("settings_item", "seo") ?></div>
                                         </div>
                                     </div>
                                 </div><!--.row-->

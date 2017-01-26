@@ -45,8 +45,12 @@
 	}
 	function action_admin(){
 		if(is_auth()){
+			pushData();
+			updateData();
+			updateDataContact();
+			pushDataBigSlider();
+			pushClientsData();
 			renderView('admin', []);	
-			push_data();
 		}else{
 			echo "Hello guest";
 		}
@@ -73,7 +77,7 @@
 				echo 'Не верний Логин или Пароль для администратора!';
 			}else{
 				$_SESSION['user'] = mysqli_fetch_assoc($res);
-				header('Location: /main/admin_set');
+				header('Location: /main/admin');
 			}
 		}
 		renderView('login', []);

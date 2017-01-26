@@ -1,3 +1,23 @@
+<?php 
+	//Функция возвращает массив путей к файлам
+	function getPictures($pathToDir){
+		$pictures = [];
+		if(file_exists($pathToDir)){
+			$d = opendir($pathToDir);
+			while (($file = readdir($d)) !== false) {
+				if($file == '.' || $file == '..') continue;
+
+				$pictures[] = $pathToDir . '/'.$file;
+			}
+		}
+		return $pictures;
+	}
+	function showFile($pathToFile){
+		include '/parts/pictures.par.php';
+	}
+	$pictures = getPictures('/file_upload/gallery_desctop');
+?>
+
 		<section id="myWorks" class="two" data-number="a5">
 		    <a name="myWorks"></a>
 			<div class="container">
@@ -7,11 +27,11 @@
                                 <h2 class="servis-title">Примеры последних <strong>работ</strong></h2>
                                 <div class="first-line"></div>
                                 <div class="second-line"></div>
-                                <p class="hidden-xs">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid rem quo labore, corporis cumque natus, optio explicabo distinctio, consectetur officiis eveniet a animi? Soluta molestiae nemo nisi cumque, nihil incidunt.</p>
+                                <p class="hidden-xs"><?php echo selectItem("articles", "works_example") ?></p>
                         </div><!--.all-title-wrap-->
                     </div>
                     <div class="col-xs-12 col-md-12">
-                    	<div class="row filter-wrap">
+                    	<!--<div class="row filter-wrap">
                     		<div class="col-xs-12 col-md-1">
                     			<div class="filter-title">ФИЛЬТР:</div>
                     		</div>
@@ -24,9 +44,9 @@
 	                    			<li><p>Магазины</p></li>
 	                    		</ul>
 	                    	</div>
-                    	</div>
+                    	</div>-->
                     </div>
-                    <div class="col-xs-12 col-md-12">
+				<div class="col-xs-12 col-md-12">
 
 
 						<div id="carousel-example-generic" class="carousel slide hidden-xs" data-ride="carousel">
