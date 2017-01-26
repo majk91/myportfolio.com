@@ -1,6 +1,12 @@
 <?php require_once("/parts/_1.top_set.php") ?>
-<form method="POST">
-	<input type="text" name="login" placeholder="login">
-	<input type="password" name="password">
-	<button>login</button>
-</form>
+	<div class="container" id="login-controls">
+		<div class="row">
+			<div class=" col-xs-6 col-xs-offset-3">
+				<form method="POST">
+					<p><input type="text" name="login" class="form-control" placeholder="login"></p>
+					<p><input type="password" class="form-control" name="password"></p>
+					<button class="btn btn-success">login</button>
+				</form>
+			</div>
+		</div>
+	</div>

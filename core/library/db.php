@@ -277,6 +277,49 @@ function selectContact(){
 	} else {
 	    echo "0 results";
 	}
-}
+};
+function getClient(){
+	if($_SERVER['REQUEST_METHOD'] == 'POST'){
+		if($_POST['send-btn']){
+			$formData = [
+				'name' => getSaveData(htmlspecialchars(trim($_POST['name']))),
+				'tel' => getSaveData(htmlspecialchars(trim($_POST['tel']))),
+				'email' => getSaveData(htmlspecialchars(trim($_POST['email']))),
+				'massege' => getSaveData(htmlspecialchars(trim($_POST['massege'])))
+			];
+			foreach ($formData as $key => $value) {
+				$data.=$value;
+			}
+			if($data){
+				$sql = "INSERT INTO `lid`(name, phone, email, comment) VALUES ('{$formData['name']}', '{$formData['tel']}', '{$formData['email']}', '{$formData['massege']}')";
 
+				$res = insertUpdateDelete($sql);
+				echo " Спасибо за ваш вопрос! С Вами свяжуться в ближайшее время";
+			}else{
+				echo "Поля должны быть заполнены!";
+			}
+		}
+	}
+}
+function selectMassege(){
+
+	$sql = "SELECT * FROM lid ";
+	$res = selectData($sql);
+	if (mysqli_num_rows($res) > 0) {
+    	while($row = mysqli_fetch_assoc($res)) {
+        	echo $row["time"]."<br>У Нас новый клиент<br> Имя: " . $row["name"]. "<br> Телефон: " . $row["phone"]."<br> Email: " . $row["email"]."<br> Сообщение: " . $row["email"]."<br>";
+        }
+    }
+}
+function selectCounter(){
+	$sql = "SELECT * FROM lid ";
+	$res = selectData($sql);
+	if (mysqli_num_rows($res) > 0) {
+        $i=0;
+    	while($row = mysqli_fetch_assoc($res)) {
+    		$i++;
+        }
+        echo $i;
+    }
+}
 ?>

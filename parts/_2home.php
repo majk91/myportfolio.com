@@ -6,13 +6,13 @@
                                 <img src="<?php echo selectItem("main_settings", "my_photo") ?>" alt="Mike my-photo">
                             </div>
                         </div>
-                        <div class="col-xs-8 col-xs-offset-2 col-sm-5 col-sm-offset-1 col-md-3 col-md-offset-3">
+                        <div class="col-xs-8 col-xs-offset-2 col-sm-6 col-sm-offset-2 col-md-4 col-md-offset-5">
 
                             <?php require("_9g_contact-box.php") ?>
 
                         </div>
                         <div class="hidden-xs col-md-3 col-sm-5 text-center clock">
-                            <?php require_once("parts/apps/clock.php") ?>
+                            <?php// require_once("parts/apps/clock.php") ?>
                         </div>
 
                         <div class="col-xs-12 col-md-12 text-center my-present">

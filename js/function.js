@@ -146,15 +146,7 @@ function setMarginSlider(){
 
 //отправка формы на сервер
 //сервер получает все поля формы
-function sendForm(){
-	//отключаем событие браузера
-	event.preventDefault();
-	$.post(
-		"../php/form-check.php",
-		$('#form').serialize(),
-		checkSend
-	);
-}	
+
 //Функция выводит ошибки формы обратной связи
 function checkSend(data){
 	console.log(data);
@@ -270,28 +262,21 @@ function dellContaktInput() {
 
 //------------------------------------AJAX  (start)---------------//
 
-//$(document).ready(function() {
-//	$('#send-my-main').on('click', function(e){
-//		e = e || window.event;
-//        e.preventDefault();
-//        console.log("fgfgfgf");
-//        return false;
-//    })
-//});
-//
-
-//		e.preventDefault();
-//		console.log("dfdfdfdfdfd");
-//		$.post(
-//			"../php/functions.php",
-//			$(".admin-main").serialize(),
-//			checkSend
-//		);
-//	});
-//
-//	function checkSend(data){
-//		alert(data);
-//	}
-//------------------------------------AJAX  (end)---------------//
+	/*$(document).ready(function(){
+		$('#send-btn').on('click', fGo); //событие на клик кнопки
+	});
+ 
+	function fGo(){
+		event.preventDefault(); //отключаем стандартную реакцию браузера
+		$.post(
+			"/fun.php", // куда отправляем запрос
+			$('#form_qestions').serialize(), // сама строка
+			ifSuccess // функция которая обрабатывает ответ сервера
+		);
+	}
+ 
+	function ifSuccess(data){
+	//	console.log(data); // ответ выводим в консоль
+	}*///------------------------------------AJAX  (end)---------------//
 //------------------------------------admin functions  (end)---------------//
 	

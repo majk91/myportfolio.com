@@ -314,6 +314,7 @@ li.activ-lan a{
 .item-text{
 	text-align: center;
 	margin: 5px 0;
+	text-align: right;
 }
 
 /*-----------------------------#servis end---------------------------*/
@@ -732,6 +733,15 @@ input[type="file" i]::-webkit-file-upload-button, button{
 }
 .admin_all_box{
 	min-height: 100vh;
+}
+#form-controls button{
+	margin: 10px 0;
+}
+#form-controls h1{
+	text-align:center;
+}
+#login-controls .row{
+	margin-top: 40px;
 }
 /*----------------------------admin.php end----------------------*/
 

@@ -12,7 +12,7 @@
                     </div><!--.col-md-8 .col-md-offset-2-->
                     <div class="col-xs-10 col-md-8 col-xs-offset-1 col-md-offset-2">
                         <div class="form-wrap">
-                        	<form class="input-box">
+                        	<form id="form_qestions" class="input-box" method="POST">
                         		<div class="row">
 	                        		<div class="col-xs-12 col-md-6">
 	                        			<p>ФИО: <sup>*</sup></p>
@@ -27,12 +27,14 @@
 										<input type="text" class="form-item" name="email" placeholder="abcd@example.com">
 	                        		</div>
 	                        		<div class="col-xs-12 col-md-6">
-	              		          		<div class="warning-box"></div><!--.warning-box-->
+	              		          		<div class="warning-box">
+	              		          			<?php getClient() ?>
+	              		          		</div><!--.warning-box-->
 	                        		</div><!--.col-md-6-->
                         		</div><!--.row-->
                         		<p>Комментарии:</p>
 								<textarea name="massege" class="form-item" rows="5"></textarea>
-								<button id="send-btn">Отправить</button>
+								<button id="send-btn" formmethod="post" name="send-btn" value="send-btn" >Отправить</button>
 							</form><!--.input-box-->
                         </div><!--.form-wrap-->
                     </div>

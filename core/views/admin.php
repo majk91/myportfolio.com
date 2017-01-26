@@ -7,7 +7,7 @@
 						<li class="active"><a href="#home" data-toggle="tab">Основные настройки</a></li>
 						<li><a href="#main-content" data-toggle="tab">Галерея портфолио</a></li>
 						<li><a href="#slider-content" data-toggle="tab">Настройка слайдера</a></li>
-						<li><a href="#messages" data-toggle="tab">Оповещение <span>(0)</span></a></li>
+						<li><a href="#messages" data-toggle="tab">Оповещение <span>(<?php selectCounter() ?>)</span></a></li>
 						<li><a href="#settings" data-toggle="tab">Дополнительные настройки</a></li>
 					</ul>
 					<div class="tab-content">
@@ -247,7 +247,7 @@
 						</div><!--#slider-content-->
 						<div class="tab-pane" id="messages">
 							<p>
-							messages
+							<?php selectMassege() ?>
 							</p>
 						</div>
 						<div class="tab-pane" id="settings">
