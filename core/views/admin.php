@@ -11,6 +11,7 @@
 						<li><a href="#settings" data-toggle="tab">Дополнительные настройки</a></li>
 					</ul>
 					<div class="tab-content">
+					<div><?php showMenyFunctions();?></div>
 						<div class="tab-pane active" id="home">
 							<form class="admin-main" method="POST" enctype="multipart/form-data" >
                         		<div class="row">

@@ -45,11 +45,6 @@
 	}
 	function action_admin(){
 		if(is_auth()){
-			pushData();
-			updateData();
-			updateDataContact();
-			pushDataBigSlider();
-			pushClientsData();
 			renderView('admin', []);	
 		}else{
 			echo "Hello guest";

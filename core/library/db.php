@@ -65,7 +65,7 @@ function imgData($input, $name){
 		}
 	}else{
 		if($input['error'] == 4){
-			echo "<br> Обращаю Ваше внимание что картинка не была обновлена. ";
+			echo "<br> Обратите внимание что картинка не была обновлена. ";
 		}else{
 			echo "Ошибка! Код ошибки: ".$input['error']."<br>";
 		}
@@ -321,5 +321,17 @@ function selectCounter(){
         }
         echo $i;
     }
+}
+function showMenyFunctions(){
+	if($_SERVER['REQUEST_METHOD'] == 'POST'){
+
+	echo '<div id="massege-box" title="Системное сообщение"><p>';
+	pushData();
+	updateData();
+	updateDataContact();
+	pushDataBigSlider();
+	pushClientsData();
+	echo "</p></div>";
+	}
 }
 ?>

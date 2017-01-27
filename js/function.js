@@ -1,7 +1,7 @@
 $( document ).ready(function() {
     setMarginSlider()
 	// вешаю событие на кнопку формы
-	$('#send-btn').on('click', sendForm);
+	$('#send-btn').on('click', sendForm );
 
 	$( ".bottom-down" ).on( "click", hideTopBtn);
 
@@ -33,7 +33,10 @@ $( document ).ready(function() {
 		infinite: 1
 	});
 });
-
+	function sendForm(){
+		event.preventDefault();
+		return true;
+	}
 	//мой слайдер клиентов для вывода клиентов
 	function Slider(settings) {
 		var slider = $('#' & settings.sliderId);

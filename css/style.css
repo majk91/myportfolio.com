@@ -28,6 +28,9 @@ a{
 .two{
 	color: #222222
 }
+.carusel-inner{
+	height: 720px;
+}
 
 @media only screen and (min-width: 768px) {
     .home-wraper{
@@ -411,6 +414,7 @@ li.activ-lan a{
 /*----------------------------#myWorks start----------------------*/
 .myWork-item{
 	width: 100%;
+	height: 620px;
 }
 .filter-wrap{
 	color: #000000;
@@ -440,7 +444,7 @@ li.activ-lan a{
 }
 #carousel-example-generic img{
 	width: 100%;
-	height: 100%;
+	//height: 100%;
 }
 #carousel-example-generic-mobile img{
 	width: 100%;
@@ -480,6 +484,7 @@ li.activ-lan a{
 }
 .myWork-item-wrap p{
 	margin: 0px;
+	height: 200px;
 }
 .myWork-item-wrap img{
 	width: 100%;
@@ -742,6 +747,9 @@ input[type="file" i]::-webkit-file-upload-button, button{
 }
 #login-controls .row{
 	margin-top: 40px;
+}
+#massege-box{
+	background:yellow;
 }
 /*----------------------------admin.php end----------------------*/
 

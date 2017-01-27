@@ -7,7 +7,8 @@
     <title><?php selectItem("main_settings", "my_name") ?></title>
 
     <link rel="shortcut icon" href="" type="<?php echo "/".selectItem("main_settings", "favicon") ?>">
-    <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link href="../includes/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/fonts.css">
     <link rel="stylesheet" href="../css/style.css">
 

@@ -1,7 +1,7 @@
 <?php 
 	//Функция возвращает массив путей к файлам
 	function getPictures($pathToDir){
-		$pictures = [];
+		$pictures=[];
 		if(file_exists($pathToDir)){
 			$d = opendir($pathToDir);
 			while (($file = readdir($d)) !== false) {
@@ -15,7 +15,7 @@
 	function showFile($pathToFile){
 		include '/parts/pictures.par.php';
 	}
-	$pictures = getPictures('/file_upload/gallery_desctop');
+	$pictures=getPictures('file_upload/gallery_desctop');
 ?>
 
 		<section id="myWorks" class="two" data-number="a5">
@@ -57,7 +57,35 @@
 							</ol>
 							<!-- Wrapper for slides desktop -->
 							<div class="carousel-inner ">
-								<div class="item active">
+							<?php 
+								$i=0;
+								$pictures;
+								foreach ($pictures as $pic) {
+									if($i==0){
+										echo '<div class="item active">
+									<div class="myWork-item">
+										<div class="row">';
+										showFile($pic);
+									}else if($i%8==0){
+										showFile($pic);
+										echo '</div>
+									</div>
+								</div>
+								<div class="item">
+									<div class="myWork-item">
+										<div class="row">';
+									}else{
+										showFile($pic);
+									}
+								$i++;
+								} 
+								if($i%9 || $i<9){
+								echo '</div>
+									</div>
+								</div>';
+								}
+							?>
+								<!--<div class="item active">
 									<div class="myWork-item">
 										<div class="row">
 											<div class="col-xs-4 col-md-4">
@@ -158,7 +186,7 @@
 											</div>
 										</div>
 									</div>
-								</div>
+								</div>-->
 							</div>
 
 							<!-- Controls -->
@@ -178,10 +206,23 @@
 
 
 						<div id="carousel-example-generic-mobile" class="carousel slide visible-xs" data-ride="carousel">
-
-							<!-- Wrapper for slides mobile -->
 							<div class="carousel-inner">
-								<div class="item active">
+							<?php 
+								$pictures;
+								$i=0;
+								foreach ($pictures as $pic) {
+									if ($i==0) {
+										echo '<div class="item active">';
+										showFile($pic);
+										echo '</div>';
+									}else{
+										showFile($pic);
+									}
+									$i++;
+								}
+							?>
+							<!-- Wrapper for slides mobile -->
+							<!--<div class="item active">
 									<div class="myWork-item">
 										<div class="row">
 											<div class="col-xs-12">
@@ -235,7 +276,7 @@
 											</div>
 										</div>
 									</div>
-								</div>
+								</div>-->
 							</div>
 							<!-- Controls -->
 							<a class="left carousel-control" href="#carousel-example-generic-mobile" data-slide="prev">
