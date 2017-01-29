@@ -34,7 +34,7 @@ $( document ).ready(function() {
 	});
 });
 	function sendForm(){
-		event.preventDefault();
+	//	event.preventDefault();
 		return true;
 	}
 	//мой слайдер клиентов для вывода клиентов

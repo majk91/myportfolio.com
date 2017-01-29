@@ -186,8 +186,8 @@
 											</div>
 										</div>
 									</div>
-								</div>-->
-							</div>
+								</div>
+							</div>-->
 
 							<!-- Controls -->
 							<a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
@@ -276,8 +276,8 @@
 											</div>
 										</div>
 									</div>
-								</div>-->
-							</div>
+								</div>
+							</div> -->
 							<!-- Controls -->
 							<a class="left carousel-control" href="#carousel-example-generic-mobile" data-slide="prev">
 							  <span class="but-work-right">

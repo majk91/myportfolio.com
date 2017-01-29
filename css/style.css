@@ -34,11 +34,13 @@ a{
 
 @media only screen and (min-width: 768px) {
     .home-wraper{
-    	min-height: 562px;
+    	min-height: 532px;
     }
 }
 .login_panel{
 	background: #111111;
+	height: 7vh;
+    min-height: 30px;
 }
 .login_panel ul{
 	margin: 10px;
@@ -51,8 +53,8 @@ a{
 .home-wraper{
 	overflow: hidden;/*временно*/
 	background-color: #111111;
-	height: 100vh;
-	min-height: 562px;
+	height: 93vh;
+	min-height: 532px;
 }
 .lang-box{
 	float:right;
@@ -444,7 +446,7 @@ li.activ-lan a{
 }
 #carousel-example-generic img{
 	width: 100%;
-	//height: 100%;
+	height: 100%;
 }
 #carousel-example-generic-mobile img{
 	width: 100%;
