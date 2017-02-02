@@ -262,10 +262,10 @@ function selectContact(){
 	    }
 	    $result="";
 	    foreach ($phone as $key => $value) {
-	    	$result.="<div class='phone-box'><span class='glyphicon glyphicon-earphone'></span><p>".$value."</p></div>";
+	    	$result.="<div class='phone-box'><span class='glyphicon glyphicon-earphone'></span><p><noindex><a rel='nofollow' href='tel:".$value."'>".$value."</a></noindex></p></div>";
 	    };
 		foreach ($viber as $key => $value) {
-	    	$result.="<div class='viber-box'><span class='viber'></span><p>".$value."</p></div>";
+			$result.="<div class='viber-box'><span class='viber'></span><p><noindex><a rel='nofollow' href='tel:".$value."'>".$value."</a></noindex></p></div>";
 	    };
 		foreach ($skype as $key => $value) {
 	    	$result.="<div class='skype-box'><span class='skype'></span><p>".$value."</p></div>";

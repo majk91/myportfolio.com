@@ -42,7 +42,7 @@
     	    				</div>
         				</div>
                     </div>
-                    <div class="button-up hidden-xs">
+                    <div class="button-up">
                     </div> <!--.button-up-->
         		</div><!--.container-->
         	</div><!--#header-->

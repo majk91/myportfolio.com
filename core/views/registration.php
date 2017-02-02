@@ -1,7 +1,7 @@
 <?php require_once("/parts/_1.top_set.php") ?>
 	<div class="container" id="form-controls">
 		<div class="row">
-			<div class="col-xs-6 col-xs-offset-3">
+			<div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3">
 				<h1>REGISTRATION</h1>
 				<form method="POST">
 					<input type="text"
