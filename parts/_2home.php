@@ -18,10 +18,10 @@
                         <div class="col-xs-12 col-md-12 text-center my-present">
                             <p><?php echo selectItem("main_settings", "my_name") ?></p>
                             <h1><?php echo selectItem("main_settings", "profession") ?></h1>
-                        </div>
-                        <div class="col-xs-12 col-md-12 text-center bottom-down-box">
-                            <div class="bottom-down">
-                                <span class="arrow-box"></span>
+                            <div class="col-xs-12 col-md-12 text-center bottom-down-box">
+                                <div class="bottom-down">
+                                    <span class="arrow-box"></span>
+                                </div>
                             </div>
                         </div>
                     </div> <!--.row-->

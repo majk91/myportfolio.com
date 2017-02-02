@@ -12,10 +12,55 @@
 		}
 		return $pictures;
 	}
-	function showFile($pathToFile){
-		include '/parts/pictures.par.php';
+	//значение $set отвечает за вывод мобильной или нет версии. При $set=true -  вывод мобильной версии
+	function showFile($pathToFile, $set){
+		($set)? include 'pictures_desktop.par.php' : include '/parts/pictures_mobile.par.php';
 	}
 	$pictures=getPictures('file_upload/gallery_desctop');
+
+	function getMarking($pictures, $set){
+		if($set){
+			$i=0;
+			foreach ($pictures as $pic) {
+				if($i==0){
+					echo '<div class="item active">
+							<div class="myWork-item">
+								<div class="row">';
+									showFile($pic, $set);
+				}else if($i%8==0){
+					showFile($pic, $set);
+					echo '</div>
+						</div>
+					</div>
+					<div class="item">
+						<div class="myWork-item">
+							<div class="row">';
+				}else{
+					showFile($pic, $set);
+				}
+			$i++;
+			} 
+			if($i%9 || $i<9){
+				echo '</div>
+					</div>
+				</div>';
+			}
+		}else{
+			$i=0;
+			foreach ($pictures as $pic) {
+				if ($i==0) {
+					echo '<div class="item active">';
+					showFile($pic, $set);
+					echo '</div>';
+				}else{
+					echo '<div class="item">';
+					showFile($pic, $set);
+					echo '</div>';
+				}
+				$i++;
+			}
+		}
+	}
 ?>
 
 		<section id="myWorks" class="two" data-number="a5">
@@ -57,137 +102,8 @@
 							</ol>
 							<!-- Wrapper for slides desktop -->
 							<div class="carousel-inner ">
-							<?php 
-								$i=0;
-								$pictures;
-								foreach ($pictures as $pic) {
-									if($i==0){
-										echo '<div class="item active">
-									<div class="myWork-item">
-										<div class="row">';
-										showFile($pic);
-									}else if($i%8==0){
-										showFile($pic);
-										echo '</div>
-									</div>
-								</div>
-								<div class="item">
-									<div class="myWork-item">
-										<div class="row">';
-									}else{
-										showFile($pic);
-									}
-								$i++;
-								} 
-								if($i%9 || $i<9){
-								echo '</div>
-									</div>
-								</div>';
-								}
-							?>
-								<!--<div class="item active">
-									<div class="myWork-item">
-										<div class="row">
-											<div class="col-xs-4 col-md-4">
-												<div class="myWork-item-wrap">
-													<p><a href="#"><img src="image/temp/gomer-simpson-kartinka.orig.jpg" alt="mySite"></a></p>
-												</div>
-											</div>
-											<div class="col-xs-4 col-md-4">
-												<div class="myWork-item-wrap">
-													<p><a href="#"><img src="image/temp/gomer-simpson-kartinka.orig.jpg" alt="mySite"></a></p>
-												</div>
-											</div>
-											<div class="col-xs-4 col-md-4">
-												<div class="myWork-item-wrap">
-													<p><a href="#"><img src="image/temp/gomer-simpson-kartinka.orig.jpg" alt="mySite"></a></p>
-												</div>
-											</div>
-											<div class="col-xs-4 col-md-4">
-												<div class="myWork-item-wrap">
-													<p><a href="#"><img src="image/temp/gomer-simpson-kartinka.orig.jpg" alt="mySite"></a></p>
-												</div>
-											</div>
-											<div class="col-xs-4 col-md-4">
-												<div class="myWork-item-wrap">
-													<p><a href="#"><img src="image/temp/gomer-simpson-kartinka.orig.jpg" alt="mySite"></a></p>
-												</div>
-											</div>
-											<div class="col-xs-4 col-md-4">
-												<div class="myWork-item-wrap">
-													<p><a href="#"><img src="image/temp/gomer-simpson-kartinka.orig.jpg" alt="mySite"></a></p>
-												</div>
-											</div>
-											<div class="col-xs-4 col-md-4">
-												<div class="myWork-item-wrap">
-													<p><a href="#"><img src="image/temp/gomer-simpson-kartinka.orig.jpg" alt="mySite"></a></p>
-												</div>
-											</div>
-											<div class="col-xs-4 col-md-4">
-												<div class="myWork-item-wrap">
-													<p><a href="#"><img src="image/temp/gomer-simpson-kartinka.orig.jpg" alt="mySite"></a></p>
-												</div>
-											</div>
-											<div class="col-xs-4 col-md-4">
-												<div class="myWork-item-wrap">
-													<p><a href="#"><img src="image/temp/gomer-simpson-kartinka.orig.jpg" alt="mySite"></a></p>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="item">
-									<div class="myWork-item">
-										<div class="row">
-											<div class="col-xs-4 col-md-4">
-												<div class="myWork-item-wrap">
-													<p><a href="#"><img src="image/temp/gomer-simpson-kartinka.orig.jpg" alt="mySite"></a></p>
-												</div>
-											</div>
-											<div class="col-xs-4 col-md-4">
-												<div class="myWork-item-wrap">
-													<p><a href="#"><img src="image/temp/gomer-simpson-kartinka.orig.jpg" alt="mySite"></a></p>
-												</div>
-											</div>
-											<div class="col-xs-4 col-md-4">
-												<div class="myWork-item-wrap">
-													<p><a href="#"><img src="image/temp/gomer-simpson-kartinka.orig.jpg" alt="mySite"></a></p>
-												</div>
-											</div>
-											<div class="col-xs-4 col-md-4">
-												<div class="myWork-item-wrap">
-													<p><a href="#"><img src="image/temp/gomer-simpson-kartinka.orig.jpg" alt="mySite"></a></p>
-												</div>
-											</div>
-											<div class="col-xs-4 col-md-4">
-												<div class="myWork-item-wrap">
-													<p><a href="#"><img src="image/temp/gomer-simpson-kartinka.orig.jpg" alt="mySite"></a></p>
-												</div>
-											</div>
-											<div class="col-xs-4 col-md-4">
-												<div class="myWork-item-wrap">
-													<p><a href="#"><img src="image/temp/gomer-simpson-kartinka.orig.jpg" alt="mySite"></a></p>
-												</div>
-											</div>
-											<div class="col-xs-4 col-md-4">
-												<div class="myWork-item-wrap">
-													<p><a href="#"><img src="image/temp/gomer-simpson-kartinka.orig.jpg" alt="mySite"></a></p>
-												</div>
-											</div>
-											<div class="col-xs-4 col-md-4">
-												<div class="myWork-item-wrap">
-													<p><a href="#"><img src="image/temp/gomer-simpson-kartinka.orig.jpg" alt="mySite"></a></p>
-												</div>
-											</div>
-											<div class="col-xs-4 col-md-4">
-												<div class="myWork-item-wrap">
-													<p><a href="#"><img src="image/temp/gomer-simpson-kartinka.orig.jpg" alt="mySite"></a></p>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>-->
+							<?php getMarking($pictures, 1); ?>
+							</div>
 
 							<!-- Controls -->
 							<a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
@@ -207,20 +123,8 @@
 
 						<div id="carousel-example-generic-mobile" class="carousel slide visible-xs" data-ride="carousel">
 							<div class="carousel-inner">
-							<?php 
-								$pictures;
-								$i=0;
-								foreach ($pictures as $pic) {
-									if ($i==0) {
-										echo '<div class="item active">';
-										showFile($pic);
-										echo '</div>';
-									}else{
-										showFile($pic);
-									}
-									$i++;
-								}
-							?>
+							<?php getMarking($pictures, 0); ?>
+
 							<!-- Wrapper for slides mobile -->
 							<!--<div class="item active">
 									<div class="myWork-item">
@@ -232,52 +136,7 @@
 											</div>
 										</div>
 									</div>
-								</div>
-								<div class="item">
-									<div class="myWork-item">
-										<div class="row">
-											<div class="col-xs-12">
-												<div class="myWork-item-wrap">
-													<p><a href="#"><img src="image/temp/gomer-simpson-kartinka.orig.jpg" alt="mySite"></a></p> 
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="item">
-									<div class="myWork-item">
-										<div class="row">
-											<div class="col-xs-12">
-												<div class="myWork-item-wrap">
-													<p><a href="#"><img src="image/temp/gomer-simpson-kartinka.orig.jpg" alt="mySite"></a></p>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="item">
-									<div class="myWork-item">
-										<div class="row">
-											<div class="col-xs-12">
-												<div class="myWork-item-wrap">
-													<p><a href="#"><img src="image/temp/gomer-simpson-kartinka.orig.jpg" alt="mySite"></a></p>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="item">
-									<div class="myWork-item">
-										<div class="row">
-											<div class="col-xs-12">
-												<div class="myWork-item-wrap">
-													<p><a href="#"><img src="image/temp/gomer-simpson-kartinka.orig.jpg" alt="mySite"></a></p>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div> -->
+								</div>-->
 							<!-- Controls -->
 							<a class="left carousel-control" href="#carousel-example-generic-mobile" data-slide="prev">
 							  <span class="but-work-right">

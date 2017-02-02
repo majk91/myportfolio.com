@@ -26,9 +26,12 @@
             <div class="row ">
                 <div class="col-xs-12">
                     <ul class="text-right">
-                        <li><a href="/main/registration">Регистрация</a</li>
-                        <li><a href="/main/login">Вход</a></li>
-                        <li><a href="/main/loguot">Выход</a></li>
+                        <li><a href="/main/registration">Регистрация</a></li>
+                            <?php if(isset($_SESSION['user']['id']) and !empty($_SESSION['user']['id'])){
+                        echo '<li><a href="/main/loguot">Выход</a></li>';
+                                }else{
+                        echo '<li><a href="/main/login">Вход</a></li>';
+                                } ?>
                     </ul>
                 </div>
             </div>

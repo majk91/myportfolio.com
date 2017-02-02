@@ -7,7 +7,8 @@ section{
 	overflow: hidden;
 }
 .vcenter {
-  height: 85vh;
+  height: 78vh;
+  min-height: 400px;
   position: relative;
 }
 a{
@@ -183,7 +184,7 @@ li.activ-lan a{
 }
 .my-present{
 	position: absolute;
-	top: 60%;
+	bottom: 5%;
 }
 .my-present p{
 	color: #d5d5d5;
@@ -209,8 +210,8 @@ li.activ-lan a{
 	display: inline-block;
 }
 .bottom-down-box{
-	position: absolute;
 	top: 85%;
+	height: 60px;
 }
 .bottom-down{
 	cursor: pointer;
@@ -319,7 +320,8 @@ li.activ-lan a{
 .item-text{
 	text-align: center;
 	margin: 5px 0;
-	text-align: right;
+	text-align: justify;
+	text-indent: 1.5em;
 }
 
 /*-----------------------------#servis end---------------------------*/
@@ -416,7 +418,6 @@ li.activ-lan a{
 /*----------------------------#myWorks start----------------------*/
 .myWork-item{
 	width: 100%;
-	height: 620px;
 }
 .filter-wrap{
 	color: #000000;
@@ -435,6 +436,12 @@ li.activ-lan a{
 	padding: 0 5px 0 5px;
 	margin: 0px;
 }
+.carousel-inner{
+	overflow: inherit;
+}
+#myWorks>.container>.row{
+	overflow: hidden;
+}
 .filter-nav li p{
 	margin: 0px;
 }
@@ -444,7 +451,7 @@ li.activ-lan a{
 .carousel-control{
 	width: 10%;
 }
-#carousel-example-generic img{
+#carousel-example-generic .carousel-control img{
 	width: 100%;
 	height: 100%;
 }
@@ -798,4 +805,17 @@ input[type="file" i]::-webkit-file-upload-button, button{
 	.filter-nav li {
 		font-size: 5vw;
 	}
+	.myWork-item{
+		height: 60vh;
+		min-height: 320px;
+	}
+	.myWork-item-wrap p {
+    	height: auto; 
+	}
+	//#carousel-example-generic-mobile img {
+    //	width: auto; 
+	//}
+	//.myWork-item-wrap img {
+    //	width: auto;
+	//}
 }
