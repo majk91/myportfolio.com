@@ -7,73 +7,129 @@
 						<li class="active"><a href="#home" data-toggle="tab">Основные настройки</a></li>
 						<li><a href="#main-content" data-toggle="tab">Галерея портфолио</a></li>
 						<li><a href="#slider-content" data-toggle="tab">Настройка слайдера</a></li>
-						<li><a href="#messages" data-toggle="tab">Оповещение <span>(<?php selectCounter() ?>)</span></a></li>
+						<li><a href="#messages" data-toggle="tab">Оповещение <span>(<?php showCounter() ?>)</span></a></li>
 						<li><a href="#settings" data-toggle="tab">Дополнительные настройки</a></li>
 					</ul>
 					<div class="tab-content">
 					<div><?php showMenyFunctions();?></div>
 						<div class="tab-pane active" id="home">
 							<form class="admin-main" method="POST" enctype="multipart/form-data" >
-                        		<div class="row">
-                        			<div class="col-xs-6 ">
-                        				<h3 class="text-center">Настройки</h3>
-                        				<p class="help-block">Здесь Вы можете внести основную информацию о пользователе, которая будет выводиться на сайте-портфолио</p>
-                        			</div>
-                        			<div class="col-xs-6 ">
-                        				<h3 class="text-center">Сохраненный параметры</h3>
-                        			</div>
-                        			<div class="col-xs-12">
-	                        			<div class="row">
-	                        				<div class="col-xs-6">
-			                        			<div class="form-group">
-			                        				<h4>Изменить логотип:</h4>
+								<div class="row">
+									<div class="col-xs-12">
+		                        		<div class="row">
+		                        			<div class="col-xs-6 ">
+		                        				<h3 class="text-center">Настройки</h3>
+		                        				<p class="help-block">Здесь Вы можете внести основную информацию о пользователе, которая будет выводиться на сайте-портфолио</p>
+		                        			</div>
+		                        			<div class="col-xs-6 ">
+		                        				<h3 class="text-center">Сохраненный параметры</h3>
+		                        			</div>
+		                        		</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-xs-12">
+				                        <div class="row">
+				                        	<div class="col-xs-6">
+						                		<div class="form-group">
+						                			<h4>Изменить favicon (ярлык сайта в закладках):</h4>
+													<label for="set_favicon">Изменить favicon:</label>
+						                			<input type="file" id="set_favicon" class="form-item btn btn-primary" name="set_favicon">
+												</div>
+						                		<div class="form-group">
+						                			<h4>Изменить логотип:</h4>
 													<label for="set_my_logo_name">Имя:</label>
 													<input type="text" id='set_my_logo_name' class="form-control" name="set_my_logo_name" placeholder="Имя бренда">
 													<label for="set_my_logo">Фамилия:</label>
 													<input type="text" id='set_my_logo_lastname'class="form-control" name="set_my_logo_lastname" placeholder="Фамилия бренда">
 												</div>
-	                        				</div>
-	                        				<div class="col-xs-6">
-			                        			<div class="form-group">
-			                        				<h4>Изменить favicon (ярлык сайта в закладках):</h4>
-													<label for="set_favicon">Изменить favicon:</label>
-			                        				<input type="file" id="set_favicon" class="form-item btn btn-primary" name="set_favicon">
-												</div>
-	                        				</div>
-	                        			</div>
-	                        			<div class="border-bottom"></div>
-	                        			<div class="row">
-	                        				<div class="col-xs-6">
+				                        	</div>
+				                        	<div class="col-xs-6">
+				                        		<div class="row">
+						                        	<div class="col-xs-12">
+								                		<div class="border-form">
+								                			<h4>Favicon:</h4>
+								                			<div class="show-favicon">
+								                				<img src="/<?php echo selectItem('main_settings', 'favicon') ?>" alt="">
+								                			</div>
+														</div>
+						                        	</div>
+						                        	<div class="col-xs-12">
+								                		<div class="border-form">
+								                			<h4>Логотип:</h4>
+								                			<div class="row">
+								                				<div class="col-xs-6">
+																	<p>Имя:</p>
+																	<p><?php echo selectItem('main_settings', 'my_name_logo') ?></p>
+								                				</div>
+								                				<div class="col-xs-6">
+																	<p>Фамилия:</p>
+																	<p><?php echo selectItem('main_settings', 'my_lastname_logo') ?></p>
+								                				</div>
+								                			</div>
+														</div>
+						                        	</div>
+				                        		</div>
+				                        	</div>
+				                        </div>
+				                        <div class="border-bottom"></div>
+				                        <div class="row">
+				                        	<div class="col-xs-6">
 												<div class="form-group">
-													<h4>Информация о пользователе:</h4>
+													<h4>Изменить информацию о пользователе:</h4>
 													<label for="set_name">Имя:</label>
 													<input type="text" id="set_name" class="form-control" name="set_name" placeholder="Иванов Иван">
 													<label for="set_proffesion">Проффесия:</label>
 													<input type="text" id="set_proffesion" class="form-control" name="set_proffesion" placeholder="WEB DEWELOPER">
 												</div>
-	                        				</div>
-		                        			<div class="col-xs-6">
-	                        					<div class="form-group">
-	                        						<h4>Большое фото на главной:</h4>
-		                        					<label for="set_myPhoto">Изменить фото: </label>
+				                        		<div class="form-group">
+				                        			<h4>Изменить большое фото на главной:</h4>
+					                    			<label for="set_myPhoto">Изменить фото: </label>
 													<input type="file" id="set_myPhoto" class="btn btn-primary" name="set_myPhoto">
-		                        				</div>
-	                        				</div>
-	                        			</div>
-	                        			<div class="border-bottom"></div>
-	                        		</div>
-                        			<div class="col-xs-12">
-										<button id="send-my-main" formmethod="post" name="admin-main" value="admin-main" class="btn btn-success">Отправить</button>
-                        			</div>
-                        		</div><!--.row-->
+					                    		</div>
+				                        	</div>
+					                    	<div class="col-xs-6">
+				                        		<div class="row">
+						                        	<div class="col-xs-12">
+								                		<div class="border-form">
+								                			<h4>Информация о пользователе:</h4>
+								                			<div class="row">
+								                				<div class="col-xs-6">
+																	<p>Имя:</p>
+																	<p><?php echo selectItem('main_settings', 'my_name') ?></p>
+								                				</div>
+								                				<div class="col-xs-6">
+																	<p>Проффесия:</p>
+																	<p><?php echo selectItem('main_settings', 'profession') ?></p>
+								                				</div>
+								                			</div>
+														</div>
+						                        	</div>
+						                        	<div class="col-xs-12">
+								                		<div class="border-form">
+								                			<h4>Большое фото на главной:</h4>
+											    			<div class="show-favicon">
+											    				<img src="/<?php echo selectItem('main_settings', 'my_photo')?> " alt="" width="90%">
+											    			</div>
+														</div>
+						                        	</div>
+				                        		</div>
+				                        	</div>
+				                        </div>
+				                        <div class="border-bottom"></div>
+				            		</div>
+								</div>
+		                       	<div class="col-xs-12">
+									<button id="send-my-main" formmethod="post" name="admin-main" value="admin-main" class="btn btn-success">Обновить основную информацию пользователя</button>
+		                       	</div>
 							</form><!--.admin-main-->
 							<form class="admin-contacts" method="POST" enctype="multipart/form-data">
 								<div class="row">
 									<div class="col-xs-12">
 										<div class="row">
-	                        				<div class="col-xs-6">
+											<div class="col-xs-6">
 	                        					<div class="form-group contact-send-box">
-	                        						<h4>Контакты:</h4>
+	                        						<h4>Изменить контакты:</h4>
 		                        					<div class="phone-form-box">
 		                        						<label for="set_phone">Изменить Телефон: </label><br>
 														<input type="text" id="set_phone" name="set_phone" class="phone-number form-control" placeholder="Телефон">
@@ -99,9 +155,21 @@
 														<div id="del-e-mail" class="dell"><span class="glyphicon glyphicon-minus"></span></div>
 													</div>
 	                        					</div>
-	                        				</div>
-	                        			</div>
-	                        			<div class="border-bottom"></div>
+											</div>
+											<div class="col-xs-6">
+				                        		<div class="row">
+						                        	<div class="col-xs-12">
+								                		<div class="border-form">
+								                			<h4>Контакты:</h4>
+								                			<div class="row">
+								                				<?php echo selectContactAdmin() ?>
+								                			</div>
+								                		</div>
+						                        	</div>
+				                        		</div>
+											</div>
+										</div>
+										<div class="border-bottom"></div>
 									</div>
 	                        		<div class="col-xs-12">
 	                        			<button id="send-my-contact" formmethod="post" name="admin-contacts" value="admin-contacts" class="btn btn-success">Отправить контакты</button>
@@ -123,32 +191,25 @@
                         				<h3 class="text-center">Контент основного слайдера</h3>
                         				<p class="help-block">Здесь можно добавить данные в основную галлерею работ</p>
                         			</div>
+                        		</div>
+                        		<div class="row">
                         			<div class="col-xs-12">
                         				<div class="row">
-                        					<div class="col-xs-6">
-                        						<div class="form-group">
-                        							<h4>Добавить фото:</h4>
-													<label for="set_photo_big">Десктоп версия:</label>
-				                        			<input type="file" id="set_photo_big" class="form-item btn btn-primary" name="set_photo_big">
-												</div>
-                        					</div>
-                        					<div class="col-xs-6">
+                        					<div class="col-xs-4">
 	                        					<div class="form-group">
-	                        						<label for="set_photo_smoll">Мобильная версия:</label>
-					                        		<input type="file" id="set_photo_smoll" class="form-item btn btn-primary" name="set_photo_smoll">
-					                        	</div>
-	                        				</div>
-	                        			</div>
-                        				<div class="border-bottom"></div>
-                        			</div>
-                        			<div class="col-xs-12">
-	                        			<div class="row">
-	                        				<div class="col-xs-6">
+	                        						<h4>Добавить фото:</h4>
+													<label for="set_photo_big">Десктоп версия:</label>
+					                        		<input type="file" id="set_photo_big" class="form-item btn btn-primary" name="set_photo_big">
+												</div>
+		                        				<div class="form-group">
+		                        					<label for="set_photo_smoll">Мобильная версия:</label>
+						                        	<input type="file" id="set_photo_smoll" class="form-item btn btn-primary" name="set_photo_smoll">
+						                       	</div>
 	                        					<div class="form-group">
 	                        						<h4>Дополнительные данные</h4>
 	                        						<label for="set_work_name">Название:</label>
 													<input type="text" id="set_work_name" name="set_work_name" class="form-control" placeholder="Как-то..">
-					                        		<label for="set_work_url">Домен:</label>
+					                        		<label for="set_work_url">Режим доступа:</label>
 													<input type="text" id="set_work_url" name="set_work_url" class="form-control" placeholder="exemple.com.ua">
 					                        		<label for="set_work_category">Категория:</label>
 					                        		<select id="set_work_category" name="set_work_category" class="form-control"  >
@@ -158,12 +219,82 @@
 														<option value="Страниццы посадки">Страниццы посадки</option>
 													</select>
 	                        					</div>
-	                        				</div>
-	                        				<div class="col-xs-6">
 	                        					<div class="form-group">
 	                        						<label for="set_client_name">Заказчик:</label>
 													<input type="text" id="set_client_name" name="set_client_name" class="form-control" placeholder="Кто-то!">
 	                        					</div>
+                        					</div>
+                        					<div class="col-xs-8">
+	                        					<div class="row">
+							                        <div class="col-xs-12">
+									                	<div class="border-form">
+									                		<h4>Загруженные работы:</h4>
+									                		<div class="show-works">
+
+																<div id="page-navigator">
+																	<div id="page-1" class="active">p1
+																		<img src="/<?php echo selectItem('main_settings', 'favicon') ?>" data-target='message0' alt="">
+																		<div id="dialog-message0" title="Название">
+																			<p>
+																				<span class="ui-icon ui-icon-circle-check" style="float:left; margin:0 7px 50px 0;"></span>
+																				Your files have downloaded successfully into the My Downloads folder.
+																			</p>
+																			<p>
+																				Currently using <b>36% of your storage space</b>.
+																			</p>
+																		</div> 
+																		<img src="/<?php echo selectItem('main_settings', 'favicon') ?>" class='message1' alt="">
+																		<div id="dialog-message1" title="Название">
+																			<p>
+																				<span class="ui-icon ui-icon-circle-check" style="float:left; margin:0 7px 50px 0;"></span>
+																				Your files have downloaded successfully into the My Downloads folder.
+																			</p>
+																			<p>
+																				Currently using <b>36% of your storage space</b>.
+																			</p>
+																		</div> 
+																		<img src="/<?php echo selectItem('main_settings', 'favicon') ?>" class='message2' alt="">
+																		<div id="dialog-message2" title="Название">
+																			<p>
+																				<span class="ui-icon ui-icon-circle-check" style="float:left; margin:0 7px 50px 0;"></span>
+																				Your files have downloaded successfully into the My Downloads folder.
+																			</p>
+																			<p>
+																				Currently using <b>36% of your storage space</b>.
+																			</p>
+																		</div> 
+																	</div>
+																	<div id="page-2">p2
+																	</div>
+																	<div id="page-3">p3</div>
+																	<div id="page-4">p4</div>
+																	<div id="page-5">p5</div>
+																	<div id="page-6">p6</div>
+																</div>
+																<nav>
+																	<ul id="pagination" class="pagination">
+																	<li><a href="#" data-target="first">&laquo;</a></li>
+																	<li class="active"><a href="#" rel="page-1">1</a></li>
+																	<li><a href="#" rel="page-2">2</a></li>
+																	<li><a href="#" rel="page-3">3</a></li>
+																	<li><a href="#" rel="page-4">4</a></li>
+																	<li><a href="#" rel="page-5">5</a></li>
+																	<li><a href="#" rel="page-6">6</a></li>
+																	<li><a href="#" data-target="last">&raquo;</a></li>
+																	</ul>
+																</nav>
+									                		</div>
+														</div>
+							                        </div>
+					                        	</div>
+                        					</div>
+                        				</div>
+                        			</div>
+                        			<div class="col-xs-12">
+	                        			<div class="row">
+	                        				<div class="col-xs-6">
+	                        				</div>
+	                        				<div class="col-xs-6">
 	                        				</div>
 	                        			</div>
                         				<div class="border-bottom"></div>

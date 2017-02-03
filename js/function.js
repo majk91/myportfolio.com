@@ -198,6 +198,9 @@ $('#myTab a').click(function (e) {
 
 //------------------------------------admin functions  (start)---------------//
 function addContaktInput() {
+	if($(this).parent().find('input').length>=3){
+		return;
+	};
 	switch($(this).attr("id")){
 	case 'add-phone':
 		$elem=$(this);
@@ -220,6 +223,9 @@ function addContaktInput() {
 		addInput($elem);
 	break;
 	}
+	if($(this).parent().find('input').length>=3){
+		$(this).addClass("block");
+	};
 }
 	function addInput(a) {
 		$className =a.parent().find('input').eq('0').attr('name');
@@ -251,17 +257,56 @@ function dellContaktInput() {
 		dellInput($elem);
 		break;
 	}
+	if($(this).parent().find('input').length!=3){
+		$(this).parent().find('.add').removeClass('block');
+	};
 }
 	function dellInput(a) {
 		$colectionLenght =a.parent().find('input').length;
+		$colectionBrLenght =a.parent().find('br').length;
 		if($colectionLenght>1){
-			$delElem=$colectionLenght-1;
-			console.log($colectionLenght);
-			console.log(a.parent().eq($delElem));
-			a.parent().find('input').eq($delElem).remove();
-			a.parent().find('br').remove();
+			$delElemInput=$colectionLenght-1;
+			$delElemBr=$colectionBrLenght-1;
+			a.parent().find('input').eq($delElemInput).remove();
+			a.parent().find('br').eq($delElemBr).remove();
 		}
 	}
+
+	//Пагинация для отображения работ в админ панели
+	function showPaginatePage(){
+		$('#pagination li.active').removeClass('active');
+		$('#page-navigator>div.active').removeClass('active');
+		if($(this).attr('rel')){
+			$(this).parent('li').addClass('active');
+			$('#' + $(this).attr('rel')).addClass('active');
+		}else{
+			if($(this).attr('data-target')=='first'){
+				$('[rel = page-1]').parent('li').addClass('active');
+				$('#' + $('[rel = page-1]').attr('rel')).addClass('active');
+			}else{
+				$('#pagination').find('li').eq($('#pagination').find('li').length-2).addClass('active');
+				$('#page-navigator').find('div').eq($('#page-navigator').find('div').length-1).addClass('active');
+			}
+			
+		}
+		return false;
+	}
+	$('#pagination a').on('click', showPaginatePage );
+
+
+	function showModal() {
+		$index = $(this).attr("class");
+		console.log($index);
+		 	$("#dialog-message").dialog({
+		 	  modal: true,
+		 	  buttons: {
+		 	  	Ok: function() {
+		 	  		$( this ).dialog( "close" );
+		 	  	}
+		 	  }
+		 	});
+		};
+	$('#page-1').on('click', showModal );
 
 //------------------------------------AJAX  (start)---------------//
 

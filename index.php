@@ -30,7 +30,7 @@
     </div><!--.site-wrapper-->
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="../includes/jquery-ui/jquery-ui.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="../includes/bootstrap/js/bootstrap.min.js"></script>
     <script src="../js/slider.js"></script>
     <script src="../js/function.js"></script>

@@ -226,7 +226,7 @@ function pushClientsData(){
 	}
 }
 function selectItem($tabl, $col){
-	$sql = "SELECT * FROM $tabl ";
+	$sql = "SELECT * FROM $tabl";
 	$res = selectData($sql);
 
 	if (mysqli_num_rows($res) > 0) {
@@ -235,6 +235,55 @@ function selectItem($tabl, $col){
 	    }
 	} else {
 	    echo "0 results";
+	}
+}
+function selectContactAdmin(){
+	$sql = "SELECT * FROM contacts ";
+	$res = selectData($sql);
+	$phone=[]; 
+	$viber=[];
+	$skype=[];
+	$email=[];
+	if (mysqli_num_rows($res) > 0) {
+	    while($row = mysqli_fetch_assoc($res)) {
+	    	if($row["phone"]!=0){
+	    		$phone[]=$row["phone"];
+	    	};
+	    	if($row["viber"]!=0){
+	    		$viber[]=$row["viber"];
+	    	};
+	    	if($row["skype"]!=''){
+	    		$skype[1]=$row["skype"];
+	    	};
+	    	if($row["e_mail"]!=''){
+	    		$email[1]=$row["e_mail"];
+	    	};
+	    	
+	    }
+	    $result="";
+	    $result.="<div class='col-xs-6'><h5>Телефон:</h5>";
+	    foreach ($phone as $key => $value) {
+	    	$result.="<p>".$value."</p>";
+	    };
+	    $result.="</div>";
+	    $result.="<div class='col-xs-6'><h5>Viber:</h5>";
+		foreach ($viber as $key => $value) {
+			$result.="<p>".$value."</p>";
+	    };
+	    $result.="</div>";
+	    $result.="<div class='col-xs-6'><h5>Skype:</h5>";
+		foreach ($skype as $key => $value) {
+	    	$result.="<p>".$value."</p>";
+	    };
+	    $result.="</div>";
+	    $result.="<div class='col-xs-6'><h5>Email:</h5>";
+		foreach ($email as $key => $value) {
+	    	$result.="<p>".$value."</p>";
+	    };
+	    $result.="</div>";
+	        return $result;
+	} else {
+	    echo "";
 	}
 }
 function selectContact(){
@@ -311,7 +360,7 @@ function selectMassege(){
         }
     }
 }
-function selectCounter(){
+function showCounter(){
 	$sql = "SELECT * FROM lid ";
 	$res = selectData($sql);
 	if (mysqli_num_rows($res) > 0) {
@@ -320,7 +369,7 @@ function selectCounter(){
     		$i++;
         }
         echo $i;
-    }
+    }else echo "0";
 }
 function showMenyFunctions(){
 	if($_SERVER['REQUEST_METHOD'] == 'POST'){
