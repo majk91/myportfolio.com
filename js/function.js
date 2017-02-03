@@ -295,9 +295,8 @@ function dellContaktInput() {
 
 
 	function showModal() {
-		$index = $(this).attr("class");
-		console.log($index);
-		 	$("#dialog-message").dialog({
+		$index = $(this).attr("data-target");
+		 	$("#dialog-"+$index).dialog({
 		 	  modal: true,
 		 	  buttons: {
 		 	  	Ok: function() {
@@ -305,8 +304,14 @@ function dellContaktInput() {
 		 	  	}
 		 	  }
 		 	});
+		$('[role = dialog]').css({
+			'height': '94vh',
+			'width': '94vw',
+			'top': '3vh',
+			'left': '3vw'
+		})
 		};
-	$('#page-1').on('click', showModal );
+	$('#page-navigator img').on('click', showModal );
 
 //------------------------------------AJAX  (start)---------------//
 

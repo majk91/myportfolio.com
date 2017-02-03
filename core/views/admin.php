@@ -232,37 +232,73 @@
 									                		<div class="show-works">
 
 																<div id="page-navigator">
-																	<div id="page-1" class="active">p1
-																		<img src="/<?php echo selectItem('main_settings', 'favicon') ?>" data-target='message0' alt="">
-																		<div id="dialog-message0" title="Название">
+																	<div id="page-1" class="active">
+																		<div class="wrap">
+																			<img src="/<?php echo selectItem('main_settings', 'favicon') ?>" data-target='message0' alt="">
+																			<div class="cross"></div>
+																			<div class="magnifier"></div>
+																		</div>
+
+																		<div id="dialog-message0" class="hid" title="Название">
+																			<div class="dialog-box">
+																				<div class="dialog-image-big">
+																					<img src="/<?php echo selectItem('main_settings', 'favicon') ?>" alt="">
+																				</div>
+																				<div class="dialog-image-smoll">
+																					<img src="/<?php echo selectItem('main_settings', 'favicon') ?>" alt="">
+																				</div>
+																				<a href=""></a>
+																			</div>
 																			<p>
-																				<span class="ui-icon ui-icon-circle-check" style="float:left; margin:0 7px 50px 0;"></span>
-																				Your files have downloaded successfully into the My Downloads folder.
-																			</p>
-																			<p>
-																				Currently using <b>36% of your storage space</b>.
-																			</p>
-																		</div> 
-																		<img src="/<?php echo selectItem('main_settings', 'favicon') ?>" class='message1' alt="">
-																		<div id="dialog-message1" title="Название">
-																			<p>
-																				<span class="ui-icon ui-icon-circle-check" style="float:left; margin:0 7px 50px 0;"></span>
-																				Your files have downloaded successfully into the My Downloads folder.
-																			</p>
-																			<p>
-																				Currently using <b>36% of your storage space</b>.
-																			</p>
-																		</div> 
-																		<img src="/<?php echo selectItem('main_settings', 'favicon') ?>" class='message2' alt="">
-																		<div id="dialog-message2" title="Название">
-																			<p>
-																				<span class="ui-icon ui-icon-circle-check" style="float:left; margin:0 7px 50px 0;"></span>
-																				Your files have downloaded successfully into the My Downloads folder.
-																			</p>
-																			<p>
-																				Currently using <b>36% of your storage space</b>.
+																				<span>Заказчик: </span><br>
+																				<span>Категория:</span>
 																			</p>
 																		</div> 
+																		<div class="wrap">
+																			<img src="/<?php echo selectItem('main_settings', 'favicon') ?>" data-target='message1' alt="">
+																			<div class="cross"></div>
+																			<div class="magnifier"></div>
+																		</div>
+
+																		<div id="dialog-message1" class="hid" title="Название">
+																			<p>
+																				Your22222 files have downloaded successfully into the My Downloads folder.
+																			</p>
+																		</div> 
+																		<div class="wrap">
+																			<img src="/<?php echo selectItem('main_settings', 'favicon') ?>" data-target='message2' alt="">
+																			<div class="cross"></div>
+																			<div class="magnifier"></div>
+																		</div>
+
+																		<div id="dialog-message2" class="hid" title="Название">
+																			<p>
+																				Your33333 files have downloaded successfully into the My Downloads folder.
+																			</p>
+																		</div>
+																		<div class="wrap">
+																			<img src="/<?php echo selectItem('main_settings', 'favicon') ?>" data-target='message2' alt="">
+																			<div class="cross"></div>
+																			<div class="magnifier"></div>
+																		</div>
+
+																		<div id="dialog-message2" class="hid" title="Название">
+																			<p>
+																				Your33333 files have downloaded successfully into the My Downloads folder.
+																			</p>
+																		</div>
+																		<div class="wrap">
+																			<img src="/<?php echo selectItem('main_settings', 'favicon') ?>" data-target='message2' alt="">
+																			<div class="cross"></div>
+																			<div class="magnifier"></div>
+																		</div>
+
+																		<div id="dialog-message2" class="hid" title="Название">
+																			<p>
+																				Your33333 files have downloaded successfully into the My Downloads folder.
+																			</p>
+																		</div>
+
 																	</div>
 																	<div id="page-2">p2
 																	</div>
