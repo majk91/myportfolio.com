@@ -230,7 +230,6 @@
 									                	<div class="border-form">
 									                		<h4>Загруженные работы:</h4>
 									                		<div class="show-works">
-
 																<div id="page-navigator">
 																	<div id="page-1" class="active">
 																		<div class="wrap">
@@ -380,14 +379,35 @@
 													</select>
 			                    	    		</div>
 			                    	    	</div> -->
+			                    	    	<div class="col-xs-6">
+			                    	    		<div class="row">
+						                        	<div class="col-xs-12">
+								                		<div class="border-form">
+								                			<h4>Информация о пользователе:</h4>
+								                			<div class="row">
+								                				<div class="col-xs-6">
+																	<p>Назваие компании:</p>
+																	<p><?php echo selectItem('main_settings', 'my_name') ?>
+																	</p>
+								                				</div>
+								                				<div class="col-xs-6">
+																	<p>Логотип:</p>
+																	<p><?php echo selectItem('main_settings', 'profession') ?>
+																	</p>
+								                				</div>
+								                			</div>
+														</div>
+						                        	</div>
+				                        		</div>
+				                        	</div>
 			                    	    </div>
 									</div>
 								</div>
 			                	<div class="border-bottom"></div>
 								<div class="row">
-									<div class="col-xs-12">
+									<div class="col-xs-6">
 										<div class="row">
-					                       	<div class="col-xs-6">
+					                       	<div class="col-xs-12">
 												<div class="form-group">
 													<h4>Отзывы клиентов</h4>
 													<label for="set_clientTtem_name">ФИО:</label>
@@ -398,15 +418,48 @@
 					                        		<input type="text" id="set_client_position" class="form-control" name="set_client_position" placeholder="Директор">
 					                        	</div>
 					                        </div>
-				                        	<div class="col-xs-6">
+				                        	<div class="col-xs-12">
 				                        		<div class="form-group">
 													<label for="exampleInputFile">Текст отзыва:</label><br>
 													<textarea id="set_review" class="form-control" name="set_review" rows="10" style="width: 100%" name="text"></textarea>
 					                        	</div>
 				                        	</div>
 					                    </div>
-										<div class="border-bottom"></div>								
 									</div>
+									<div class="col-xs-6">
+										<div class="row">
+					                       	<div class="col-xs-12">
+												<div class="form-group">
+													<h4>Отзывы клиентов:</h4>
+								                	<div class="row">
+								                		<div class="col-xs-6">
+															<p>Ф.И.О.</p>
+															<p><?php echo selectItem('main_settings', 'my_name') ?>
+															</p>
+								                		</div>
+								                		<div class="col-xs-6">
+															<p>Организация:</p>
+															<p><?php echo selectItem('main_settings', 'profession') ?>
+															</p>
+								                		</div>
+								                		<div class="col-xs-6">
+								                			<p>Должность:</p>
+															<p><?php echo selectItem('main_settings', 'profession') ?>
+															</p>
+								                		</div>
+								                		<div class="col-xs-12">
+								                			<p>Текст отзыва:</p>
+															<p><?php echo selectItem('main_settings', 'profession') ?>
+															</p>
+								                		</div>
+								                	</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="border-bottom"></div>
+								<div class="row">						
 				                    <div class="col-xs-12">
 					                	<button id="send-slider-content" formmethod="post" name="admin-myClients" value="admin-myClients" class="btn btn-success">Отправить</button>
 					                </div>
@@ -414,9 +467,9 @@
 							</form><!--.admin-myClients-->
 						</div><!--#slider-content-->
 						<div class="tab-pane" id="messages">
-							<p>
-							<?php selectMassege() ?>
-							</p>
+							<div class="messeges-box">
+									<?php selectMassege() ?>
+							</div>
 						</div>
 						<div class="tab-pane" id="settings">
 							<p>
