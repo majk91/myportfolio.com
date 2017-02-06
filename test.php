@@ -20,15 +20,8 @@
 	</script>
 </head>
 <body>
-<div id="dialog-message" title="Download complete">
-  <p>
-    <span class="ui-icon ui-icon-circle-check" style="float:left; margin:0 7px 50px 0;"></span>
-    Your files have downloaded successfully into the My Downloads folder.
-  </p>
-  <p>
-    Currently using <b>36% of your storage space</b>.
-  </p>
-</div>
+
+<?php include 'parts/mail_client.inc.php'; ?>
  
 
  

@@ -356,7 +356,42 @@ function selectMassege(){
 	$res = selectData($sql);
 	if (mysqli_num_rows($res) > 0) {
     	while($row = mysqli_fetch_assoc($res)) {
-        	echo $row["time"]."<br>У Нас новый клиент<br> Имя: " . $row["name"]. "<br> Телефон: " . $row["phone"]."<br> Email: " . $row["email"]."<br> Сообщение: " . $row["email"]."<br>";
+    		if($row["checking"]){
+        		echo '	<div class="row"><div class="col-xs-12">
+							<h4>Новое сообщение от потенциального клиента:</h4>
+							<p>Время: '.$row["time"].'</p>
+							<div class="row">
+								<div class="col-md-4">
+									<div>
+										<p>ФИО:</p>
+										<p>'.$row["name"].'</p>
+									</div>
+								</div>
+								<div class="col-md-4">
+									<div>
+										<p>Телефон: </p>
+										<p>'.$row["phone"].'</p>
+									</div>
+								</div>
+								<div class="col-md-4">
+									<div>
+										<p>Email: </p>
+										<p>'.$row["email"].'</p>
+									</div>
+								</div>
+								<div class="col-md-12">
+									<div>
+										<p>Текст сообщения: </p>
+										<p>'.$row["comment"].'</p>
+									</div>
+								</div>
+							</div>
+						</div>
+        			</div>
+					<div class="mess-item" data-check_mess="'.$row["id"].'">
+						<p>Просмотрено</p>
+					</div>';
+    		}
         }
     }
 }

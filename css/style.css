@@ -818,6 +818,20 @@ input[type="file" i]::-webkit-file-upload-button, button{
 	bottom: 0px;
 	background: green;
 }
+.messeges-box{
+	border: 2px solid #C1C1C1;
+}
+.messeges-box .row{
+    margin: 10px 0;
+    padding: 10px;
+}
+.mess-item{
+	text-align: center;
+	line-height: 30px;
+    height: 30px;
+    cursor: pointer;
+    background-color: #FCAC45;
+}
 /*----------------------------admin.php end----------------------*/
 
 
