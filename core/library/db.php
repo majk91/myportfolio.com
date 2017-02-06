@@ -350,14 +350,16 @@ function getClient(){
 		}
 	}
 }
-function selectMassege(){
+function selectMessege(){
 
 	$sql = "SELECT * FROM lid ";
 	$res = selectData($sql);
 	if (mysqli_num_rows($res) > 0) {
     	while($row = mysqli_fetch_assoc($res)) {
     		if($row["checking"]){
-        		echo '	<div class="row"><div class="col-xs-12">
+        		echo '<div class="mess-item-box">
+        			<div class="row">
+        				<div class="col-xs-12">
 							<h4>Новое сообщение от потенциального клиента:</h4>
 							<p>Время: '.$row["time"].'</p>
 							<div class="row">
@@ -388,15 +390,19 @@ function selectMassege(){
 							</div>
 						</div>
         			</div>
-					<div class="mess-item" data-check_mess="'.$row["id"].'">
-						<p>Просмотрено</p>
-					</div>';
+					<div class="mess-item but-show" data-check_mess="'.$row["id"].'">
+						<p>Отметить как просмотренное (внести в Базу)</p>
+					</div>
+					<div class="mess-item but-del" data-check_mess="'.$row["id"].'">
+						<p>Удалить</p>
+					</div>
+        		</div>';
     		}
         }
     }
 }
 function showCounter(){
-	$sql = "SELECT * FROM lid ";
+	$sql = "SELECT * FROM lid WHERE checking != 0 ";
 	$res = selectData($sql);
 	if (mysqli_num_rows($res) > 0) {
         $i=0;

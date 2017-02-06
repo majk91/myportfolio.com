@@ -8,7 +8,7 @@ $( document ).ready(function() {
 //	$('.my-photo-box img').mouseOver(changeBgImg);
 	$('.button-up').on('click', hideUpBut);
 
-	//Удаляем или добавляем текстовые  поля
+//Удаляем или добавляем текстовые  поля
 	$('.contact-send-box .add').on('click', addContaktInput);
 	$('.contact-send-box .dell').on('click', dellContaktInput);
 
@@ -17,6 +17,14 @@ $( document ).ready(function() {
 		var data = $( this ).attr('data-name');
 		var value = $("#"+data).position()['top'];
 	 	animatedUpOrDown(value);
+	});
+
+//Функции обработки сообщений от клиентов AJAX - методом		
+	$('#messages .but-show').on('click', function(){
+		checkingClientMess(1, $(this));
+	});
+	$('#messages .but-del').on('click', function(){
+		checkingClientMess(0, $(this));
 	});
 
 	$( window ).scroll(function(){
@@ -319,22 +327,38 @@ function dellContaktInput() {
 	$('.cross').on('click', delWorkItem );
 
 //------------------------------------AJAX  (start)---------------//
+//функция для обработки сообщений от клиентов
+		function checkingClientMess(setting, thisItem){
+			var menuId = thisItem.first().attr("data-check_mess");
+				deletMessege(thisItem);
+				changeCouneter();
+			var request = $.ajax({
+			  url: "../functionAJAX.php",
+			  type: "POST",
+			  data: {id : menuId,
+			  		set : setting,
+			  		},
+			  success: ifSuccess
+			});
+			 
+			function ifSuccess(data){
+				$("#messeges-show-informer").css("display","block").html( data );
+				$("#messages span").html( data );
+			}
+		};
+		function changeCouneter(){
+			$count = $(".nav-tabs .active span").html();
+			$result = $count.match(/^\d+$/);
+			console.log($result);
+			//$("#messages span").html(parseInt($count) - 1 );
+			
+		};
+		function deletMessege(btn){
+			btn.parent().remove();
+		};
+					
+			
 
-	/*$(document).ready(function(){
-		$('#send-btn').on('click', fGo); //событие на клик кнопки
-	});
- 
-	function fGo(){
-		event.preventDefault(); //отключаем стандартную реакцию браузера
-		$.post(
-			"/fun.php", // куда отправляем запрос
-			$('#form_qestions').serialize(), // сама строка
-			ifSuccess // функция которая обрабатывает ответ сервера
-		);
-	}
- 
-	function ifSuccess(data){
-	//	console.log(data); // ответ выводим в консоль
-	}*///------------------------------------AJAX  (end)---------------//
+//------------------------------------AJAX  (end)---------------//
 //------------------------------------admin functions  (end)---------------//
 	

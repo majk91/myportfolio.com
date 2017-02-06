@@ -468,8 +468,9 @@
 						</div><!--#slider-content-->
 						<div class="tab-pane" id="messages">
 							<div class="messeges-box">
-									<?php selectMassege() ?>
+								<?php selectMessege() ?>
 							</div>
+							<div id="messeges-show-informer"></div>
 						</div>
 						<div class="tab-pane" id="settings">
 							<p>

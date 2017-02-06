@@ -35,6 +35,7 @@
     <script src="../js/slider.js"></script>
     <script src="../js/function.js"></script>
 
+
 </body>
 </html>
 

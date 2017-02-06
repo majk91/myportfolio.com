@@ -32,12 +32,6 @@ a{
 .carusel-inner{
 	height: 720px;
 }
-
-@media only screen and (min-width: 768px) {
-    .home-wraper{
-    	min-height: 532px;
-    }
-}
 .login_panel{
 	background: #111111;
 	height: 7vh;
@@ -831,19 +825,43 @@ input[type="file" i]::-webkit-file-upload-button, button{
     left: 30%;
 	opacity: 1;
 }
-.messeges-box{
-	border: 2px solid #C1C1C1;
-}
 .messeges-box .row{
     margin: 10px 0;
     padding: 10px;
+}
+.mess-item-box{
+	border: 2px solid #C1C1C1;
+	margin-bottom: 15px;
 }
 .mess-item{
 	text-align: center;
 	line-height: 30px;
     height: 30px;
     cursor: pointer;
+    width: 50%;
+    display: inline-block;
+}
+.mess-item p{
+	display: inline;
+}
+.but-show{
+	background-color: #5cb85c;
+}
+.but-del{
+	margin: -4px;
+	background-color: #f9888a;
+}
+.mess-item:hover{
     background-color: #FCAC45;
+}
+#messeges-show-informer{
+	display:none;
+	position: fixed;
+    bottom: 0px;
+    right: 0px;
+    width: 200px;
+    height: 150px;
+    background-color: #FFE75E;
 }
 /*----------------------------admin.php end----------------------*/
 
@@ -855,6 +873,11 @@ input[type="file" i]::-webkit-file-upload-button, button{
 	    width: 44px;
 	    height: 44px;
 	}
+}
+@media only screen and (min-width: 768px) {
+    .home-wraper{
+    	min-height: 532px;
+    }
 }
 @media (max-width: 767px){
 	.nav>li {
