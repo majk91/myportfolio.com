@@ -234,9 +234,9 @@
 																<div id="page-navigator">
 																	<div id="page-1" class="active">
 																		<div class="wrap">
-																			<img src="/<?php echo selectItem('main_settings', 'favicon') ?>" data-target='message0' alt="">
+																			<img src="/<?php echo selectItem('main_settings', 'favicon') ?>" alt="">
 																			<div class="cross"></div>
-																			<div class="magnifier"></div>
+																			<div class="magnifier" data-target='message0'></div>
 																		</div>
 
 																		<div id="dialog-message0" class="hid" title="Название">
@@ -255,9 +255,9 @@
 																			</p>
 																		</div> 
 																		<div class="wrap">
-																			<img src="/<?php echo selectItem('main_settings', 'favicon') ?>" data-target='message1' alt="">
+																			<img src="/<?php echo selectItem('main_settings', 'favicon') ?>" alt="">
 																			<div class="cross"></div>
-																			<div class="magnifier"></div>
+																			<div class="magnifier" data-target='message1'></div>
 																		</div>
 
 																		<div id="dialog-message1" class="hid" title="Название">
@@ -266,9 +266,9 @@
 																			</p>
 																		</div> 
 																		<div class="wrap">
-																			<img src="/<?php echo selectItem('main_settings', 'favicon') ?>" data-target='message2' alt="">
+																			<img src="/<?php echo selectItem('main_settings', 'favicon') ?>"  alt="">
 																			<div class="cross"></div>
-																			<div class="magnifier"></div>
+																			<div class="magnifier" data-target='message2'></div>
 																		</div>
 
 																		<div id="dialog-message2" class="hid" title="Название">
@@ -277,9 +277,9 @@
 																			</p>
 																		</div>
 																		<div class="wrap">
-																			<img src="/<?php echo selectItem('main_settings', 'favicon') ?>" data-target='message2' alt="">
+																			<img src="/<?php echo selectItem('main_settings', 'favicon') ?>" alt="">
 																			<div class="cross"></div>
-																			<div class="magnifier"></div>
+																			<div class="magnifier" data-target='message3'></div>
 																		</div>
 
 																		<div id="dialog-message2" class="hid" title="Название">
@@ -288,9 +288,9 @@
 																			</p>
 																		</div>
 																		<div class="wrap">
-																			<img src="/<?php echo selectItem('main_settings', 'favicon') ?>" data-target='message2' alt="">
+																			<img src="/<?php echo selectItem('main_settings', 'favicon') ?>"  alt="">
 																			<div class="cross"></div>
-																			<div class="magnifier"></div>
+																			<div class="magnifier" data-target='message4'></div>
 																		</div>
 
 																		<div id="dialog-message2" class="hid" title="Название">

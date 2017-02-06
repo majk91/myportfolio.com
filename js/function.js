@@ -311,7 +311,12 @@ function dellContaktInput() {
 			'left': '3vw'
 		})
 		};
-	$('#page-navigator img').on('click', showModal );
+	$('.magnifier').on('click', showModal );
+	
+	function delWorkItem(){
+		
+	}
+	$('.cross').on('click', delWorkItem );
 
 //------------------------------------AJAX  (start)---------------//
 
