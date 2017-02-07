@@ -174,11 +174,12 @@ function pushDataBigSlider(){
 					echo "Данные отправлены!";
 				}
 			}
-			$count = '';
+			$count = "";
 			foreach ($formData as $key => $value) {
 				$count .=$value;
 			}
-			if($count==0){
+				//var_dump($formData);
+			if($count==""){
 				echo "Поля не заполнены";
 				return folse;
 			}
@@ -344,10 +345,33 @@ function getClient(){
 
 				$res = insertUpdateDelete($sql);
 				echo " Спасибо за ваш вопрос! С Вами свяжуться в ближайшее время";
+				$sql = "SELECT * FROM users ";
+				$res = selectData($sql);
+			    $i=0;
+				while($row = mysqli_fetch_assoc($res)) {
+			    	if($row["email"]!=""){
+						$i++;
+			    	};
+			    };
+				if (mysqli_num_rows($res) > 0) {
+					$admin_email = "";
+					$sql = "SELECT * FROM users ";
+					$res = selectData($sql);
+		   			while($row = mysqli_fetch_assoc($res)) {
+		    			$admin_email.=$row["email"];
+		   				if($i>0){
+		   					$admin_email.=", ";
+		   				}
+		    			$i--;
+		   					
+		    		}
+		    	}
+				sendEmail($admin_email, $formData['name'], $formData['tel'], $formData['email'], $formData['massege']);
 			}else{
 				echo "Поля должны быть заполнены!";
 			}
-		}
+	    	
+	    }
 	}
 }
 function selectMessege(){
@@ -424,5 +448,180 @@ function showMenyFunctions(){
 	echo "</p></div>";
 	}
 }
+
+function sendEmail($to, $name, $phone, $email, $mess){
+	//$to = 'yuryshynets.m@gmail.com'; // достать почту всех админов из БД
+	$subject = 'portfolio.com || Вы получили новое сообщение из формы';
+	$message = '
+	<html>
+	<head>
+	  <title>Новое письмо с портала portfolio.com</title>
+	</head>
+	<body>
+		<table width="100%" bgcolor="#e8e9ea" style="font-family:Arial,Helvetica,sans-serif;color:#333333; font-size:12px">
+			<tbody width="80%" >
+				<tr>
+					<td>
+						<table  width="50%"  style=" margin: 0 auto; border: 1px solid #111111; background: linear-gradient(limegreen,	transparent),linear-gradient(90deg, skyblue, transparent), linear-gradient( -90deg, coral, transparent);">
+							<tbody width="80%" >
+								<tr>
+									<td>
+										<table width="100%">
+											<tbody>
+												<tr>
+													<td>
+														<div>
+															<h2 width="100%" style="text-align: center;">Новое сообщение от потенциального клиента</h2>
+															<p>ФИО: <span>'.$name.'</span></p>
+															<p>Телефон: <span>'.$phone.'</span></p>
+															<p>Email: <span>'.$email.'</span></p>
+															<p>Текст сообщения: <span>'.$mess.'</span></p>
+														</div>
+														<div>
+															<p style="font-size: 20px;">Для входа в административную панель сайта перейдите по <a href="portfolio.com">ссылке</a>.</p>
+														</div>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+										<hr>
+										<div  width="100%" style="text-align: center;">Вы получили это письмо так как Ваша почта указана как почта администратора на сайте portfolio.com</div>
+										<hr>
+										<div>
+											<center>Copyright © 2017 Yuryshynets</center>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</body>
+	</html>
+	';
+	$headers  = 'MIME-Version: 1.0' . "\r\n";
+	$headers .= 'Content-type: text/html; charset=utf-8' . "\r\n";
+	mail($to, $subject, $message, $headers);
+	return folse;
+}
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Вывод галлереи работ на главной
+	//Функция возвращает массив путей к файлам
+	function selectPic($row_name, $row_url){
+		$sql = "SELECT * FROM gallery_settings ";
+		$res = selectData($sql);
+		if (mysqli_num_rows($res) > 0) {
+			$data = [];
+		    while($row = mysqli_fetch_assoc($res)) {
+		    	if($row["$row_name"]!=0){
+		    		$data[]= [
+		    			"domen" => $row["$row_name"],
+		    			"url" => $row["$row_url"]
+		    		];
+		    	};    	
+		    };
+		}
+		return $data;
+	}
+
+	function getPictures($pathToDir){
+		$pictures=[];
+		if(file_exists($pathToDir)){
+			$d = opendir($pathToDir);
+			while (($file = readdir($d)) !== false) {
+				if($file == '.' || $file == '..') continue;
+
+				$pictures[] = $pathToDir . '/'.$file;
+			}
+		}
+		return $pictures;
+	}
+	//значение $set отвечает за вывод мобильной или нет версии. При $set=true -  вывод мобильной версии
+	function showFile($pathToFile, $set){
+		($set)? include '/parts/pictures_desktop.par.php' : include '/parts/pictures_mobile.par.php';
+	}
+	$pictures=getPictures('/file_upload/gallery_desctop');
+
+	function getMarking($pictures, $set){
+		if($set){
+			$i=0;
+			foreach ($pictures as $pic) {
+				if($i==0){
+					echo '<div class="item active">
+							<div class="myWork-item">
+								<div class="row">';
+									showFile($pic, $set);
+				}else if($i%8==0){
+					showFile($pic, $set);
+					echo '</div>
+						</div>
+					</div>
+					<div class="item">
+						<div class="myWork-item">
+							<div class="row">';
+				}else{
+					showFile($pic, $set);
+				}
+			$i++;
+			} 
+			if($i==0){
+					echo '<div class="item active">
+							<div class="myWork-item">
+								<div class="row">';
+				};
+			if($i%9 || $i<9 ){
+				$j=$i%9;
+				while($j<9) {
+					echo '<div class="col-xs-4 col-md-4">
+							<div class="myWork-item-wrap">
+								<p><a href="#"><img src="image/template-work.png" alt="mySite"></a></p>
+							</div>
+						</div>';
+					$j++;
+				}
+				echo '</div>
+					</div>
+				</div>';
+			}
+		}else{
+			$i=0;
+			foreach ($pictures as $pic) {
+				if ($i==0) {
+					echo '<div class="item active">';
+					showFile($pic, $set);
+					echo '</div>';
+				}else{
+					echo '<div class="item">';
+					showFile($pic, $set);
+					echo '</div>';
+				}
+				$i++;
+			}
+		}
+	}
+	function getIndicators(){
+		$dir = opendir('file_upload/gallery_desctop');
+		$count = 0;
+		while($file = readdir($dir)){
+		    if($file == '.' || $file == '..' || is_dir('path/to/dir' . $file)){
+		        continue;
+		    }
+		    $count++;
+		}
+		$i = intval($count/9);
+		$j = 0;
+		while ( $j <= $i) {
+			if($j){
+				echo '<li data-target="#carousel-example-generic" data-slide-to="'.$j.'"></li>';
+			}else{
+				echo '<li data-target="#carousel-example-generic" data-slide-to="'.$j.'" class="active"></li>';
+			}
+			$j++;
+								
+		}
+
+	}
 
 ?>

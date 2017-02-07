@@ -329,6 +329,33 @@ function dellContaktInput() {
 //------------------------------------AJAX  (start)---------------//
 //функция для обработки сообщений от клиентов
 		function checkingClientMess(setting, thisItem){
+			if(setting){
+				gatherPattern('Вы действительно просмотрели сообщение клиента и хотите сохранить его в базе данных? Обращаю внимание, что после сохранения данные клиента будут доступни только напрямую с базы данных.');
+				$('.messeges-but-ok').on('click', function(){
+					pullAjax(setting, thisItem);
+					$("#messeges-show-modal").css("display","none").html( " " );
+				});
+				$('.messeges-but-cancel').on('click', function(){
+					$("#messeges-show-modal").css("display","none").html( " " );
+				});
+				$('.messeges-exit').on('click', function(){
+					$("#messeges-show-modal").css("display","none").html( " " );
+				});
+			}else{
+				gatherPattern('Вы действительно хотите безвозвратно удалить данные полученные от клиента?');
+				$('.messeges-but-ok').on('click', function(){
+					pullAjax(setting, thisItem);
+					$("#messeges-show-modal").css("display","none").html( " " );
+				});
+				$('.messeges-but-cancel').on('click', function(){
+					$("#messeges-show-modal").css("display","none").html( " " );
+				});
+				$('.messeges-exit').on('click', function(){
+					$("#messeges-show-modal").css("display","none").html( " " );
+				});
+			}
+		};
+		function pullAjax(setting, thisItem){
 			var menuId = thisItem.first().attr("data-check_mess");
 				deletMessege(thisItem);
 				changeCouneter();
@@ -342,20 +369,37 @@ function dellContaktInput() {
 			});
 			 
 			function ifSuccess(data){
-				$("#messeges-show-informer").css("display","block").html( data );
-				$("#messages span").html( data );
+				$("#messeges-show-informer").css({"height": '90px', "transition": "all ease 2.15s"}).html('<p>'+data+'</p>');
+
+				setTimeout(function(){
+					$("#messeges-show-informer").css({
+						"height": '0px',
+						"transition": "all .3s ease 2.15s"
+					});
+					
+				}, 3000);
+				//$("#messages span").html( data );
 			}
-		};
+			
+		}
 		function changeCouneter(){
 			$count = $(".nav-tabs .active span").html();
-			$result = $count.match(/^\d+$/);
-			console.log($result);
-			//$("#messages span").html(parseInt($count) - 1 );
+			$reg = /\d+/;
+			$result = $count.match($reg);
+			$("#clientMess span").html('('+($result[0] - 1)+')');
 			
 		};
 		function deletMessege(btn){
 			btn.parent().remove();
 		};
+
+		function gatherPattern(data){
+			$string = "";
+			$string += '<div class="messeges-show-wrap"><div class="messeges-show-titl"><p>Предупреждение</p></div><div class="messeges-show-content"><p>'+data;
+			$string += '</p></div><div class="messeges-show-boxes"><div class="messeges-but-ok">Да, все верно.</div>';
+			$string += '<div class="messeges-but-cancel">Нет! вернутся</div></div><div class="messeges-exit"></div></div>';
+			$("#messeges-show-modal").css("display","block").html( $string );
+		}
 					
 			
 

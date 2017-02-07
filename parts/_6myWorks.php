@@ -1,66 +1,5 @@
 <?php 
-	//Функция возвращает массив путей к файлам
-	function getPictures($pathToDir){
-		$pictures=[];
-		if(file_exists($pathToDir)){
-			$d = opendir($pathToDir);
-			while (($file = readdir($d)) !== false) {
-				if($file == '.' || $file == '..') continue;
 
-				$pictures[] = $pathToDir . '/'.$file;
-			}
-		}
-		return $pictures;
-	}
-	//значение $set отвечает за вывод мобильной или нет версии. При $set=true -  вывод мобильной версии
-	function showFile($pathToFile, $set){
-		($set)? include 'pictures_desktop.par.php' : include '/parts/pictures_mobile.par.php';
-	}
-	$pictures=getPictures('file_upload/gallery_desctop');
-
-	function getMarking($pictures, $set){
-		if($set){
-			$i=0;
-			foreach ($pictures as $pic) {
-				if($i==0){
-					echo '<div class="item active">
-							<div class="myWork-item">
-								<div class="row">';
-									showFile($pic, $set);
-				}else if($i%8==0){
-					showFile($pic, $set);
-					echo '</div>
-						</div>
-					</div>
-					<div class="item">
-						<div class="myWork-item">
-							<div class="row">';
-				}else{
-					showFile($pic, $set);
-				}
-			$i++;
-			} 
-			if($i%9 || $i<9){
-				echo '</div>
-					</div>
-				</div>';
-			}
-		}else{
-			$i=0;
-			foreach ($pictures as $pic) {
-				if ($i==0) {
-					echo '<div class="item active">';
-					showFile($pic, $set);
-					echo '</div>';
-				}else{
-					echo '<div class="item">';
-					showFile($pic, $set);
-					echo '</div>';
-				}
-				$i++;
-			}
-		}
-	}
 ?>
 
 		<section id="myWorks" class="two" data-number="a5">
@@ -93,16 +32,15 @@
                     </div>
 				<div class="col-xs-12 col-md-12">
 
-
+						<?php var_dump(selectPic('big_photo', 'domen')) ?>
 						<div id="carousel-example-generic" class="carousel slide hidden-xs" data-ride="carousel">
 							<!-- Indicators desktop-->
 							<ol class="carousel-indicators hidden-xs">
-								<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-								<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+								<?php getIndicators(); ?>
 							</ol>
 							<!-- Wrapper for slides desktop -->
 							<div class="carousel-inner ">
-							<?php getMarking($pictures, 1); ?>
+							<?php getMarking(getPictures('file_upload/gallery_desctop'), 1); ?>
 							</div>
 
 							<!-- Controls -->
@@ -123,21 +61,8 @@
 
 						<div id="carousel-example-generic-mobile" class="carousel slide visible-xs" data-ride="carousel">
 							<div class="carousel-inner">
-							<?php getMarking($pictures, 0); ?>
+							<?php getMarking(getPictures('file_upload/gallery_desctop'), 0); ?>
 
-							<!-- Wrapper for slides mobile -->
-							<!--<div class="item active">
-									<div class="myWork-item">
-										<div class="row">
-											<div class="col-xs-12">
-												<div class="myWork-item-wrap">
-													<p><a href="#"><img src="image/temp/gomer-simpson-kartinka.orig.jpg" alt="mySite"></a></p>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>-->
-							<!-- Controls -->
 							<a class="left carousel-control" href="#carousel-example-generic-mobile" data-slide="prev">
 							  <span class="but-work-right">
 							  	<img src="image/button-work-left-BG.png" alt="">
@@ -149,15 +74,6 @@
 							  </span>
 							</a>
 						</div><!--#carousel-example-generic-mobile-->
-
-
-
-
-
-
-
-
-
                     </div><!--.col-xs-3 col-md-12-->
                 </div>
             </div>

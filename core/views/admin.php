@@ -7,7 +7,7 @@
 						<li class="active"><a href="#home" data-toggle="tab">Основные настройки</a></li>
 						<li><a href="#main-content" data-toggle="tab">Галерея портфолио</a></li>
 						<li><a href="#slider-content" data-toggle="tab">Настройка слайдера</a></li>
-						<li><a href="#messages" data-toggle="tab">Оповещение <span>(<?php showCounter() ?>)</span></a></li>
+						<li><a href="#messages" data-toggle="tab" id="clientMess">Оповещение <span>(<?php showCounter() ?>)</span></a></li>
 						<li><a href="#settings" data-toggle="tab">Дополнительные настройки</a></li>
 					</ul>
 					<div class="tab-content">
@@ -470,6 +470,7 @@
 							<div class="messeges-box">
 								<?php selectMessege() ?>
 							</div>
+							<div id="messeges-show-modal"></div>
 							<div id="messeges-show-informer"></div>
 						</div>
 						<div class="tab-pane" id="settings">

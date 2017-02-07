@@ -488,6 +488,7 @@ li.activ-lan a{
 }
 .myWork-item-wrap img{
 	width: 100%;
+	height: 100%;
 }
 .myWork-item-wrap a{
 	display: block;
@@ -855,14 +856,78 @@ input[type="file" i]::-webkit-file-upload-button, button{
     background-color: #FCAC45;
 }
 #messeges-show-informer{
-	display:none;
+	//display:none;
 	position: fixed;
     bottom: 0px;
     right: 0px;
-    width: 200px;
-    height: 150px;
+    width: 210px;
+    height: 0px;
     background-color: #FFE75E;
+    border-radius: 20px 0px 0 0;
 }
+#messeges-show-modal{
+	display: none;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    background-color: rgba(93, 93, 93, 0.7);
+}
+.messeges-show-wrap{
+	position: relative;
+	display: block;
+    margin: 0 auto;
+    width: 40%;
+    margin-top: 30vh;
+    background-color: #ffffff;
+    font-size: 16px;
+    border: 1px solid #111111;
+}
+.messeges-show-wrap>div{
+	padding: 10px 15px; 
+}
+.messeges-show-wrap>.messeges-show-titl{
+	padding: 0px;
+	margin-top: -10px;
+    text-align: center;
+    background-color: #FFBF61;
+    height: 30px;
+    line-height: 30px;
+}
+.messeges-show-boxes>div{
+	width: 30%;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.messeges-but-ok{
+	float: left;
+	background: #5cb85c;
+}
+.messeges-but-cancel{
+	float: right;
+	background: #f9888a;
+}
+.messeges-exit{
+	position: absolute;
+    top: 0px;
+    right: 0px;
+    padding: 0 5px !important;
+    height: 20px;
+    width: 20px;
+    background-image: url('../image/cross.png');
+    background-size: 100%;
+    border-radius: 11px;
+    margin: 3px;
+    cursor: pointer;
+}
+#messeges-show-informer p{
+	padding: 10px;
+}
+
 /*----------------------------admin.php end----------------------*/
 
 
