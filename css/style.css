@@ -927,7 +927,26 @@ input[type="file" i]::-webkit-file-upload-button, button{
 #messeges-show-informer p{
 	padding: 10px;
 }
-
+#settings hr{
+	border-top: 1px solid #FFF;
+}
+#settings .button-box>div{
+	text-align: center;
+    line-height: 30px;
+    cursor: pointer;
+    width: 100%;
+    display: inline-block;
+}
+#settings p{
+	margin: 0px;
+}
+#settings .save{
+	background-color: #5cb85c;
+}
+#settings .del{
+	background-color: #f9888a;
+	margin-bottom: 10px;
+}
 /*----------------------------admin.php end----------------------*/
 
 

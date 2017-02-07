@@ -474,9 +474,108 @@
 							<div id="messeges-show-informer"></div>
 						</div>
 						<div class="tab-pane" id="settings">
-							<p>
-							settings
-							</p>
+							<form class="admin-plus" method="POST" enctype="multipart/form-data" >
+								<div class="row">
+									<div class="col-xs-12">
+		                        		<div class="row">
+		                        			<div class="col-xs-12 ">
+		                        				<h3 class="text-center">Настройки</h3>
+		                        				<p class="help-block">Здесь Вы можете внести дополнительные настройки</p>
+		                        			</div>
+		                        		</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-xs-12">
+						                <div class="border-form">
+						                	<h4>Настройк учетных записей и прав пользователей</h4>
+				                        	<div class="row">
+				                        		<div class="col-xs-2">
+						                			<h5>ФИО:</h5>	
+													<p>Василий Петрович</p>
+												</div>
+				                        		<div class="col-xs-2">
+						                			<h5>Login:</h5>	
+													<p>Василий Петрович</p>
+												</div>
+												<div class="col-xs-4">
+							                		<label for="set_show_el">Права доступа:</label><br>
+													<select id="set_show_el" name="set_show_el" class="form-control">
+														<option disabled>Выбрать права</option>
+														<option value="user">user</option>
+														<option value="admin">admin</option>
+													</select>
+					                        	</div>
+					                        	<div class="col-xs-4 button-box">
+					                        		<div class="del"><p>Удалить пользователя из БД</p></div>
+					                        		<div class="save"><p>Сохранить изменение прав (Выслать уведомление)</p></div>
+					                        	</div>
+					                        	<div class="col-xs-12"><hr></div>
+					                        	<div class="col-xs-2">
+						                			<h5>ФИО:</h5>	
+													<p>Василий Петрович</p>
+												</div>
+					                        	<div class="col-xs-2">
+						                			<h5>Login:</h5>	
+													<p>Василий Петрович</p>
+												</div>
+												<div class="col-xs-4">
+							                		<label for="set_show_el">Права доступа:</label><br>
+													<select id="set_show_el" name="set_show_el" class="form-control">
+														<option disabled>Выбрать права</option>
+														<option value="user">user</option>
+														<option value="admin">admin</option>
+													</select>
+					                        	</div>
+					                        	<div class="col-xs-4 button-box">
+					                        		<div class="del"><p>Удалить пользователя из БД</p></div>
+					                        		<div class="save"><p>Сохранить изменение прав (Выслать уведомление)</p></div>
+					                        	</div>
+					                        	<div class="col-xs-12"><hr></div>
+											</div>
+				                        </div>
+				            		</div>
+				            		<div id="settings-show-modal"></div>
+									<div id="settings-show-informer"></div>
+								</div>
+				                <div class="border-bottom"></div>
+								<div class="row">
+                        			<div class="col-xs-12">
+                        				<div class="row">
+                        					<div class="col-xs-4">
+	                        					<div class="form-group">
+	                        						<h4>Добавить услугу (не более 6):</h4>
+													<label for="set_glificon">Добавить картинку (glyphicon - Bootstrap):</label>
+													<input type="text" id="set_glificon" class="form-control" name="set_glificon" placeholder="glyphicon-envelope">
+												</div>
+		                        				<div class="form-group">
+		                        					<label for="set_photo_smoll">Добавить название:</label>
+		                        					<input type="text" id="set_servis_item" class="form-control" name="set_servis_item">
+						                       	</div>
+						                       	<div class="form-group">
+		                        					<label for="set_photo_smoll">Добавить описание:</label>
+		                        					<textarea id="set_servis_text" class="form-control" name="set_servis_text" rows="10" style="width: 100%"></textarea>
+						                       	</div>
+                        					</div>
+                        					<div class="col-xs-8">
+	                        					<div class="row">
+							                        <div class="col-xs-12">
+									                	<div class="border-form">
+									                		<h4>Сохраненные услуги:</h4>
+									                		<div class="show-settings">
+									                		</div>
+														</div>
+							                        </div>
+					                        	</div>
+                        					</div>
+                        				</div>
+                        			</div>
+                        		</div><!--.row-->
+                        		<div class="border-bottom"></div>
+		                       	<div class="col-xs-12">
+									<button id="send-my-main" formmethod="post" name="admin-main" value="admin-main" class="btn btn-success">Обновить основную информацию пользователя</button>
+		                       	</div>
+							</form><!--.admin-main-->
 						</div>
 					</div>
 				</div>

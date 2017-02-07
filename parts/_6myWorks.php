@@ -32,7 +32,6 @@
                     </div>
 				<div class="col-xs-12 col-md-12">
 
-						<?php var_dump(selectPic('big_photo', 'domen')) ?>
 						<div id="carousel-example-generic" class="carousel slide hidden-xs" data-ride="carousel">
 							<!-- Indicators desktop-->
 							<ol class="carousel-indicators hidden-xs">
@@ -40,7 +39,7 @@
 							</ol>
 							<!-- Wrapper for slides desktop -->
 							<div class="carousel-inner ">
-							<?php getMarking(getPictures('file_upload/gallery_desctop'), 1); ?>
+							<?php echo showPictures('big_photo', 'domen', 1) ?>
 							</div>
 
 							<!-- Controls -->
@@ -61,7 +60,7 @@
 
 						<div id="carousel-example-generic-mobile" class="carousel slide visible-xs" data-ride="carousel">
 							<div class="carousel-inner">
-							<?php getMarking(getPictures('file_upload/gallery_desctop'), 0); ?>
+							<?php  echo showPictures('big_photo', 'domen', 0) ?>
 
 							<a class="left carousel-control" href="#carousel-example-generic-mobile" data-slide="prev">
 							  <span class="but-work-right">

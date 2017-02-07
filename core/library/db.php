@@ -184,7 +184,7 @@ function pushDataBigSlider(){
 				return folse;
 			}
 			
-			$sql = "INSERT INTO `gallery_settings`(`big-photo`, `smoll-photo`, `name`, `category`, `customer`, `domen`) VALUES ('{$formData['big-photo']}', '{$formData['smoll-photo']}', '{$formData['name']}', '{$formData['category']}', '{$formData['customer']}', '{$formData['domen']}')";
+			$sql = "INSERT INTO `gallery_settings`(`big_photo`, `smoll_photo`, `name`, `category`, `customer`, `domen`) VALUES ('{$formData['big-photo']}', '{$formData['smoll-photo']}', '{$formData['name']}', '{$formData['category']}', '{$formData['customer']}', '{$formData['domen']}')";
 
 			$res = insertUpdateDelete($sql);
 		}
@@ -478,14 +478,14 @@ function sendEmail($to, $name, $phone, $email, $mess){
 															<p>Текст сообщения: <span>'.$mess.'</span></p>
 														</div>
 														<div>
-															<p style="font-size: 20px;">Для входа в административную панель сайта перейдите по <a href="portfolio.com">ссылке</a>.</p>
+															<p style="font-size: 20px;">Для входа в административную панель сайта перейдите по <a href="http://portfolio.com/main/login">ссылке</a>.</p>
 														</div>
 													</td>
 												</tr>
 											</tbody>
 										</table>
 										<hr>
-										<div  width="100%" style="text-align: center;">Вы получили это письмо так как Ваша почта указана как почта администратора на сайте portfolio.com</div>
+										<div  width="100%" style="text-align: center;">Вы получили это письмо, так как Ваша почта указана, как почта администратора на сайте portfolio.com</div>
 										<hr>
 										<div>
 											<center>Copyright © 2017 Yuryshynets</center>
@@ -510,96 +510,135 @@ function sendEmail($to, $name, $phone, $email, $mess){
 //Вывод галлереи работ на главной
 	//Функция возвращает массив путей к файлам
 	function selectPic($row_name, $row_url){
-		$sql = "SELECT * FROM gallery_settings ";
+		$sql = "SELECT * FROM gallery_settings";
 		$res = selectData($sql);
 		if (mysqli_num_rows($res) > 0) {
 			$data = [];
 		    while($row = mysqli_fetch_assoc($res)) {
-		    	if($row["$row_name"]!=0){
+		    	if($row[$row_name]!=""){
 		    		$data[]= [
-		    			"domen" => $row["$row_name"],
-		    			"url" => $row["$row_url"]
+		    			"url" => $row[$row_url],
+		    			"path" => $row[$row_name]
 		    		];
 		    	};    	
 		    };
 		}
 		return $data;
 	}
-
-	function getPictures($pathToDir){
-		$pictures=[];
-		if(file_exists($pathToDir)){
-			$d = opendir($pathToDir);
-			while (($file = readdir($d)) !== false) {
-				if($file == '.' || $file == '..') continue;
-
-				$pictures[] = $pathToDir . '/'.$file;
-			}
-		}
-		return $pictures;
-	}
 	//значение $set отвечает за вывод мобильной или нет версии. При $set=true -  вывод мобильной версии
-	function showFile($pathToFile, $set){
-		($set)? include '/parts/pictures_desktop.par.php' : include '/parts/pictures_mobile.par.php';
-	}
-	$pictures=getPictures('/file_upload/gallery_desctop');
-
-	function getMarking($pictures, $set){
+	function showPictures($row_name, $row_url, $set){
+		$data = selectPic($row_name, $row_url);
 		if($set){
 			$i=0;
-			foreach ($pictures as $pic) {
-				if($i==0){
-					echo '<div class="item active">
+			$print="";
+			foreach ($data as $key => $value) {
+				foreach ($data[$key] as $keys => $val) {
+					if($i==0){
+						if($keys == 'url'){
+							$print .='<div class="item active">
+								<div class="myWork-item">
+									<div class="row">
+										<div class="col-xs-4 col-md-4">
+											<div class="myWork-item-wrap">
+												<p><a href="'.$val.'">';
+						}else{
+							$print .='<img src="file_upload/gallery_desctop/'.$val.'" alt="mySite"></a></p>
+											</div>
+										</div>';
+						}
+					}else if($i%8==0){
+						if($keys == 'url'){
+							$print .='<div class="col-xs-4 col-md-4">
+										<div class="myWork-item-wrap">
+											<p><a href="'.$val.'">';
+						}else{
+							$print .='<img src="file_upload/gallery_desctop/'.$val.'" alt="mySite"></a></p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="item">
 							<div class="myWork-item">
 								<div class="row">';
-									showFile($pic, $set);
-				}else if($i%8==0){
-					showFile($pic, $set);
-					echo '</div>
-						</div>
-					</div>
-					<div class="item">
+						}					
+					}else{
+						if($keys == 'url'){
+							$print .='<div class="col-xs-4 col-md-4">
+							<div class="myWork-item-wrap">
+								<p><a href="'.$val.'">';
+						}else{
+							$print .='<img src="file_upload/gallery_desctop/'.$val.'" alt="mySite"></a></p>
+										</div>
+									</div>';
+						}
+					}
+				} 
+				$i++;
+			}
+			if($i==0){
+				$print .='<div class="item active">
 						<div class="myWork-item">
 							<div class="row">';
-				}else{
-					showFile($pic, $set);
-				}
-			$i++;
-			} 
-			if($i==0){
-					echo '<div class="item active">
-							<div class="myWork-item">
-								<div class="row">';
 				};
 			if($i%9 || $i<9 ){
 				$j=$i%9;
 				while($j<9) {
-					echo '<div class="col-xs-4 col-md-4">
+					$print .= '<div class="col-xs-4 col-md-4">
 							<div class="myWork-item-wrap">
 								<p><a href="#"><img src="image/template-work.png" alt="mySite"></a></p>
 							</div>
 						</div>';
 					$j++;
 				}
-				echo '</div>
+				$print .= '</div>
 					</div>
 				</div>';
 			}
+			return $print;
 		}else{
 			$i=0;
-			foreach ($pictures as $pic) {
-				if ($i==0) {
-					echo '<div class="item active">';
-					showFile($pic, $set);
-					echo '</div>';
-				}else{
-					echo '<div class="item">';
-					showFile($pic, $set);
-					echo '</div>';
-				}
+			$print="";
+			foreach ($data as $key => $value) {
+				foreach ($data[$key] as $keys => $val) {
+					if ($i==0) {
+						if($keys == 'url'){
+							$print.='<div class="item active">
+								<div class="myWork-item">
+									<div class="row">
+										<div class="col-xs-12">
+											<div class="myWork-item-wrap">
+												<p><a href="'.$val.'">';
+						}else{
+							$print.='<img src="file_upload/gallery_mobile/'.$val.'" alt="mySite"></a></p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>';
+						}
+					}else{
+						if($keys == 'url'){
+							$print.='<div class="item">	
+								<div class="myWork-item">
+									<div class="row">
+										<div class="col-xs-12">
+											<div class="myWork-item-wrap">
+												<p><a href="'.$val.'">';
+						}else{
+							$print.='<img src="file_upload/gallery_mobile/'.$val.'" alt="mySite"></a></p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>';
+						}
+					}
 				$i++;
+				}
 			}
-		}
+		return $print;
+		};
 	}
 	function getIndicators(){
 		$dir = opendir('file_upload/gallery_desctop');

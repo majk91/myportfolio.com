@@ -330,7 +330,7 @@ function dellContaktInput() {
 //функция для обработки сообщений от клиентов
 		function checkingClientMess(setting, thisItem){
 			if(setting){
-				gatherPattern('Вы действительно просмотрели сообщение клиента и хотите сохранить его в базе данных? Обращаю внимание, что после сохранения данные клиента будут доступни только напрямую с базы данных.');
+				gatherPattern('Вы действительно просмотрели сообщение клиента и хотите сохранить его в базе данных? Обращаю внимание, что после сохранения данные клиента будут доступны только напрямую с базы данных.');
 				$('.messeges-but-ok').on('click', function(){
 					pullAjax(setting, thisItem);
 					$("#messeges-show-modal").css("display","none").html( " " );
@@ -397,7 +397,7 @@ function dellContaktInput() {
 			$string = "";
 			$string += '<div class="messeges-show-wrap"><div class="messeges-show-titl"><p>Предупреждение</p></div><div class="messeges-show-content"><p>'+data;
 			$string += '</p></div><div class="messeges-show-boxes"><div class="messeges-but-ok">Да, все верно.</div>';
-			$string += '<div class="messeges-but-cancel">Нет! вернутся</div></div><div class="messeges-exit"></div></div>';
+			$string += '<div class="messeges-but-cancel">Нет! Вернуться</div></div><div class="messeges-exit"></div></div>';
 			$("#messeges-show-modal").css("display","block").html( $string );
 		}
 					
