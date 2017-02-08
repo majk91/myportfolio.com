@@ -488,50 +488,9 @@
 								<div class="row">
 									<div class="col-xs-12">
 						                <div class="border-form">
-						                	<h4>Настройк учетных записей и прав пользователей</h4>
+						                	<h4>Настройк учетных записей и прав пользователей (Выводяться все кроме пользователя под которым осуществлен вход)</h4>
 				                        	<div class="row">
-				                        		<div class="col-xs-2">
-						                			<h5>ФИО:</h5>	
-													<p>Василий Петрович</p>
-												</div>
-				                        		<div class="col-xs-2">
-						                			<h5>Login:</h5>	
-													<p>Василий Петрович</p>
-												</div>
-												<div class="col-xs-4">
-							                		<label for="set_show_el">Права доступа:</label><br>
-													<select id="set_show_el" name="set_show_el" class="form-control">
-														<option disabled>Выбрать права</option>
-														<option value="user">user</option>
-														<option value="admin">admin</option>
-													</select>
-					                        	</div>
-					                        	<div class="col-xs-4 button-box">
-					                        		<div class="del"><p>Удалить пользователя из БД</p></div>
-					                        		<div class="save"><p>Сохранить изменение прав (Выслать уведомление)</p></div>
-					                        	</div>
-					                        	<div class="col-xs-12"><hr></div>
-					                        	<div class="col-xs-2">
-						                			<h5>ФИО:</h5>	
-													<p>Василий Петрович</p>
-												</div>
-					                        	<div class="col-xs-2">
-						                			<h5>Login:</h5>	
-													<p>Василий Петрович</p>
-												</div>
-												<div class="col-xs-4">
-							                		<label for="set_show_el">Права доступа:</label><br>
-													<select id="set_show_el" name="set_show_el" class="form-control">
-														<option disabled>Выбрать права</option>
-														<option value="user">user</option>
-														<option value="admin">admin</option>
-													</select>
-					                        	</div>
-					                        	<div class="col-xs-4 button-box">
-					                        		<div class="del"><p>Удалить пользователя из БД</p></div>
-					                        		<div class="save"><p>Сохранить изменение прав (Выслать уведомление)</p></div>
-					                        	</div>
-					                        	<div class="col-xs-12"><hr></div>
+				                        		<?php echo showUsers() ?> 
 											</div>
 				                        </div>
 				            		</div>
@@ -544,25 +503,26 @@
                         				<div class="row">
                         					<div class="col-xs-4">
 	                        					<div class="form-group">
-	                        						<h4>Добавить услугу (не более 6):</h4>
+	                        						<h4>Добавить услугу (для дизайна желательно не более 6):</h4>
 													<label for="set_glificon">Добавить картинку (glyphicon - Bootstrap):</label>
 													<input type="text" id="set_glificon" class="form-control" name="set_glificon" placeholder="glyphicon-envelope">
-												</div>
-		                        				<div class="form-group">
 		                        					<label for="set_photo_smoll">Добавить название:</label>
 		                        					<input type="text" id="set_servis_item" class="form-control" name="set_servis_item">
-						                       	</div>
-						                       	<div class="form-group">
 		                        					<label for="set_photo_smoll">Добавить описание:</label>
 		                        					<textarea id="set_servis_text" class="form-control" name="set_servis_text" rows="10" style="width: 100%"></textarea>
-						                       	</div>
+												</div>
                         					</div>
                         					<div class="col-xs-8">
 	                        					<div class="row">
 							                        <div class="col-xs-12">
 									                	<div class="border-form">
-									                		<h4>Сохраненные услуги:</h4>
+									            			<h4>Сохраненные услуги:</h4>
 									                		<div class="show-settings">
+									                			<div class="row">
+									                				<div class="col-xs-12">
+									                				<?php echo showServisaAdmin() ?>
+																	</div>
+									                			</div>
 									                		</div>
 														</div>
 							                        </div>

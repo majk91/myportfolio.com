@@ -21,10 +21,29 @@ $( document ).ready(function() {
 
 //Функции обработки сообщений от клиентов AJAX - методом		
 	$('#messages .but-show').on('click', function(){
-		checkingClientMess(1, $(this));
+		$messege = 'Вы действительно просмотрели сообщение клиента и хотите сохранить его в базе данных? Обращаю внимание, что после сохранения данные клиента будут доступны только напрямую с базы данных.';
+		checkingClientMess(1, $(this) , $messege, '#messeges-show-modal', '#messeges-show-informer');
 	});
 	$('#messages .but-del').on('click', function(){
-		checkingClientMess(0, $(this));
+		$messege = 'Вы действительно хотите безвозвратно удалить данные полученные от клиента?';
+		checkingClientMess(0, $(this) , $messege, '#messeges-show-modal', '#messeges-show-informer');
+	});
+//изменение ролей пользователей	
+	$('#settings .save').on('click', function(){
+		$messege = 'Вы действительно хотите предоставить пользователю доступ в админпанель? (Уведомить пользователя)';
+		checkingClientMess(1, $(this), $messege, '#settings-show-modal', '#settings-show-informer');
+	});
+	$('#settings .del').on('click', function(){
+		$messege = 'Вы пытаетесь безвозвратно удалить пользователя из БД. Вы действительно хотите этого?'
+		checkingClientMess(0, $(this), $messege, '#settings-show-modal', '#settings-show-informer');
+	});
+	$('#settings .servis-save').on('click', function(){
+		$messege = 'Приступить к редактированию?';
+		checkingClientMess(1, $(this) , $messege, '#settings-show-modal', '#settings-show-informer');
+	});
+	$('#settings .servis-del').on('click', function(){
+		$messege = 'Вы действительно хотите безвозвратно удалить этот сервис из перечня?';
+		checkingClientMess(0, $(this) , $messege, '#settings-show-modal', '#settings-show-informer');
 	});
 
 	$( window ).scroll(function(){
@@ -203,6 +222,81 @@ $('#myTab a').click(function (e) {
 	$(this).tab('show')
 })
 
+//------------------------------------validator  (start)----------------------//
+//$('input').bind('focus blur', function(e) {
+//		var borderVal = e.type == "focus" ? "medium solid green" : "";
+//        $(this).css("border", borderVal);
+//	});
+$('form').submit(function( event ) {
+	$this = $(this);
+	validator($this);
+});
+$rules = {
+	required: function($el){
+		if($el.value != ''){
+			return true;
+		}
+		return false;
+	},
+	email: function($el){
+		$reg = /^\w+(\.?\w+|)@\w+\.{1}\w{1,10}$/;
+		return $reg.test($el.value);
+	},
+	phone: function($el){
+		$reg = /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){10,14}(\s*)?$/;
+		return $reg.test($el.value);
+	},
+	max: function($el){
+		if($el.value.length < '300'){
+			return true;
+		}
+		return false;
+	},
+
+}
+$rulesDescripts = {
+	required: 'Поле должно быть заполнено!',
+	email: 'Вы ввели некоректные данные!',
+	phone: 'Вы ввели некоректные данные!',
+	max: 'Количество символов больше 300!'
+}
+function showErrors($arr){
+	$('.warning').empty();
+	for (var $i = 0; $i < $arr.length; $i++) {
+		$el=$( "input[name~='"+$arr[$i]['name']+"']");///'input, textarea, select'
+		$rulMess = $rulesDescripts[$arr[$i]['error']];
+		$el.parent().find('.warning').append("<div>"+$rulMess+"</div>");
+		if($('.warning').html()){
+			$el.addClass("error");
+		}
+	}
+}
+function validator($this){
+	$errors = [];
+	$inputs = $this.find('input, textarea, select');
+	for($i = 0; $i < $inputs.length; $i++){
+		$rulesList = $inputs[$i].dataset.rule;
+		$rulesList = $rulesList.split(' ');
+		for ($j = 0; $j < $rulesList.length; $j++) {
+			if($rulesList[$j] in $rules){
+				if(!$rules[$rulesList[$j]]($inputs[$i])){
+					$errors.push({
+						name: $inputs[$i].name,
+						error: $rulesList[$j]
+					});
+				}
+			}
+		}
+	}
+	if($errors.length > 0){
+		event.preventDefault();
+		showErrors($errors);
+	}
+}
+$('form').find('input, textarea, select').focus(function( event ) {
+	$this = $(this).removeClass('error');
+});
+//------------------------------------validator  (end)------------------------//
 
 //------------------------------------admin functions  (start)---------------//
 function addContaktInput() {
@@ -326,47 +420,76 @@ function dellContaktInput() {
 	}
 	$('.cross').on('click', delWorkItem );
 
+//------------------------------------admin functions  (end)---------------//
 //------------------------------------AJAX  (start)---------------//
 //функция для обработки сообщений от клиентов
-		function checkingClientMess(setting, thisItem){
+		function checkingClientMess(setting, thisItem, mess, idModal, idInformer){
+			gatherPattern(mess, idModal);
 			if(setting){
-				gatherPattern('Вы действительно просмотрели сообщение клиента и хотите сохранить его в базе данных? Обращаю внимание, что после сохранения данные клиента будут доступны только напрямую с базы данных.');
 				$('.messeges-but-ok').on('click', function(){
-					pullAjax(setting, thisItem);
-					$("#messeges-show-modal").css("display","none").html( " " );
+					pullAjax(setting, thisItem, idModal, idInformer);
+					$(idModal).css("display","none").html( " " );
 				});
 				$('.messeges-but-cancel').on('click', function(){
-					$("#messeges-show-modal").css("display","none").html( " " );
+					$(idModal).css("display","none").html( " " );
 				});
 				$('.messeges-exit').on('click', function(){
-					$("#messeges-show-modal").css("display","none").html( " " );
+					$(idModal).css("display","none").html( " " );
 				});
 			}else{
-				gatherPattern('Вы действительно хотите безвозвратно удалить данные полученные от клиента?');
 				$('.messeges-but-ok').on('click', function(){
-					pullAjax(setting, thisItem);
-					$("#messeges-show-modal").css("display","none").html( " " );
+					pullAjax(setting, thisItem, idModal, idInformer);
+					$(idModal).css("display","none").html( " " );
 				});
 				$('.messeges-but-cancel').on('click', function(){
-					$("#messeges-show-modal").css("display","none").html( " " );
+					$(idModal).css("display","none").html( " " );
 				});
 				$('.messeges-exit').on('click', function(){
-					$("#messeges-show-modal").css("display","none").html( " " );
+					$(idModal).css("display","none").html( " " );
 				});
 			}
 		};
-		function pullAjax(setting, thisItem){
+		function pullAjax(setting, thisItem, idModal, idInformer){
 			var menuId = thisItem.first().attr("data-check_mess");
-				deletMessege(thisItem);
-				changeCouneter();
-			var request = $.ajax({
-			  url: "../functionAJAX.php",
-			  type: "POST",
-			  data: {id : menuId,
-			  		set : setting,
-			  		},
-			  success: ifSuccess
-			});
+			if(idModal == "#messeges-show-modal"){
+					deletMessege(thisItem);
+					changeCouneter();
+				var request = $.ajax({
+				  url: "../functionAJAX.php",
+				  type: "POST",
+				  data: {id : menuId,
+				  		set : setting,
+				  		idModal: idModal
+				  		},
+				  success: ifSuccess
+				});
+			}else if(idModal == "#settings-show-modal"){
+				if(thisItem.attr('class')=='servis-del'||thisItem.attr('class')=='servis-save'){
+					var request = $.ajax({
+						url: "../functionAJAX.php",
+						type: "POST",
+						data: {
+							id : menuId,
+							set : setting,
+							idModal: idModal,
+							param : thisItem.attr('class'),
+						},
+						success: ifSuccessSettongs
+					});
+				}else{
+					var request = $.ajax({
+						url: "../functionAJAX.php",
+						type: "POST",
+						data: {
+							id : menuId,
+							set : setting,
+							idModal: idModal,
+							param : thisItem.parent().parent().find('select').val(),
+						},
+						success: ifSuccessSettongs
+					});
+				}
+			}
 			 
 			function ifSuccess(data){
 				$("#messeges-show-informer").css({"height": '90px', "transition": "all ease 2.15s"}).html('<p>'+data+'</p>');
@@ -379,6 +502,17 @@ function dellContaktInput() {
 					
 				}, 3000);
 				//$("#messages span").html( data );
+			}
+			function ifSuccessSettongs(data){
+				$("#settings-show-informer").css({"height": '90px', "transition": "all ease 2.15s"}).html('<p>'+data+'</p>');
+
+				setTimeout(function(){
+					$("#settings-show-informer").css({
+						"height": '0px',
+						"transition": "all .3s ease 2.15s"
+					});
+					
+				}, 3000);
 			}
 			
 		}
@@ -393,16 +527,14 @@ function dellContaktInput() {
 			btn.parent().remove();
 		};
 
-		function gatherPattern(data){
+		function gatherPattern(data, idModal){
 			$string = "";
 			$string += '<div class="messeges-show-wrap"><div class="messeges-show-titl"><p>Предупреждение</p></div><div class="messeges-show-content"><p>'+data;
 			$string += '</p></div><div class="messeges-show-boxes"><div class="messeges-but-ok">Да, все верно.</div>';
 			$string += '<div class="messeges-but-cancel">Нет! Вернуться</div></div><div class="messeges-exit"></div></div>';
-			$("#messeges-show-modal").css("display","block").html( $string );
+			$(idModal).css("display","block").html( $string );
 		}
 					
-			
 
 //------------------------------------AJAX  (end)---------------//
-//------------------------------------admin functions  (end)---------------//
 	

@@ -18,7 +18,6 @@ a{
 	height: 15vh;
 	min-height: 100px;	
 }
-
 .one, .two{
 	padding-bottom: 60px;
 }
@@ -576,6 +575,19 @@ li.activ-lan a{
 	width:165px;
 	height: 40px;
 }
+.worning-wraper{
+	height: 30px;
+}
+#form_qestions .warning{
+    width: 100%;
+    line-height: 14px;
+    background-color: #FFBCA9;
+    border-radius: 5px;
+    padding: 0 10px;
+}
+form .error{
+	border: 1px solid red;
+}
 /*----------------------------#contact end----------------------*/
 
 /*----------------------------#footer start----------------------*/
@@ -855,7 +867,7 @@ input[type="file" i]::-webkit-file-upload-button, button{
 .mess-item:hover{
     background-color: #FCAC45;
 }
-#messeges-show-informer{
+#messeges-show-informer, #settings-show-informer{
 	//display:none;
 	position: fixed;
     bottom: 0px;
@@ -864,8 +876,9 @@ input[type="file" i]::-webkit-file-upload-button, button{
     height: 0px;
     background-color: #FFE75E;
     border-radius: 20px 0px 0 0;
+    z-index: 1;
 }
-#messeges-show-modal{
+#messeges-show-modal, #settings-show-modal{
 	display: none;
     width: 100vw;
     height: 100vh;
@@ -873,6 +886,10 @@ input[type="file" i]::-webkit-file-upload-button, button{
     top: 0px;
     left: 0px;
     background-color: rgba(93, 93, 93, 0.7);
+    z-index: 1;
+}
+#settings-show-modal  .messeges-show-titl{
+    margin-top: 0px;
 }
 .messeges-show-wrap{
 	position: relative;
@@ -927,8 +944,13 @@ input[type="file" i]::-webkit-file-upload-button, button{
 #messeges-show-informer p{
 	padding: 10px;
 }
-#settings hr{
+#settings-show-informer p{
+	padding: 10px;
+}
+hr{
 	border-top: 1px solid #FFF;
+	margin-top: 0px;
+    margin-bottom: 0px;
 }
 #settings .button-box>div{
 	text-align: center;
@@ -940,12 +962,22 @@ input[type="file" i]::-webkit-file-upload-button, button{
 #settings p{
 	margin: 0px;
 }
-#settings .save{
+#settings .save, #settings .servis-save{
 	background-color: #5cb85c;
 }
-#settings .del{
+#settings .del, #settings .servis-del{
 	background-color: #f9888a;
 	margin-bottom: 10px;
+}
+#settings .glyphicon{
+	font-size: 40px;
+}
+#settings .servis-save, #settings .servis-del{
+	text-align: center;
+    line-height: 30px;
+    cursor: pointer;
+    width: 100%;
+    display: inline-block;
 }
 /*----------------------------admin.php end----------------------*/
 

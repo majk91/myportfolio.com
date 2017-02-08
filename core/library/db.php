@@ -344,7 +344,7 @@ function getClient(){
 				$sql = "INSERT INTO `lid`(name, phone, email, comment) VALUES ('{$formData['name']}', '{$formData['tel']}', '{$formData['email']}', '{$formData['massege']}')";
 
 				$res = insertUpdateDelete($sql);
-				echo " Спасибо за ваш вопрос! С Вами свяжуться в ближайшее время";
+				echo " Спасибо за ваш запрос! С Вами свяжуться в ближайшее время";
 				$sql = "SELECT * FROM users ";
 				$res = selectData($sql);
 			    $i=0;
@@ -375,7 +375,6 @@ function getClient(){
 	}
 }
 function selectMessege(){
-
 	$sql = "SELECT * FROM lid ";
 	$res = selectData($sql);
 	if (mysqli_num_rows($res) > 0) {
@@ -506,75 +505,76 @@ function sendEmail($to, $name, $phone, $email, $mess){
 	mail($to, $subject, $message, $headers);
 	return folse;
 }
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Вывод галлереи работ на главной
-	//Функция возвращает массив путей к файлам
-	function selectPic($row_name, $row_url){
-		$sql = "SELECT * FROM gallery_settings";
-		$res = selectData($sql);
-		if (mysqli_num_rows($res) > 0) {
-			$data = [];
-		    while($row = mysqli_fetch_assoc($res)) {
-		    	if($row[$row_name]!=""){
-		    		$data[]= [
-		    			"url" => $row[$row_url],
-		    			"path" => $row[$row_name]
-		    		];
-		    	};    	
-		    };
-		}
-		return $data;
+//Функция возвращает массив путей к файлам
+function selectPic($row_name, $row_url){
+	$sql = "SELECT * FROM gallery_settings";
+	$res = selectData($sql);
+	if (mysqli_num_rows($res) > 0) {
+		$data = [];
+	    while($row = mysqli_fetch_assoc($res)) {
+	    	if($row[$row_name]!=""){
+	    		$data[]= [
+	    			"url" => $row[$row_url],
+	    			"path" => $row[$row_name]
+	    		];
+	    	};    	
+	    };
 	}
-	//значение $set отвечает за вывод мобильной или нет версии. При $set=true -  вывод мобильной версии
-	function showPictures($row_name, $row_url, $set){
+	return $data;
+}
+//значение $set отвечает за вывод мобильной или нет версии. При $set=true -  вывод мобильной версии
+function showPictures($row_name, $row_url, $set){
 		$data = selectPic($row_name, $row_url);
 		if($set){
 			$i=0;
 			$print="";
-			foreach ($data as $key => $value) {
-				foreach ($data[$key] as $keys => $val) {
-					if($i==0){
-						if($keys == 'url'){
-							$print .='<div class="item active">
-								<div class="myWork-item">
-									<div class="row">
-										<div class="col-xs-4 col-md-4">
+			if($data){
+				foreach ($data as $key => $value) {
+					foreach ($data[$key] as $keys => $val) {
+						if($i==0){
+							if($keys == 'url'){
+								$print .='<div class="item active">
+									<div class="myWork-item">
+										<div class="row">
+											<div class="col-xs-4 col-md-4">
+												<div class="myWork-item-wrap">
+													<p><a href="'.$val.'">';
+							}else{
+								$print .='<img src="file_upload/gallery_desctop/'.$val.'" alt="mySite"></a></p>
+												</div>
+											</div>';
+							}
+						}else if($i%8==0){
+							if($keys == 'url'){
+								$print .='<div class="col-xs-4 col-md-4">
 											<div class="myWork-item-wrap">
 												<p><a href="'.$val.'">';
-						}else{
-							$print .='<img src="file_upload/gallery_desctop/'.$val.'" alt="mySite"></a></p>
+							}else{
+								$print .='<img src="file_upload/gallery_desctop/'.$val.'" alt="mySite"></a></p>
 											</div>
-										</div>';
-						}
-					}else if($i%8==0){
-						if($keys == 'url'){
-							$print .='<div class="col-xs-4 col-md-4">
-										<div class="myWork-item-wrap">
-											<p><a href="'.$val.'">';
-						}else{
-							$print .='<img src="file_upload/gallery_desctop/'.$val.'" alt="mySite"></a></p>
 										</div>
 									</div>
 								</div>
 							</div>
-						</div>
-						<div class="item">
-							<div class="myWork-item">
-								<div class="row">';
-						}					
-					}else{
-						if($keys == 'url'){
-							$print .='<div class="col-xs-4 col-md-4">
-							<div class="myWork-item-wrap">
-								<p><a href="'.$val.'">';
+							<div class="item">
+								<div class="myWork-item">
+									<div class="row">';
+							}					
 						}else{
-							$print .='<img src="file_upload/gallery_desctop/'.$val.'" alt="mySite"></a></p>
-										</div>
-									</div>';
+							if($keys == 'url'){
+								$print .='<div class="col-xs-4 col-md-4">
+								<div class="myWork-item-wrap">
+									<p><a href="'.$val.'">';
+							}else{
+								$print .='<img src="file_upload/gallery_desctop/'.$val.'" alt="mySite"></a></p>
+											</div>
+										</div>';
+							}
 						}
-					}
-				} 
-				$i++;
+					} 
+					$i++;
+				}
 			}
 			if($i==0){
 				$print .='<div class="item active">
@@ -599,68 +599,151 @@ function sendEmail($to, $name, $phone, $email, $mess){
 		}else{
 			$i=0;
 			$print="";
-			foreach ($data as $key => $value) {
-				foreach ($data[$key] as $keys => $val) {
-					if ($i==0) {
-						if($keys == 'url'){
-							$print.='<div class="item active">
-								<div class="myWork-item">
-									<div class="row">
-										<div class="col-xs-12">
-											<div class="myWork-item-wrap">
-												<p><a href="'.$val.'">';
-						}else{
-							$print.='<img src="file_upload/gallery_mobile/'.$val.'" alt="mySite"></a></p>
+			if($data){
+				foreach ($data as $key => $value) {
+					foreach ($data[$key] as $keys => $val) {
+						if ($i==0) {
+							if($keys == 'url'){
+								$print.='<div class="item active">
+									<div class="myWork-item">
+										<div class="row">
+											<div class="col-xs-12">
+												<div class="myWork-item-wrap">
+													<p><a href="'.$val.'">';
+							}else{
+								$print.='<img src="file_upload/gallery_mobile/'.$val.'" alt="mySite"></a></p>
+												</div>
 											</div>
 										</div>
 									</div>
-								</div>
-							</div>';
-						}
-					}else{
-						if($keys == 'url'){
-							$print.='<div class="item">	
-								<div class="myWork-item">
-									<div class="row">
-										<div class="col-xs-12">
-											<div class="myWork-item-wrap">
-												<p><a href="'.$val.'">';
+								</div>';
+							}
 						}else{
-							$print.='<img src="file_upload/gallery_mobile/'.$val.'" alt="mySite"></a></p>
+							if($keys == 'url'){
+								$print.='<div class="item">	
+									<div class="myWork-item">
+										<div class="row">
+											<div class="col-xs-12">
+												<div class="myWork-item-wrap">
+													<p><a href="'.$val.'">';
+							}else{
+								$print.='<img src="file_upload/gallery_mobile/'.$val.'" alt="mySite"></a></p>
+												</div>
 											</div>
 										</div>
 									</div>
-								</div>
-							</div>';
+								</div>';
+							}
 						}
+					$i++;
 					}
-				$i++;
 				}
+			}
+			if ($i==0) {
+				$print.='<div class="item active">
+					<div class="myWork-item">
+						<div class="row">
+							<div class="col-xs-12">
+								<div class="myWork-item-wrap">
+									<p><a href="#"><img src="image/template-work.png" alt="mySite"></a></p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>';
 			}
 		return $print;
 		};
+}
+function getIndicators(){
+	$dir = opendir('file_upload/gallery_desctop');
+	$count = 0;
+	while($file = readdir($dir)){
+	    if($file == '.' || $file == '..' || is_dir('path/to/dir' . $file)){
+	        continue;
+	    }
+	    $count++;
 	}
-	function getIndicators(){
-		$dir = opendir('file_upload/gallery_desctop');
-		$count = 0;
-		while($file = readdir($dir)){
-		    if($file == '.' || $file == '..' || is_dir('path/to/dir' . $file)){
-		        continue;
-		    }
-		    $count++;
+	$i = intval($count/9);
+	$j = 0;
+	while ( $j <= $i) {
+		if($j){
+			echo '<li data-target="#carousel-example-generic" data-slide-to="'.$j.'"></li>';
+		}else{
+			echo '<li data-target="#carousel-example-generic" data-slide-to="'.$j.'" class="active"></li>';
 		}
-		$i = intval($count/9);
-		$j = 0;
-		while ( $j <= $i) {
-			if($j){
-				echo '<li data-target="#carousel-example-generic" data-slide-to="'.$j.'"></li>';
-			}else{
-				echo '<li data-target="#carousel-example-generic" data-slide-to="'.$j.'" class="active"></li>';
-			}
-			$j++;
-								
-		}
-
+		$j++;					
 	}
+}
+function showUsers(){
+	$sql = "SELECT * FROM users";
+	$res = selectData($sql);
+	if (mysqli_num_rows($res) > 0) {
+		$data = '';
+	    while($row = mysqli_fetch_assoc($res)) {
+	    	if($row['id']!=$_SESSION['user']['id']){
+			 $data	.='<div class="user-wrap">
+			 	<div class="col-xs-2">
+					<h5>Login:</h5>	
+					<p>'.$row['login'].'</p>
+				</div>
+				<div class="col-xs-4">
+					<label for="set_show_el">Права доступа:</label><br>
+					<select id="set_show_el" name="set_show_el" class="form-control">
+						<option disabled>Выбрать права</option>';
+				if($row['role'] == 'admin'){
+						$data.='<option value="admin" selected>admin</option>
+						<option value="user">user</option>';
+				}else{
+					$data.='<option value="admin">admin</option>
+						<option value="user" selected>user</option>';
+				}
+					$data.='</select>
+				</div>
+				<div class="col-xs-4 button-box">
+					<div class="del" data-sql-id="'.$row['id'].'" data-check_mess="'.$row['id'].'"><p>Удалить пользователя из БД</p></div>
+					<div class="save" data-sql-mail="'.$row['email'].'" data-check_mess="'.$row['id'].'"><p>Сохранить изменение прав</p></div>
+				</div>
+				<div class="col-xs-12"><hr></div>
+			</div>';
+	    	};    	
+	    };
+	}
+	return $data;
+}
+function showServisaAdmin(){
+	$sql = "SELECT * FROM settings_list";
+	$res = selectData($sql);
+	if (mysqli_num_rows($res) > 0) {
+		$data = '';
+	    while($row = mysqli_fetch_assoc($res)) {
+	    	$data .='<div class="articles-wrap">
+				 		<div class="col-xs-2">
+							<h5>Glyphicon:</h5><span class="glyphicon '.$row['glyphicon'].'"></span>
+						</div>
+						<div class="col-xs-2">
+							<h5>Название:</h5>	
+							<p>'.$row['title'].'</p>
+						</div>
+						<div class="col-xs-8">
+							<h5>Статья:</h5>	
+							<p>'.$row['article'].'</p>
+						</div>
+						<div class="col-xs-12 button-box">
+							<div class="row">
+								<div class="col-xs-6">
+									<div class="servis-del" data-check_mess="'.$row['id'].'"><p> Удалить статью из БД</p></div>
+								</div>
+								<div class="col-xs-6">
+									<div class="servis-save" data-check_mess="'.$row['id'].'"><p>Редактировать и сохранить</p></div>
+								</div>
+							</div>
+						</div>
+						<div class="col-xs-12"><hr></div>
+					</div>';
+	    }
+	    return $data;
+	}
+}
 
 ?>

@@ -28,9 +28,12 @@
                     <ul class="text-right">
                         <li><a href="/main/registration">Регистрация</a></li>
                             <?php if(isset($_SESSION['user']['id']) and !empty($_SESSION['user']['id'])){
-                        echo '<li><a href="/main/loguot">Выход</a></li>';
+                                    echo '<li><a href="/main/loguot">Выход</a></li>';
+                                    if($_SERVER["REQUEST_URI"]!='/'){
+                                        echo '<li><a href="/">Главная</a></li>';
+                                    }
                                 }else{
-                        echo '<li><a href="/main/login">Вход</a></li>';
+                                    echo '<li><a href="/main/login">Вход</a></li>';
                                 } ?>
                     </ul>
                 </div>

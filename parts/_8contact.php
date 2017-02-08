@@ -12,19 +12,28 @@
                     </div><!--.col-md-8 .col-md-offset-2-->
                     <div class="col-xs-10 col-md-8 col-xs-offset-1 col-md-offset-2">
                         <div class="form-wrap">
-                        	<form id="form_qestions" class="input-box" method="POST">
+                        	<form id="form_qestions" class="input-box" method="POST" >
                         		<div class="row">
 	                        		<div class="col-xs-12 col-md-6">
-	                        			<p>ФИО: <sup>*</sup></p>
-										<input type="text" class="form-item" name="name" placeholder="Иванов Иван">
+	                        			<label for="inputName" class="control-label">ФИО: <sup>*</sup></label>
+										<input type="text" class="form-item" name="name" placeholder="Иванов Иван" id="inputName" data-rule ="required">
+										<div class="worning-wraper">
+											<div class="warning"></div>
+										</div>
 	                        		</div>
 	                        		<div class="col-xs-12 col-md-6">
-	                        			<p>Телефон: <sup>*</sup></p>  
-										<input type="tel" name="tel" placeholder="+380123456789">
+	                        			<label for="inputName" class="control-label">Телефон: <sup>*</sup></label>
+										<input type="tel" name="tel" placeholder="+380123456789" data-rule ="required phone">
+										<div class="worning-wraper">
+											<div class="warning"></div>
+										</div>
 	                        		</div>
 	                        		<div class="col-xs-12 col-md-6">
-	                        			<p>E-mail: <sup>*</sup></p>
-										<input type="text" class="form-item" name="email" placeholder="abcd@example.com">
+	                        			<label for="inputName" class="control-label">E-mail: <sup>*</sup></label>
+										<input type="text" class="form-item" name="email" placeholder="abcd@example.com" data-rule ="required email">
+										<div class="worning-wraper">
+											<div class="warning"></div>
+										</div>
 	                        		</div>
 	                        		<div class="col-xs-12 col-md-6">
 	              		          		<div class="warning-box">
@@ -32,12 +41,17 @@
 	              		          		</div><!--.warning-box-->
 	                        		</div><!--.col-md-6-->
                         		</div><!--.row-->
-                        		<p>Комментарии:</p>
-								<textarea name="massege" class="form-item" rows="5"></textarea>
+                        		<label for="inputName" class="control-label">Дополнительная информация (не больше 300 символов):</label>
+								<textarea name="massege" class="form-item" rows="5" data-rule ="max"></textarea>
+								<div class="worning-wraper">
+									<div class="warning"></div>
+								</div>
 								<button id="send-btn" formmethod="post" name="send-btn" value="send-btn" >Отправить</button>
 							</form><!--.input-box-->
                         </div><!--.form-wrap-->
                     </div>
                 </div><!--.row-->
             </div><!--.container-->
+
+            
         </section>
