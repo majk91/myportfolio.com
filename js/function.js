@@ -464,7 +464,20 @@ function dellContaktInput() {
 				  success: ifSuccess
 				});
 			}else if(idModal == "#settings-show-modal"){
-				if(thisItem.attr('class')=='servis-del'||thisItem.attr('class')=='servis-save'){
+				if(thisItem.attr('class')=='servis-save'){
+					addDialog(thisItem);
+					/*var request = $.ajax({
+						url: "../functionAJAX.php",
+						type: "POST",
+						data: {
+							id : menuId,
+							set : setting,
+							idModal: idModal,
+							param : thisItem.attr('class'),
+						},
+						success: ifSuccessSettongs
+					})*/;
+				}else if(thisItem.attr('class')=='servis-del'){
 					var request = $.ajax({
 						url: "../functionAJAX.php",
 						type: "POST",
@@ -534,6 +547,36 @@ function dellContaktInput() {
 			$string += '<div class="messeges-but-cancel">Нет! Вернуться</div></div><div class="messeges-exit"></div></div>';
 			$(idModal).css("display","block").html( $string );
 		}
+
+		function addDialog($this){
+			$el=$this.parent().parent().parent().parent();
+			$glyphicon= $el.find('.glyphicon').attr('class').split(" ");
+			$title = $el.find('.admin-article-title').html();
+			$textarea = $el.find('.admin-article-text').html();
+	$sourse ='<div id="form-add-wrap">\n';
+  		$sourse +='<form class="admin-add-wrap" method="POST" enctype="multipart/form-data">\n';
+  			$sourse +='<div class="row">\n';
+                $sourse +='<div class="col-xs-6 col-xs-offset-3">\n';
+	                $sourse +='<div class="form-group">\n';
+	                	$sourse +='<h4>Вы можете изменить информацию о существующей услуге:</h4>\n';
+						$sourse +='<label for="set_glificon">Изменить картинку (glyphicon - Bootstrap):</label>\n';
+						$sourse +='<input type="text" id="set_glificon-update" class="form-control" name="set_glificon-update" placeholder="glyphicon-envelope" value="'+$glyphicon[1]+'">\n';
+		                $sourse +='<label for="set_photo_smoll">Изменить название:</label>\n';
+		                $sourse +='<input type="text" id="set_servis_item-update" class="form-control" name="set_servis_item-update" placeholder="предоставляемая услуга" value="'+$title+'">\n';
+		                $sourse +='<label for="set_photo_smoll">Изменить описание</label>\n';
+		                $sourse +='<textarea id="set_servis_text-update" class="form-control" name="set_servis_text-update" rows="10" style="width: 100%" value="">'+$textarea+'</textarea>\n';
+					$sourse +='</div>\n';
+					$sourse +='<button id="send-settings" formmethod="post" name="send-settings" value="send-settings" class="btn btn-success">Сохранить изменения</button>\n';
+  					$sourse +='<div class="messeges-exit"></div>\n';
+                $sourse +='</div>\n';
+            $sourse +='</div>\n';
+  		$sourse +='</form>\n';
+  	$sourse +='</div>\n';
+			$('#settings').append( $sourse ).find('#form-add-wrap').css("display","block");
+			$('.messeges-exit').on('click', function(){
+				$('#form-add-wrap').remove();
+			});
+		};
 					
 
 //------------------------------------AJAX  (end)---------------//

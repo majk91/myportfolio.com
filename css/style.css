@@ -846,6 +846,9 @@ input[type="file" i]::-webkit-file-upload-button, button{
 	border: 2px solid #C1C1C1;
 	margin-bottom: 15px;
 }
+.mess-item-box .row{
+	margin: 0px;
+}
 .mess-item{
 	text-align: center;
 	line-height: 30px;
@@ -878,7 +881,7 @@ input[type="file" i]::-webkit-file-upload-button, button{
     border-radius: 20px 0px 0 0;
     z-index: 1;
 }
-#messeges-show-modal, #settings-show-modal{
+#messeges-show-modal, #settings-show-modal, #form-add-wrap{
 	display: none;
     width: 100vw;
     height: 100vh;
@@ -958,16 +961,23 @@ hr{
     cursor: pointer;
     width: 100%;
     display: inline-block;
+    border-radius: 5px;
+}
+#settings{
+	margin-bottom: 50px;	
 }
 #settings p{
 	margin: 0px;
 }
-#settings .save, #settings .servis-save{
+.save, .servis-save{
 	background-color: #5cb85c;
 }
-#settings .del, #settings .servis-del{
+.del, .servis-del{
 	background-color: #f9888a;
 	margin-bottom: 10px;
+}
+.but-del:hover,.but-show:hover, .del:hover, .servis-del:hover, .save:hover, .servis-save:hover{
+    background-color: #FCAC45;
 }
 #settings .glyphicon{
 	font-size: 40px;
@@ -978,6 +988,10 @@ hr{
     cursor: pointer;
     width: 100%;
     display: inline-block;
+    border-radius: 5px;
+}
+#form-add-wrap .form-group{
+    background: #ededed
 }
 /*----------------------------admin.php end----------------------*/
 

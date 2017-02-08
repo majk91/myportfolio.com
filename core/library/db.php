@@ -386,25 +386,25 @@ function selectMessege(){
 							<h4>Новое сообщение от потенциального клиента:</h4>
 							<p>Время: '.$row["time"].'</p>
 							<div class="row">
-								<div class="col-md-4">
+								<div class="col-md-2">
 									<div>
 										<p>ФИО:</p>
 										<p>'.$row["name"].'</p>
 									</div>
 								</div>
-								<div class="col-md-4">
+								<div class="col-md-2">
 									<div>
 										<p>Телефон: </p>
 										<p>'.$row["phone"].'</p>
 									</div>
 								</div>
-								<div class="col-md-4">
+								<div class="col-md-2">
 									<div>
 										<p>Email: </p>
 										<p>'.$row["email"].'</p>
 									</div>
 								</div>
-								<div class="col-md-12">
+								<div class="col-md-6">
 									<div>
 										<p>Текст сообщения: </p>
 										<p>'.$row["comment"].'</p>
@@ -723,11 +723,11 @@ function showServisaAdmin(){
 						</div>
 						<div class="col-xs-2">
 							<h5>Название:</h5>	
-							<p>'.$row['title'].'</p>
+							<p class="admin-article-title">'.$row['title'].'</p>
 						</div>
 						<div class="col-xs-8">
 							<h5>Статья:</h5>	
-							<p>'.$row['article'].'</p>
+							<p class="admin-article-text">'.$row['article'].'</p>
 						</div>
 						<div class="col-xs-12 button-box">
 							<div class="row">

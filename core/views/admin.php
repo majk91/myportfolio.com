@@ -507,10 +507,11 @@
 													<label for="set_glificon">Добавить картинку (glyphicon - Bootstrap):</label>
 													<input type="text" id="set_glificon" class="form-control" name="set_glificon" placeholder="glyphicon-envelope">
 		                        					<label for="set_photo_smoll">Добавить название:</label>
-		                        					<input type="text" id="set_servis_item" class="form-control" name="set_servis_item">
+		                        					<input type="text" id="set_servis_item" class="form-control" name="set_servis_item" placeholder="предоставляемая услуга">
 		                        					<label for="set_photo_smoll">Добавить описание:</label>
 		                        					<textarea id="set_servis_text" class="form-control" name="set_servis_text" rows="10" style="width: 100%"></textarea>
 												</div>
+												<button id="send-settings" formmethod="post" name="send-settings" value="send-settings" class="btn btn-success">Добавить новую услугу</button>
                         					</div>
                         					<div class="col-xs-8">
 	                        					<div class="row">
@@ -533,7 +534,6 @@
                         		</div><!--.row-->
                         		<div class="border-bottom"></div>
 		                       	<div class="col-xs-12">
-									<button id="send-my-main" formmethod="post" name="admin-main" value="admin-main" class="btn btn-success">Обновить основную информацию пользователя</button>
 		                       	</div>
 							</form><!--.admin-main-->
 						</div>
