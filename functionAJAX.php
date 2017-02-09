@@ -36,6 +36,12 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 				echo "Пользователь успешно удален из системы";
 			}
 		}
+	}else if($_POST['idModal']=='#main-content-show-modal'){
+		$idItem = $_POST['id'];
+		$sql = "DELETE FROM gallery_settings WHERE id=$idItem";
+		$res = insertUpdateDelete($sql);
+		sendEmailUser($idItem, $_POST['param']);
+		echo "Работа удалена из галереи";
 	}
 }
 ?>

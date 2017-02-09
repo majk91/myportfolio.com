@@ -44,6 +44,7 @@ $( document ).ready(function() {
 		$messege = 'Вы пытаетесь безвозвратно удалить пользователя из БД. Вы действительно хотите этого?'
 		checkingClientMess(0, $(this), $messege, '#settings-show-modal', '#settings-show-informer');
 	});
+//изменить сервис
 	$('#settings .servis-save').on('click', function(){
 		$messege = 'Приступить к редактированию?';
 		checkingClientMess(1, $(this) , $messege, '#settings-show-modal', '#settings-show-informer');
@@ -51,6 +52,11 @@ $( document ).ready(function() {
 	$('#settings .servis-del').on('click', function(){
 		$messege = 'Вы действительно хотите безвозвратно удалить этот сервис из перечня?';
 		checkingClientMess(0, $(this) , $messege, '#settings-show-modal', '#settings-show-informer');
+	});
+//удалить работу
+	$('#main-content .trash').on('click', function(){
+		$messege = 'Вы действительно хотите безвозвратно удалить пример работы?';
+		checkingClientMess(0, $(this) , $messege, '#main-content-show-modal', '#main-content-show-informer');
 	});
 
 	$( window ).scroll(function(){
@@ -238,7 +244,7 @@ function servisWidth(){
 		$elList = $('.servis-item');
 		$length = $elList.length;
 		$width = parseInt($('.servis-item-wrap').width());
-	if(parseInt($('body').width())>=768){
+	if(parseInt($(window).width())>=768){
 		$elList.attr('style', '');
 		$elList.find('.item-text').attr('style', '');
 		$elList.css({
@@ -253,7 +259,7 @@ function servisWidth(){
 	}
 }
 function servisSize(){
-	if(parseInt($('body').width())>=768){
+	if(parseInt($(window).width())>=768){
 		$(this).css({
 						padding : 0,
 						background : '#c7c7c7',
@@ -291,7 +297,7 @@ $rules = {
 		return $reg.test($el.value);
 	},
 	phone: function($el){
-		$reg = /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){10,14}(\s*)?$/;
+		$reg = /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){10,14}(\s*)?$/;//-----------------------------------------------------------------------------
 		return $reg.test($el.value);
 	},
 	max: function($el){
@@ -455,10 +461,9 @@ function dellContaktInput() {
 		 	  }
 		 	});
 		$('[role = dialog]').css({
-			'height': '94vh',
-			'width': '94vw',
+			'width': '70vw',
 			'top': '3vh',
-			'left': '3vw'
+			'left': '15vw'
 		})
 		};
 	$('.magnifier').on('click', showModal );
@@ -490,7 +495,6 @@ function dellContaktInput() {
 			}else{
 				$('.messeges-but-ok').on('click', function(){
 					pullAjax(setting, thisItem, idModal, idInformer);
-					thisItem.parent().parent().parent().parent().remove();
 					$(idModal).css("display","none").html( " " );
 				});
 				$('.messeges-but-cancel').on('click', function(){
@@ -498,12 +502,14 @@ function dellContaktInput() {
 				});
 				$('.messeges-exit').on('click', function(){
 					$(idModal).css("display","none").html( " " );
+					return true;
 				});
 			}
 		};
 		function pullAjax(setting, thisItem, idModal, idInformer){
-			var menuId = thisItem.first().attr("data-check_mess");
+			var menuId = thisItem.attr("data-check_mess");
 			if(idModal == "#messeges-show-modal"){
+				thisItem.parent().remove();
 					deletMessege(thisItem);
 					changeCouneter();
 				var request = $.ajax({
@@ -516,6 +522,7 @@ function dellContaktInput() {
 				  success: ifSuccess
 				});
 			}else if(idModal == "#settings-show-modal"){
+				thisItem.parent().parent().parent().parent().remove();
 				if(thisItem.attr('class')=='servis-save'){
 					addDialog(thisItem);
 				}else if(thisItem.attr('class')=='servis-del'){
@@ -543,7 +550,20 @@ function dellContaktInput() {
 						success: ifSuccessSettongs
 					});
 				}
+			}else if(idModal == "#main-content-show-modal"){/*--------------------изменения то что было перенес в конец файла---------------------------*/
+				var request = $.ajax({
+					url: "../functionAJAX.php",
+					type: "POST",
+					data: {							
+						id : menuId,
+						idModal: idModal,
+				},
+					success: ifSuccessSettongs
+				});
+				console.log(thisItem.first());
 			}
+
+
 			 
 			function ifSuccess(data){
 				$("#messeges-show-informer").css({"height": '90px', "transition": "all ease 2.15s"}).html('<p>'+data+'</p>');

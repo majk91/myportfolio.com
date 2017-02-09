@@ -231,80 +231,7 @@
 									                		<h4>Загруженные работы:</h4>
 									                		<div class="show-works">
 																<div id="page-navigator">
-																	<div id="page-1" class="active">
-																		<div class="wrap">
-																			<img src="/<?php echo selectItem('main_settings', 'favicon') ?>" alt="">
-																			<div class="cross"></div>
-																			<div class="magnifier" data-target='message0'></div>
-																		</div>
-
-																		<div id="dialog-message0" class="hid" title="Название">
-																			<div class="dialog-box">
-																				<div class="dialog-image-big">
-																					<img src="/<?php echo selectItem('main_settings', 'favicon') ?>" alt="">
-																				</div>
-																				<div class="dialog-image-smoll">
-																					<img src="/<?php echo selectItem('main_settings', 'favicon') ?>" alt="">
-																				</div>
-																				<a href=""></a>
-																			</div>
-																			<p>
-																				<span>Заказчик: </span><br>
-																				<span>Категория:</span>
-																			</p>
-																		</div> 
-																		<div class="wrap">
-																			<img src="/<?php echo selectItem('main_settings', 'favicon') ?>" alt="">
-																			<div class="cross"></div>
-																			<div class="magnifier" data-target='message1'></div>
-																		</div>
-
-																		<div id="dialog-message1" class="hid" title="Название">
-																			<p>
-																				Your22222 files have downloaded successfully into the My Downloads folder.
-																			</p>
-																		</div> 
-																		<div class="wrap">
-																			<img src="/<?php echo selectItem('main_settings', 'favicon') ?>"  alt="">
-																			<div class="cross"></div>
-																			<div class="magnifier" data-target='message2'></div>
-																		</div>
-
-																		<div id="dialog-message2" class="hid" title="Название">
-																			<p>
-																				Your33333 files have downloaded successfully into the My Downloads folder.
-																			</p>
-																		</div>
-																		<div class="wrap">
-																			<img src="/<?php echo selectItem('main_settings', 'favicon') ?>" alt="">
-																			<div class="cross"></div>
-																			<div class="magnifier" data-target='message3'></div>
-																		</div>
-
-																		<div id="dialog-message2" class="hid" title="Название">
-																			<p>
-																				Your33333 files have downloaded successfully into the My Downloads folder.
-																			</p>
-																		</div>
-																		<div class="wrap">
-																			<img src="/<?php echo selectItem('main_settings', 'favicon') ?>"  alt="">
-																			<div class="cross"></div>
-																			<div class="magnifier" data-target='message4'></div>
-																		</div>
-
-																		<div id="dialog-message2" class="hid" title="Название">
-																			<p>
-																				Your33333 files have downloaded successfully into the My Downloads folder.
-																			</p>
-																		</div>
-
-																	</div>
-																	<div id="page-2">p2
-																	</div>
-																	<div id="page-3">p3</div>
-																	<div id="page-4">p4</div>
-																	<div id="page-5">p5</div>
-																	<div id="page-6">p6</div>
+																<?php echo showWorksAdmin() ?>
 																</div>
 																<nav>
 																	<ul id="pagination" class="pagination">
@@ -339,11 +266,8 @@
                         			</div>
                         		</div><!--.row-->
 							</form><!--.admin-myPortfilio-->
-							<div class="row">
-		                   		<div class="col-md-12">
-		          	        		<div class="warning-box"></div><!--.warning-box-->
-		                   		</div><!--.col-md-12-->
-							</div>
+							<div id="main-content-show-modal" class='show-modal'></div>
+							<div id="main-content-show-informer" class="show-informer"></div>
 						</div>
 						<div class="tab-pane" id="slider-content">
 							<form class="admin-myClients" method="POST" enctype="multipart/form-data">
@@ -470,8 +394,8 @@
 							<div class="messeges-box">
 								<?php selectMessege() ?>
 							</div>
-							<div id="messeges-show-modal"></div>
-							<div id="messeges-show-informer"></div>
+							<div id="messeges-show-modal" class='show-modal'></div>
+							<div id="messeges-show-informer" class='show-informer'></div>
 						</div>
 						<div class="tab-pane" id="settings">
 							<form class="admin-plus" method="POST" enctype="multipart/form-data" >
@@ -494,8 +418,8 @@
 											</div>
 				                        </div>
 				            		</div>
-				            		<div id="settings-show-modal"></div>
-									<div id="settings-show-informer"></div>
+				            		<div id="settings-show-modal" class='show-modal'></div>
+									<div id="settings-show-informer" class="show-informer"></div>
 								</div>
 				                <div class="border-bottom"></div>
 								<div class="row">

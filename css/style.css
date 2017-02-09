@@ -3,6 +3,9 @@ body{
 	background: #ffffff;
 	min-width: 320px;
 }
+.container{
+	overflow: hidden;
+}
 section{
 	overflow: hidden;
 }
@@ -264,7 +267,7 @@ li.activ-lan a{
 /*-----------------------------#home end---------------------------*/
 /*-----------------------------#servis start---------------------------*/
 #servis{
-	//overflow: visible;
+	overflow: visible;
 }
 .all-title-wrap{
 	padding: 60px 0px 20px 0px;
@@ -340,7 +343,7 @@ li.activ-lan a{
     bottom: -13px;
 }
 .height-max{
-	margin-bottom: 40px;_
+	margin-bottom: 40px;
 } 
 
 
@@ -833,7 +836,7 @@ input[type="file" i]::-webkit-file-upload-button, button{
 .wrap{
 	display: inline-block;
 	position: relative;
-    width: 19%;
+    width: 24%;
 }
 .cross, .magnifier{
 	position: absolute;
@@ -854,6 +857,7 @@ input[type="file" i]::-webkit-file-upload-button, button{
 	background: url('../image/lupa.png');
     opacity: 0.5;
     background-size: 100%;
+	background-repeat: no-repeat;
 }
 .magnifier:hover{
 	width: 40%;
@@ -894,7 +898,7 @@ input[type="file" i]::-webkit-file-upload-button, button{
 .mess-item:hover{
     background-color: #FCAC45;
 }
-#messeges-show-informer, #settings-show-informer{
+.show-informer{
 	//display:none;
 	position: fixed;
     bottom: 0px;
@@ -905,7 +909,7 @@ input[type="file" i]::-webkit-file-upload-button, button{
     border-radius: 20px 0px 0 0;
     z-index: 1;
 }
-#messeges-show-modal, #settings-show-modal, #form-add-wrap{
+.show-modal, #form-add-wrap{
 	display: none;
     width: 100vw;
     height: 100vh;
@@ -955,18 +959,24 @@ input[type="file" i]::-webkit-file-upload-button, button{
 	float: right;
 	background: #5cb85c;
 }
-.messeges-exit{
+.messeges-exit, .trash{
 	position: absolute;
     top: 0px;
     right: 0px;
     padding: 0 5px !important;
     height: 20px;
     width: 20px;
-    background-image: url('../image/cross.png');
     background-size: 100%;
     border-radius: 11px;
     margin: 3px;
     cursor: pointer;
+}
+.messeges-exit{
+    background-image: url('../image/cross.png');
+}
+.trash{
+    background-image: url('../image/rabish.png');
+    background-color:#ffffff;
 }
 #messeges-show-informer p{
 	padding: 10px;
@@ -1081,6 +1091,12 @@ hr{
 		font-size: 4vw;
 		height: 60px;
 	}
+	.item-text{
+	    height: 100%;
+	}
+	.servis-item:after{
+	    content: '';
+	}
 }
 @media (max-width: 500px){
 	.servis-item{
@@ -1088,5 +1104,10 @@ hr{
 	}
 	.form-control{
 		height: 50px;
+	}
+}
+@media (min-width: 768px){
+	#servis{
+		max-height: 670px;
 	}
 }

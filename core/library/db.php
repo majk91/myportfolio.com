@@ -880,5 +880,65 @@ function showServises(){
     }
     return $data ;
 }
+function showWorksAdmin(){
+	$sql = "SELECT * FROM gallery_settings";
+	$res = selectData($sql);
+	$i=1;
+	$j=1;
+	$data = "";
+	$data .= '<div id="page-'.$j.'" class="active">';
+	if (mysqli_num_rows($res) > 0) {
+	    while($row = mysqli_fetch_assoc($res)) {
+	    	if($i%12){
+				$data .='<div class="wrap">';
+					$data .='<img src="../file_upload/gallery_desctop/'.$row['big_photo'].'" alt="'.$row['name'].'">';
+					$data .='<div class="trash" data-check_mess="100000"></div>';
+					$data .='<div class="magnifier" data-target="message'.($i-1).'"></div>';
+				$data .='</div>';
+				$data .='<div id="dialog-message'.($i-1).'" class="hid" title="'.$row['name'].'">';
+					$data .='<div class="dialog-box">';
+						$data .='<div class="dialog-image-big">';
+							$data .='<img src="../file_upload/gallery_desctop/'.$row['big_photo'].'" alt="'.$row['name'].'">';
+						$data .='</div>';
+						$data .='<div class="dialog-image-smoll">';
+							$data .='<img src="../file_upload/gallery_mobile/'.$row['smoll_photo'].'?>" alt="'.$row['name'].'">';
+						$data .='</div>';
+						$data .='<a href="'.$row['domen'].'">Перейти на сайт</a>';
+					$data .='</div>';
+					$data .='<p>';
+						$data .='<span>Заказчик: '.$row['customer'].'</span><br>';
+						$data .='<span>Категория: '.$row['category'].'</span>';
+					$data .='</p>';
+				$data .='</div>';
 
+	    	}else{
+	    		$j++;
+				$data .='<div class="wrap">';
+					$data .='<img src="../file_upload/gallery_desctop/'.$row['big_photo'].'" alt="'.$row['name'].'">';
+					$data .='<div class="trash" data-check_mess="100000"></div>';
+					$data .='<div class="magnifier" data-target="message'.($i-1).'"></div>';
+				$data .='</div>';
+				$data .='<div id="dialog-message'.($i-1).'" class="hid" title="'.$row['name'].'">';
+					$data .='<div class="dialog-box">';
+						$data .='<div class="dialog-image-big">';
+							$data .='<img src="../file_upload/gallery_desctop/'.$row['big_phot'].'" alt="'.$row['name'].'">';
+						$data .='</div>';
+						$data .='<div class="dialog-image-smoll">';
+							$data .='<img src="../file_upload/gallery_mobile/'.$row['smoll_photo'].'?>" alt="'.$row['name'].'">';
+						$data .='</div>';
+						$data .='<a href="'.$row['domen'].'">Перейти на сайт</a>';
+					$data .='</div>';
+					$data .='<p>';
+						$data .='<span>Заказчик: '.$row['customer'].'</span><br>';
+						$data .='<span>Категория: '.$row['category'].'</span>';
+					$data .='</p>';
+				$data .='</div>';
+			$data .='<div id="page-'.$j.'">';
+			$i++;
+	    	}
+	    }
+	}
+	$data .='</div>';
+	return $data;   	
+}
 ?>
