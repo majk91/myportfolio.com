@@ -15,13 +15,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 			echo "Данные о клиенте успешно удалены";
 		}
 	}else if($_POST['idModal']=='#settings-show-modal'){
-		if ($_POST['set'] =='servis-del'|| $_POST['set'] =='servis-save') {
-			if($_POST['set']){
-				$idItem = $_POST['id'];
-				$sql = "UPDATE settings_list SET glyphicon='{$_POST['glyphicon']}', title='{$_POST['title']}', article='{$_POST['article']}' WHERE id = $idItem";
-				$res = insertUpdateDelete($sql);
-				echo "Новые данные об услуге сохранены";
-			}else{
+		if ($_POST['param'] =='servis-del'|| $_POST['param'] =='servis-save') {
+			if(!$_POST['set']){
 				$idItemDel = $_POST['id'];
 				$sql = "DELETE FROM settings_list WHERE id=$idItemDel";
 				$res = insertUpdateDelete($sql);
@@ -32,6 +27,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 				$idItem = $_POST['id'];
 				$sql = "UPDATE users SET role='{$_POST['param']}' WHERE id = $idItem";
 				$res = insertUpdateDelete($sql);
+				sendEmailUser($idItem, $_POST['param']);
 				echo "Права пользователя сохранены";
 			}else{
 				$idItemDel = $_POST['id'];

@@ -263,7 +263,9 @@ li.activ-lan a{
 }
 /*-----------------------------#home end---------------------------*/
 /*-----------------------------#servis start---------------------------*/
-
+#servis{
+	//overflow: visible;
+}
 .all-title-wrap{
 	padding: 60px 0px 20px 0px;
 	text-transform: uppercase;
@@ -292,9 +294,14 @@ li.activ-lan a{
 	text-transform: none;
 	font-size: 16px;
 }
+.servis-item-wrap{
+	width: 100%;
+}
 .servis-item{
 	color: #000;
-	display: inline-block;
+	float: left;
+	position: relative;
+	border-radius: 10px;
 }
 .item-logo{
 	width: 120px;
@@ -309,16 +316,33 @@ li.activ-lan a{
 	font-size:40px;
 }
 .item-title{
-	text-align: center;
-	font-size: 25px;
-	text-transform: uppercase;
+    text-align: center;
+    font-size: 25px;
+    text-transform: uppercase;
+    height: 2.5em;
+    margin-top: 25px;
 }
 .item-text{
 	text-align: center;
-	margin: 5px 0;
-	text-align: justify;
-	text-indent: 1.5em;
+    margin: 5px 0;
+    text-align: justify;
+    text-indent: 1.5em;
+    height: 7.5em;
+    line-height: 1.5;
+    overflow: hidden;
 }
+.servis-item:after{
+    content: '...';
+    width: 100%;
+    position: absolute;
+    font-size: 25px;
+    left: 50%;
+    bottom: -13px;
+}
+.height-max{
+	margin-bottom: 40px;_
+} 
+
 
 /*-----------------------------#servis end---------------------------*/
 /*-----------------------#clients start-----------------------*/
@@ -925,11 +949,11 @@ input[type="file" i]::-webkit-file-upload-button, button{
 }
 .messeges-but-ok{
 	float: left;
-	background: #5cb85c;
+	background: #f9888a;
 }
 .messeges-but-cancel{
 	float: right;
-	background: #f9888a;
+	background: #5cb85c;
 }
 .messeges-exit{
 	position: absolute;
@@ -1049,12 +1073,10 @@ hr{
 	.myWork-item-wrap p {
     	height: auto; 
 	}
-	//#carousel-example-generic-mobile img {
-    //	width: auto; 
-	//}
-	//.myWork-item-wrap img {
-    //	width: auto;
-	//}
+	.servis-item{
+		width:48%;
+		padding: 2%;
+	}
 	.form-control{
 		font-size: 4vw;
 		height: 60px;

@@ -1,4 +1,11 @@
 $( document ).ready(function() {
+	servisWidth();
+	$( window ).resize(function(){
+		servisWidth();
+	});	
+	$(".servis-item").hover(servisSize, servisWidth);
+	
+		
     setMarginSlider()
 	// вешаю событие на кнопку формы
 	$('#send-btn').on('click', sendForm );
@@ -59,6 +66,13 @@ $( document ).ready(function() {
 		slidesToShow: 3,
 		infinite: 1
 	});
+
+	$( "body" ).on('click', hideMess);
+	$( window ).scroll(hideMess);
+	$( window ).resize(hideMess);
+	function hideMess(){
+		$('#massege-box').empty();
+	};
 });
 	function sendForm(){
 	//	event.preventDefault();
@@ -163,8 +177,6 @@ $( document ).ready(function() {
 function setMarginSlider(){
 	var parent = $('.myWork-item');
 	if(parent.eq(0).find(".myWork-item-wrap").width()<=$('.carousel-inner').width()/4){
-
-		console.log(parent.eq(0).find(".myWork-item-wrap"));
 		for (var i = 0; i <=parent.length ; i++) {
 			parent.eq(i);
 			for(var j = 8; i<=parent.eq(0).find(".myWork-item-wrap").length; i++){
@@ -222,6 +234,40 @@ $('#myTab a').click(function (e) {
 	$(this).tab('show')
 })
 
+function servisWidth(){
+		$elList = $('.servis-item');
+		$length = $elList.length;
+		$width = parseInt($('.servis-item-wrap').width());
+	if(parseInt($('body').width())>=768){
+		$elList.attr('style', '');
+		$elList.find('.item-text').attr('style', '');
+		$elList.css({
+			width : (100-$length)/$length+"%",
+			'padding': '0 1%'
+		});
+		$elList.eq(0).css({
+			'margin-left': '0'
+		});
+	}else{
+		$elList.attr('style', '');
+	}
+}
+function servisSize(){
+	if(parseInt($('body').width())>=768){
+		$(this).css({
+						padding : 0,
+						background : '#c7c7c7',
+						overflow : 'hidden',
+						"transition": "all ease 0.8s"
+					});
+		$(this).find('.item-text').css({
+											height: '100%',
+											padding: '0 4%',
+											"transition": "all ease 0.8s"
+										})
+	}
+}
+
 //------------------------------------validator  (start)----------------------//
 //$('input').bind('focus blur', function(e) {
 //		var borderVal = e.type == "focus" ? "medium solid green" : "";
@@ -229,7 +275,9 @@ $('#myTab a').click(function (e) {
 //	});
 $('form').submit(function( event ) {
 	$this = $(this);
-	validator($this);
+	if($this.attr('id')=='form_qestions'){
+		validator($this);
+	}
 });
 $rules = {
 	required: function($el){
@@ -418,7 +466,10 @@ function dellContaktInput() {
 	function delWorkItem(){
 		
 	}
+
 	$('.cross').on('click', delWorkItem );
+
+
 
 //------------------------------------admin functions  (end)---------------//
 //------------------------------------AJAX  (start)---------------//
@@ -439,6 +490,7 @@ function dellContaktInput() {
 			}else{
 				$('.messeges-but-ok').on('click', function(){
 					pullAjax(setting, thisItem, idModal, idInformer);
+					thisItem.parent().parent().parent().parent().remove();
 					$(idModal).css("display","none").html( " " );
 				});
 				$('.messeges-but-cancel').on('click', function(){
@@ -466,17 +518,6 @@ function dellContaktInput() {
 			}else if(idModal == "#settings-show-modal"){
 				if(thisItem.attr('class')=='servis-save'){
 					addDialog(thisItem);
-					/*var request = $.ajax({
-						url: "../functionAJAX.php",
-						type: "POST",
-						data: {
-							id : menuId,
-							set : setting,
-							idModal: idModal,
-							param : thisItem.attr('class'),
-						},
-						success: ifSuccessSettongs
-					})*/;
 				}else if(thisItem.attr('class')=='servis-del'){
 					var request = $.ajax({
 						url: "../functionAJAX.php",
@@ -549,6 +590,7 @@ function dellContaktInput() {
 		}
 
 		function addDialog($this){
+			$idItem= $this.attr('data-check_mess');
 			$el=$this.parent().parent().parent().parent();
 			$glyphicon= $el.find('.glyphicon').attr('class').split(" ");
 			$title = $el.find('.admin-article-title').html();
@@ -559,6 +601,7 @@ function dellContaktInput() {
                 $sourse +='<div class="col-xs-6 col-xs-offset-3">\n';
 	                $sourse +='<div class="form-group">\n';
 	                	$sourse +='<h4>Вы можете изменить информацию о существующей услуге:</h4>\n';
+	                	$sourse +='<input type="hidden" name="id-item" value="'+$idItem+'">\n';
 						$sourse +='<label for="set_glificon">Изменить картинку (glyphicon - Bootstrap):</label>\n';
 						$sourse +='<input type="text" id="set_glificon-update" class="form-control" name="set_glificon-update" placeholder="glyphicon-envelope" value="'+$glyphicon[1]+'">\n';
 		                $sourse +='<label for="set_photo_smoll">Изменить название:</label>\n';

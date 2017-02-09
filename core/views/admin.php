@@ -511,7 +511,7 @@
 		                        					<label for="set_photo_smoll">Добавить описание:</label>
 		                        					<textarea id="set_servis_text" class="form-control" name="set_servis_text" rows="10" style="width: 100%"></textarea>
 												</div>
-												<button id="send-settings" formmethod="post" name="send-settings" value="send-settings" class="btn btn-success">Добавить новую услугу</button>
+												<button id="send-set-item" formmethod="post" name="send-set-item" value="send-set-item" class="btn btn-success">Добавить новую услугу</button>
                         					</div>
                         					<div class="col-xs-8">
 	                        					<div class="row">

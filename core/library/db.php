@@ -1,4 +1,19 @@
 <?php
+
+function showMenyFunctions(){
+	if($_SERVER['REQUEST_METHOD'] == 'POST'){
+
+	echo '<div id="massege-box" title="Системное сообщение"><p>';
+	pushData();
+	updateData();
+	updateDataContact();
+	pushDataBigSlider();
+	pushClientsData();
+	updateServisItem();
+	newServis();
+	echo "</p></div>";
+	}
+}
 	/**
 	*Функция для подключения к БД
 	*@return mysqli
@@ -435,26 +450,77 @@ function showCounter(){
         echo $i;
     }else echo "0";
 }
-function showMenyFunctions(){
-	if($_SERVER['REQUEST_METHOD'] == 'POST'){
-
-	echo '<div id="massege-box" title="Системное сообщение"><p>';
-	pushData();
-	updateData();
-	updateDataContact();
-	pushDataBigSlider();
-	pushClientsData();
-	echo "</p></div>";
-	}
-}
-
-function sendEmail($to, $name, $phone, $email, $mess){
-	//$to = 'yuryshynets.m@gmail.com'; // достать почту всех админов из БД
-	$subject = 'portfolio.com || Вы получили новое сообщение из формы';
+function sendEmailUser($idItem, $role){
+	$sql = "SELECT * FROM users WHERE id=$idItem";
+	$res = selectData($sql);
+	if (mysqli_num_rows($res) > 0) {
+		while($row = mysqli_fetch_assoc($res)) {
+	    	$login = $row["login"];
+	    	$email = $row["email"];
+	    	$role = $row["role"];
+        }
+    }
+	$subject = $_SERVER['SERVER_NAME'].' || Вы получили новое сообщение об изменении прав';
 	$message = '
 	<html>
 	<head>
-	  <title>Новое письмо с портала portfolio.com</title>
+	  <title>Изменение прав доступа '.$_SERVER['SERVER_NAME'].'</title>
+	</head>
+	<body>
+		<table width="100%" bgcolor="#e8e9ea" style="font-family:Arial,Helvetica,sans-serif;color:#333333; font-size:12px">
+			<tbody width="80%" >
+				<tr>
+					<td>
+						<table  width="50%"  style=" margin: 0 auto; border: 1px solid #111111; background: linear-gradient(limegreen,	transparent),linear-gradient(90deg, skyblue, transparent), linear-gradient( -90deg, coral, transparent);">
+							<tbody width="80%" >
+								<tr>
+									<td>
+										<table width="100%">
+											<tbody>
+												<tr>
+													<td>
+														<div>
+															<h2 width="100%" style="text-align: center;">Новое сообщение о изменениях в правах доступа</h2>
+															<p>Уважаемый пользователь '.$login.', ваши права доступа в админ панель изменены.</p>
+															<p>На данные момент ваше право доступа - '.$role.'</p>';
+															$message .= ($role == 'admin') ? '<p>С правами доступа '.$role.' Вам доступна административная панель сайта </p>' : '<p>С правами доступа '.$role.' Вы не можете испльзовать административную панель сайта</p>';
+													$message .= '
+														</div>
+														<div>
+															<p style="font-size: 20px;">Для входа в административную панель сайта перейдите по <a href="http://'.$_SERVER['SERVER_NAME'].'/main/login">ссылке</a>.</p>
+														</div>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+										<hr>
+										<div  width="100%" style="text-align: center;">Вы получили это письмо, так как зарегестрировались на сайте '.$_SERVER['SERVER_NAME'].'.Если Вы этого не делали то отпишитесь: напишите о проблеме нас по <a href="http://'.$_SERVER['SERVER_NAME'].'/#contact">ссылке</a> </div>
+										<hr>
+										<div>
+											<center>Copyright © 2017 Yuryshynets</center>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</body>
+	</html>
+	';
+	$headers  = 'MIME-Version: 1.0' . "\r\n";
+	$headers .= 'Content-type: text/html; charset=utf-8' . "\r\n";
+	mail($email, $subject, $message, $headers);
+	return folse;
+};
+function sendEmail($to, $name, $phone, $email, $mess){
+	$subject = $_SERVER['SERVER_NAME'].' || Вы получили новое сообщение из формы';
+	$message = '
+	<html>
+	<head>
+	  <title>Новое письмо с портала '.$_SERVER['SERVER_NAME'].'</title>
 	</head>
 	<body>
 		<table width="100%" bgcolor="#e8e9ea" style="font-family:Arial,Helvetica,sans-serif;color:#333333; font-size:12px">
@@ -744,6 +810,75 @@ function showServisaAdmin(){
 	    }
 	    return $data;
 	}
+}
+
+function updateServisItem(){
+	if($_SERVER['REQUEST_METHOD'] == 'POST'){
+		if($_POST['send-settings']){
+			$formData = [
+				'glificon' => getSaveData(htmlspecialchars(trim($_POST['set_glificon-update']))),
+				'servis_title' => getSaveData(htmlspecialchars(trim($_POST['set_servis_item-update']))),
+				'servis_text' => getSaveData(htmlspecialchars(trim($_POST['set_servis_text-update']))),
+				'id_item' => $_POST['id-item']
+			];
+
+			$count = '';
+			foreach ($formData as $key => $value) {
+				$count .=$value;
+			}
+			if($count==''){
+				echo 'Поля должны быть заполнены!';
+				return folse;
+			}else{
+				echo 'Изменения сохранены!';
+			}
+			$sql = "UPDATE `settings_list` SET glyphicon='{$formData['glificon']}', title='{$formData['servis_title']}', article='{$formData['servis_text']}' WHERE id='{$formData['id_item']}' ";
+			$res = insertUpdateDelete($sql);
+		}
+	}
+}
+function newServis(){
+	if($_SERVER['REQUEST_METHOD'] == 'POST'){
+		if($_POST['send-set-item']){
+			$formData = [
+				'glificon' => getSaveData(htmlspecialchars(trim($_POST['set_glificon']))),
+				'title' => getSaveData(htmlspecialchars(trim($_POST['set_servis_item']))),
+				'text' => getSaveData(htmlspecialchars(trim($_POST['set_servis_text']))),
+			];
+
+			$count = '';
+			foreach ($formData as $key => $value) {
+				$count .=$value;
+			}
+			if($count==''){
+				echo 'Поля должны быть заполнены!';
+				return folse;
+			}else{
+				echo 'Новый сервис добавлен!';
+			}
+			$sql = "INSERT INTO settings_list (glyphicon, title, article) VALUES ('{$formData['glificon']}', '{$formData['title']}', '{$formData['text']}')";
+			$res = insertUpdateDelete($sql);
+		}
+	}
+}
+function showServises(){
+	$sql = "SELECT * FROM settings_list";
+	$res = selectData($sql);
+	if (mysqli_num_rows($res) > 0) {
+		$data = "";
+	    while($row = mysqli_fetch_assoc($res)) {
+	    	$data .= '<div class="servis-item">
+        	     <div class="item-wraper">
+        	         <div class="item-logo"><span class="glyphicon '.$row['glyphicon'].'"></span></div>
+        	         <div class="item-title">
+        	         	<div class="item-title-box">'.$row['title'].'</div>
+        	         </div>
+        	         <div class="item-text">'.$row['article'].'</div>
+        	     </div>
+        	 </div>';
+        }
+    }
+    return $data ;
 }
 
 ?>
