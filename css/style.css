@@ -605,12 +605,14 @@ li.activ-lan a{
 .worning-wraper{
 	height: 30px;
 }
-#form_qestions .warning{
-    width: 100%;
+#form_qestions .warning>div{
+	width: 100%;
     line-height: 14px;
-    background-color: #FFBCA9;
+    background-color: #fcac45;
     border-radius: 5px;
     padding: 0 10px;
+    border-bottom: 1px solid #000000;
+    color: #ffffff;
 }
 form .error{
 	border: 1px solid red;
@@ -856,7 +858,7 @@ input[type="file" i]::-webkit-file-upload-button, button{
     left: 35%;
 	background: url('../image/lupa.png');
     opacity: 0.5;
-    background-size: 100%;
+    background-size: contain;
 	background-repeat: no-repeat;
 }
 .magnifier:hover{
@@ -869,6 +871,19 @@ input[type="file" i]::-webkit-file-upload-button, button{
 .messeges-box .row{
     margin: 10px 0;
     padding: 10px;
+}
+.dialog-image-smoll{
+	position: absolute;
+    bottom: 60px;
+    right: 17px;
+    border: 5px solid #111111;
+    width: 30%;
+}
+.hid{
+	position: relative;
+}
+.dialog-image-smoll img{
+	width: 100%;
 }
 .mess-item-box{
 	border: 2px solid #C1C1C1;
@@ -989,7 +1004,7 @@ hr{
 	margin-top: 0px;
     margin-bottom: 0px;
 }
-#settings .button-box>div{
+.button-box>div{
 	text-align: center;
     line-height: 30px;
     cursor: pointer;
@@ -1010,13 +1025,12 @@ hr{
 	background-color: #f9888a;
 	margin-bottom: 10px;
 }
-.but-del:hover,.but-show:hover, .del:hover, .servis-del:hover, .save:hover, .servis-save:hover{
-    background-color: #FCAC45;
-}
+
+
 #settings .glyphicon{
 	font-size: 40px;
 }
-#settings .servis-save, #settings .servis-del{
+#settings .servis-save, #settings .servis-del, #slider-content .company-del, #slider-content .company-save{
 	text-align: center;
     line-height: 30px;
     cursor: pointer;
@@ -1027,6 +1041,12 @@ hr{
 #form-add-wrap .form-group{
     background: #ededed
 }
+.but-del:hover,.but-show:hover, .del:hover, .servis-del:hover, .save:hover, .servis-save:hover{
+    background-color: #FCAC45;
+}
+//.hover-but:hover{
+//    background-color: #FCAC45;
+//}
 /*----------------------------admin.php end----------------------*/
 
 

@@ -40,12 +40,14 @@
 	              		          			<?php getClient() ?>
 	              		          		</div><!--.warning-box-->
 	                        		</div><!--.col-md-6-->
+	                        		<div class="col-xs-12 col-md-12">
+		                        		<label for="inputName" class="control-label">Дополнительная информация (не больше 300 символов):</label>
+										<textarea name="massege" class="form-item" rows="5" data-rule ="max"></textarea>
+										<div class="worning-wraper">
+											<div class="warning"></div>
+										</div>
+	                        		</div>
                         		</div><!--.row-->
-                        		<label for="inputName" class="control-label">Дополнительная информация (не больше 300 символов):</label>
-								<textarea name="massege" class="form-item" rows="5" data-rule ="max"></textarea>
-								<div class="worning-wraper">
-									<div class="warning"></div>
-								</div>
 								<button id="send-btn" formmethod="post" name="send-btn" value="send-btn" >Отправить</button>
 							</form><!--.input-box-->
                         </div><!--.form-wrap-->

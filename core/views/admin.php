@@ -234,16 +234,7 @@
 																<?php echo showWorksAdmin() ?>
 																</div>
 																<nav>
-																	<ul id="pagination" class="pagination">
-																	<li><a href="#" data-target="first">&laquo;</a></li>
-																	<li class="active"><a href="#" rel="page-1">1</a></li>
-																	<li><a href="#" rel="page-2">2</a></li>
-																	<li><a href="#" rel="page-3">3</a></li>
-																	<li><a href="#" rel="page-4">4</a></li>
-																	<li><a href="#" rel="page-5">5</a></li>
-																	<li><a href="#" rel="page-6">6</a></li>
-																	<li><a href="#" data-target="last">&raquo;</a></li>
-																	</ul>
+																 <?php echo showWorksPagination() ?>
 																</nav>
 									                		</div>
 														</div>
@@ -274,7 +265,7 @@
 								<div class="row">
 								    <div class="col-xs-12 ">
                         				<h3 class="text-center">Данные о клиентах</h3>
-                        				<p class="help-block">Здесь можно добавить данные в клиентах для слайдеров</p>
+                        				<p class="help-block">Здесь можно добавить данные о клиентах для слайдеров: Клиенты, Отзывы</p>
                         			</div>
 									<div class="col-xs-12">
 										<div class="row">
@@ -307,18 +298,10 @@
 			                    	    		<div class="row">
 						                        	<div class="col-xs-12">
 								                		<div class="border-form">
-								                			<h4>Информация о пользователе:</h4>
+								                			<h4>Информация о клиентах:</h4>
+
 								                			<div class="row">
-								                				<div class="col-xs-6">
-																	<p>Назваие компании:</p>
-																	<p><?php echo selectItem('main_settings', 'my_name') ?>
-																	</p>
-								                				</div>
-								                				<div class="col-xs-6">
-																	<p>Логотип:</p>
-																	<p><?php echo selectItem('main_settings', 'profession') ?>
-																	</p>
-								                				</div>
+								                				<?php echo showClientsAdmin() ?>
 								                			</div>
 														</div>
 						                        	</div>

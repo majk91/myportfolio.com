@@ -3,7 +3,7 @@
                     <div class="row vcenter">
                         <div class="hidden-xs hidden-sm col-md-3 text-center">
                             <div class="my-photo-box">
-                                <img src="<?php echo selectItem("main_settings", "my_photo") ?>" alt="Mike my-photo">
+                                <img src="<?php echo selectItem("main_settings", "my_photo") ?>" alt="<?php echo selectItem("main_settings", "my_name") ?>">
                             </div>
                         </div>
                         <div class="col-xs-8 col-xs-offset-2 col-sm-6 col-sm-offset-2 col-md-4 col-md-offset-5">

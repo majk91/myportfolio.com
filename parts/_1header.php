@@ -1,4 +1,5 @@
-       		<div id="header" data-number="a1">
+       	<div class="home-wraper">
+        	<div id="header" data-number="a1">
         		<div class="container">
         			<div class="row">
         			    <div class=" col-xs-12">

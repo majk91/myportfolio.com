@@ -395,46 +395,7 @@ function selectMessege(){
 	if (mysqli_num_rows($res) > 0) {
     	while($row = mysqli_fetch_assoc($res)) {
     		if($row["checking"]){
-        		echo '<div class="mess-item-box">
-        			<div class="row">
-        				<div class="col-xs-12">
-							<h4>Новое сообщение от потенциального клиента:</h4>
-							<p>Время: '.$row["time"].'</p>
-							<div class="row">
-								<div class="col-md-2">
-									<div>
-										<p>ФИО:</p>
-										<p>'.$row["name"].'</p>
-									</div>
-								</div>
-								<div class="col-md-2">
-									<div>
-										<p>Телефон: </p>
-										<p>'.$row["phone"].'</p>
-									</div>
-								</div>
-								<div class="col-md-2">
-									<div>
-										<p>Email: </p>
-										<p>'.$row["email"].'</p>
-									</div>
-								</div>
-								<div class="col-md-6">
-									<div>
-										<p>Текст сообщения: </p>
-										<p>'.$row["comment"].'</p>
-									</div>
-								</div>
-							</div>
-						</div>
-        			</div>
-					<div class="mess-item but-show" data-check_mess="'.$row["id"].'">
-						<p>Отметить как просмотренное (внести в Базу)</p>
-					</div>
-					<div class="mess-item but-del" data-check_mess="'.$row["id"].'">
-						<p>Удалить</p>
-					</div>
-        		</div>';
+    			include '/core/parts/admin_showmassege.inc.php';
     		}
         }
     }
@@ -461,111 +422,21 @@ function sendEmailUser($idItem, $role){
         }
     }
 	$subject = $_SERVER['SERVER_NAME'].' || Вы получили новое сообщение об изменении прав';
-	$message = '
-	<html>
-	<head>
-	  <title>Изменение прав доступа '.$_SERVER['SERVER_NAME'].'</title>
-	</head>
-	<body>
-		<table width="100%" bgcolor="#e8e9ea" style="font-family:Arial,Helvetica,sans-serif;color:#333333; font-size:12px">
-			<tbody width="80%" >
-				<tr>
-					<td>
-						<table  width="50%"  style=" margin: 0 auto; border: 1px solid #111111; background: linear-gradient(limegreen,	transparent),linear-gradient(90deg, skyblue, transparent), linear-gradient( -90deg, coral, transparent);">
-							<tbody width="80%" >
-								<tr>
-									<td>
-										<table width="100%">
-											<tbody>
-												<tr>
-													<td>
-														<div>
-															<h2 width="100%" style="text-align: center;">Новое сообщение о изменениях в правах доступа</h2>
-															<p>Уважаемый пользователь '.$login.', ваши права доступа в админ панель изменены.</p>
-															<p>На данные момент ваше право доступа - '.$role.'</p>';
-															$message .= ($role == 'admin') ? '<p>С правами доступа '.$role.' Вам доступна административная панель сайта </p>' : '<p>С правами доступа '.$role.' Вы не можете испльзовать административную панель сайта</p>';
-													$message .= '
-														</div>
-														<div>
-															<p style="font-size: 20px;">Для входа в административную панель сайта перейдите по <a href="http://'.$_SERVER['SERVER_NAME'].'/main/login">ссылке</a>.</p>
-														</div>
-													</td>
-												</tr>
-											</tbody>
-										</table>
-										<hr>
-										<div  width="100%" style="text-align: center;">Вы получили это письмо, так как зарегестрировались на сайте '.$_SERVER['SERVER_NAME'].'.Если Вы этого не делали то отпишитесь: напишите о проблеме нас по <a href="http://'.$_SERVER['SERVER_NAME'].'/#contact">ссылке</a> </div>
-										<hr>
-										<div>
-											<center>Copyright © 2017 Yuryshynets</center>
-										</div>
-									</td>
-								</tr>
-							</tbody>
-						</table>
-					</td>
-				</tr>
-			</tbody>
-		</table>
-	</body>
-	</html>
-	';
+
+	include '/core/parts/email_newclient.inc.php';
+
 	$headers  = 'MIME-Version: 1.0' . "\r\n";
 	$headers .= 'Content-type: text/html; charset=utf-8' . "\r\n";
 	mail($email, $subject, $message, $headers);
 	return folse;
 };
+
 function sendEmail($to, $name, $phone, $email, $mess){
 	$subject = $_SERVER['SERVER_NAME'].' || Вы получили новое сообщение из формы';
-	$message = '
-	<html>
-	<head>
-	  <title>Новое письмо с портала '.$_SERVER['SERVER_NAME'].'</title>
-	</head>
-	<body>
-		<table width="100%" bgcolor="#e8e9ea" style="font-family:Arial,Helvetica,sans-serif;color:#333333; font-size:12px">
-			<tbody width="80%" >
-				<tr>
-					<td>
-						<table  width="50%"  style=" margin: 0 auto; border: 1px solid #111111; background: linear-gradient(limegreen,	transparent),linear-gradient(90deg, skyblue, transparent), linear-gradient( -90deg, coral, transparent);">
-							<tbody width="80%" >
-								<tr>
-									<td>
-										<table width="100%">
-											<tbody>
-												<tr>
-													<td>
-														<div>
-															<h2 width="100%" style="text-align: center;">Новое сообщение от потенциального клиента</h2>
-															<p>ФИО: <span>'.$name.'</span></p>
-															<p>Телефон: <span>'.$phone.'</span></p>
-															<p>Email: <span>'.$email.'</span></p>
-															<p>Текст сообщения: <span>'.$mess.'</span></p>
-														</div>
-														<div>
-															<p style="font-size: 20px;">Для входа в административную панель сайта перейдите по <a href="http://portfolio.com/main/login">ссылке</a>.</p>
-														</div>
-													</td>
-												</tr>
-											</tbody>
-										</table>
-										<hr>
-										<div  width="100%" style="text-align: center;">Вы получили это письмо, так как Ваша почта указана, как почта администратора на сайте portfolio.com</div>
-										<hr>
-										<div>
-											<center>Copyright © 2017 Yuryshynets</center>
-										</div>
-									</td>
-								</tr>
-							</tbody>
-						</table>
-					</td>
-				</tr>
-			</tbody>
-		</table>
-	</body>
-	</html>
-	';
+
+	include '/core/parts/email_newclient.inc.php';
+	
+	
 	$headers  = 'MIME-Version: 1.0' . "\r\n";
 	$headers .= 'Content-type: text/html; charset=utf-8' . "\r\n";
 	mail($to, $subject, $message, $headers);
@@ -589,136 +460,23 @@ function selectPic($row_name, $row_url){
 	}
 	return $data;
 }
-//значение $set отвечает за вывод мобильной или нет версии. При $set=true -  вывод мобильной версии
+//значение $set отвечает за вывод мобильной или нет версии. При $set= 0 -  вывод мобильной версии
 function showPictures($row_name, $row_url, $set){
 		$data = selectPic($row_name, $row_url);
 		if($set){
 			$i=0;
 			$print="";
-			if($data){
-				foreach ($data as $key => $value) {
-					foreach ($data[$key] as $keys => $val) {
-						if($i==0){
-							if($keys == 'url'){
-								$print .='<div class="item active">
-									<div class="myWork-item">
-										<div class="row">
-											<div class="col-xs-4 col-md-4">
-												<div class="myWork-item-wrap">
-													<p><a href="'.$val.'">';
-							}else{
-								$print .='<img src="file_upload/gallery_desctop/'.$val.'" alt="mySite"></a></p>
-												</div>
-											</div>';
-							}
-						}else if($i%8==0){
-							if($keys == 'url'){
-								$print .='<div class="col-xs-4 col-md-4">
-											<div class="myWork-item-wrap">
-												<p><a href="'.$val.'">';
-							}else{
-								$print .='<img src="file_upload/gallery_desctop/'.$val.'" alt="mySite"></a></p>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="item">
-								<div class="myWork-item">
-									<div class="row">';
-							}					
-						}else{
-							if($keys == 'url'){
-								$print .='<div class="col-xs-4 col-md-4">
-								<div class="myWork-item-wrap">
-									<p><a href="'.$val.'">';
-							}else{
-								$print .='<img src="file_upload/gallery_desctop/'.$val.'" alt="mySite"></a></p>
-											</div>
-										</div>';
-							}
-						}
-					} 
-					$i++;
-				}
-			}
-			if($i==0){
-				$print .='<div class="item active">
-						<div class="myWork-item">
-							<div class="row">';
-				};
-			if($i%9 || $i<9 ){
-				$j=$i%9;
-				while($j<9) {
-					$print .= '<div class="col-xs-4 col-md-4">
-							<div class="myWork-item-wrap">
-								<p><a href="#"><img src="image/template-work.png" alt="mySite"></a></p>
-							</div>
-						</div>';
-					$j++;
-				}
-				$print .= '</div>
-					</div>
-				</div>';
-			}
+
+			include '/core/parts/pictures_big.inc.php';
+			
 			return $print;
 		}else{
 			$i=0;
 			$print="";
-			if($data){
-				foreach ($data as $key => $value) {
-					foreach ($data[$key] as $keys => $val) {
-						if ($i==0) {
-							if($keys == 'url'){
-								$print.='<div class="item active">
-									<div class="myWork-item">
-										<div class="row">
-											<div class="col-xs-12">
-												<div class="myWork-item-wrap">
-													<p><a href="'.$val.'">';
-							}else{
-								$print.='<img src="file_upload/gallery_mobile/'.$val.'" alt="mySite"></a></p>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>';
-							}
-						}else{
-							if($keys == 'url'){
-								$print.='<div class="item">	
-									<div class="myWork-item">
-										<div class="row">
-											<div class="col-xs-12">
-												<div class="myWork-item-wrap">
-													<p><a href="'.$val.'">';
-							}else{
-								$print.='<img src="file_upload/gallery_mobile/'.$val.'" alt="mySite"></a></p>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>';
-							}
-						}
-					$i++;
-					}
-				}
-			}
-			if ($i==0) {
-				$print.='<div class="item active">
-					<div class="myWork-item">
-						<div class="row">
-							<div class="col-xs-12">
-								<div class="myWork-item-wrap">
-									<p><a href="#"><img src="image/template-work.png" alt="mySite"></a></p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>';
-			}
-		return $print;
+
+			include '/core/parts/pictures_smoll.inc.php';
+
+			return $print;
 		};
 }
 function getIndicators(){
@@ -746,34 +504,7 @@ function showUsers(){
 	$res = selectData($sql);
 	if (mysqli_num_rows($res) > 0) {
 		$data = '';
-	    while($row = mysqli_fetch_assoc($res)) {
-	    	if($row['id']!=$_SESSION['user']['id']){
-			 $data	.='<div class="user-wrap">
-			 	<div class="col-xs-2">
-					<h5>Login:</h5>	
-					<p>'.$row['login'].'</p>
-				</div>
-				<div class="col-xs-4">
-					<label for="set_show_el">Права доступа:</label><br>
-					<select id="set_show_el" name="set_show_el" class="form-control">
-						<option disabled>Выбрать права</option>';
-				if($row['role'] == 'admin'){
-						$data.='<option value="admin" selected>admin</option>
-						<option value="user">user</option>';
-				}else{
-					$data.='<option value="admin">admin</option>
-						<option value="user" selected>user</option>';
-				}
-					$data.='</select>
-				</div>
-				<div class="col-xs-4 button-box">
-					<div class="del" data-sql-id="'.$row['id'].'" data-check_mess="'.$row['id'].'"><p>Удалить пользователя из БД</p></div>
-					<div class="save" data-sql-mail="'.$row['email'].'" data-check_mess="'.$row['id'].'"><p>Сохранить изменение прав</p></div>
-				</div>
-				<div class="col-xs-12"><hr></div>
-			</div>';
-	    	};    	
-	    };
+  			include '/core/parts/admin_showuser.inc.php';
 	}
 	return $data;
 }
@@ -798,10 +529,10 @@ function showServisaAdmin(){
 						<div class="col-xs-12 button-box">
 							<div class="row">
 								<div class="col-xs-6">
-									<div class="servis-del" data-check_mess="'.$row['id'].'"><p> Удалить статью из БД</p></div>
+									<div class="servis-del hover-but" data-check_mess="'.$row['id'].'"><p> Удалить статью из БД</p></div>
 								</div>
 								<div class="col-xs-6">
-									<div class="servis-save" data-check_mess="'.$row['id'].'"><p>Редактировать и сохранить</p></div>
+									<div class="servis-save hover-but" data-check_mess="'.$row['id'].'"><p>Редактировать и сохранить</p></div>
 								</div>
 							</div>
 						</div>
@@ -811,6 +542,38 @@ function showServisaAdmin(){
 	    return $data;
 	}
 }
+function showClientsAdmin(){
+	$sql = "SELECT * FROM clients_logo";
+	$res = selectData($sql);
+	if (mysqli_num_rows($res) > 0) {
+		$data = '';
+	    while($row = mysqli_fetch_assoc($res)) {
+	    	$data .='<div class="col-xs-6">
+						<p>Назваие компании:</p>
+						<p>'.$row['name'].'</p>
+                	</div>
+                	<div class="col-xs-6">
+						<p>Логотип:</p>
+						<div class="img-client">
+							<img src="/file_upload/client_logo/'.$row['photo_logo'].'" alt="'.$row['name'].'">
+						</div>
+                	</div>
+                	<div class="col-xs-12 button-box">
+						<div class="row">
+							<div class="col-xs-6">
+								<div class="del hover-but" data-check_mess="'.$row['id'].'"><p> Удалить данные</p></div>
+							</div>
+							<div class="col-xs-6">
+								<div class="save hover-but" data-check_mess="'.$row['id'].'"><p>Редактировать данные</p></div>
+							</div>
+						</div>
+					</div>
+                	<div class="col-xs-12"><hr></div>';
+	    }
+	    return $data;
+	}
+}
+
 
 function updateServisItem(){
 	if($_SERVER['REQUEST_METHOD'] == 'POST'){
@@ -890,49 +653,49 @@ function showWorksAdmin(){
 	if (mysqli_num_rows($res) > 0) {
 	    while($row = mysqli_fetch_assoc($res)) {
 	    	if($i%12){
-				$data .='<div class="wrap">';
-					$data .='<img src="../file_upload/gallery_desctop/'.$row['big_photo'].'" alt="'.$row['name'].'">';
-					$data .='<div class="trash" data-check_mess="100000"></div>';
-					$data .='<div class="magnifier" data-target="message'.($i-1).'"></div>';
-				$data .='</div>';
-				$data .='<div id="dialog-message'.($i-1).'" class="hid" title="'.$row['name'].'">';
-					$data .='<div class="dialog-box">';
-						$data .='<div class="dialog-image-big">';
-							$data .='<img src="../file_upload/gallery_desctop/'.$row['big_photo'].'" alt="'.$row['name'].'">';
-						$data .='</div>';
-						$data .='<div class="dialog-image-smoll">';
-							$data .='<img src="../file_upload/gallery_mobile/'.$row['smoll_photo'].'?>" alt="'.$row['name'].'">';
-						$data .='</div>';
-						$data .='<a href="'.$row['domen'].'">Перейти на сайт</a>';
-					$data .='</div>';
-					$data .='<p>';
-						$data .='<span>Заказчик: '.$row['customer'].'</span><br>';
-						$data .='<span>Категория: '.$row['category'].'</span>';
-					$data .='</p>';
-				$data .='</div>';
+				$data .= '<div class="wrap">
+					<img src="../file_upload/gallery_desctop/'.$row['big_photo'].'" alt="'.$row['name'].'">
+					<div class="trash" data-check_mess="100000"></div>
+					<div class="magnifier" data-target="message'.($i-1).'"></div>
+				</div>
+				<div id="dialog-message'.($i-1).'" class="hid" title="'.$row['name'].'">
+					<div class="dialog-box">
+						<div class="dialog-image-big">
+							<img src="../file_upload/gallery_desctop/'.$row['big_photo'].'" alt="'.$row['name'].'">
+						</div>
+						<div class="dialog-image-smoll">
+							<img src="../file_upload/gallery_mobile/'.$row['smoll_photo'].'?>" alt="'.$row['name'].'">
+						</div>
+						<a href="'.$row['domen'].'">Перейти на сайт</a>
+					</div>
+					<p>
+						<span>Заказчик: '.$row['customer'].'</span><br>
+						<span>Категория: '.$row['category'].'</span>
+					</p>
+				</div>';
 
 	    	}else{
 	    		$j++;
-				$data .='<div class="wrap">';
-					$data .='<img src="../file_upload/gallery_desctop/'.$row['big_photo'].'" alt="'.$row['name'].'">';
-					$data .='<div class="trash" data-check_mess="100000"></div>';
-					$data .='<div class="magnifier" data-target="message'.($i-1).'"></div>';
-				$data .='</div>';
-				$data .='<div id="dialog-message'.($i-1).'" class="hid" title="'.$row['name'].'">';
-					$data .='<div class="dialog-box">';
-						$data .='<div class="dialog-image-big">';
-							$data .='<img src="../file_upload/gallery_desctop/'.$row['big_phot'].'" alt="'.$row['name'].'">';
-						$data .='</div>';
-						$data .='<div class="dialog-image-smoll">';
-							$data .='<img src="../file_upload/gallery_mobile/'.$row['smoll_photo'].'?>" alt="'.$row['name'].'">';
-						$data .='</div>';
-						$data .='<a href="'.$row['domen'].'">Перейти на сайт</a>';
-					$data .='</div>';
-					$data .='<p>';
-						$data .='<span>Заказчик: '.$row['customer'].'</span><br>';
-						$data .='<span>Категория: '.$row['category'].'</span>';
-					$data .='</p>';
-				$data .='</div>';
+				$data .= '<div class="wrap">
+					<img src="../file_upload/gallery_desctop/'.$row['big_photo'].'" alt="'.$row['name'].'">
+					<div class="trash" data-check_mess="100000"></div>
+					<div class="magnifier" data-target="message'.($i-1).'"></div>
+				</div>
+				<div id="dialog-message'.($i-1).'" class="hid" title="'.$row['name'].'">
+					<div class="dialog-box">
+						<div class="dialog-image-big">
+							<img src="../file_upload/gallery_desctop/'.$row['big_photo'].'" alt="'.$row['name'].'">
+						</div>
+						<div class="dialog-image-smoll">
+							<img src="../file_upload/gallery_mobile/'.$row['smoll_photo'].'?>" alt="'.$row['name'].'">
+						</div>
+						<a href="'.$row['domen'].'">Перейти на сайт</a>
+					</div>
+					<p>
+						<span>Заказчик: '.$row['customer'].'</span><br>
+						<span>Категория: '.$row['category'].'</span>
+					</p>
+				</div>';
 			$data .='<div id="page-'.$j.'">';
 			$i++;
 	    	}
@@ -940,5 +703,25 @@ function showWorksAdmin(){
 	}
 	$data .='</div>';
 	return $data;   	
+}
+function showWorksPagination(){
+	$sql = "SELECT * FROM gallery_settings";
+	$res = selectData($sql);
+	$i=1;
+	$j=1;
+	if (mysqli_num_rows($res) > 0) {
+		$data = '<ul id="pagination" class="pagination">
+					<li><a href="#" data-target="first">&laquo;</a></li>
+					<li class="active"><a href="#" rel="page-1">1</a></li>';
+	    while($row = mysqli_fetch_assoc($res)) {
+	    	if(!$i%12){
+	    		$j++;
+				$data .= '<li><a href="#" rel="page-'.$j.'">'.$j.'</a></li>';
+	    	}
+	    }
+		$data .= '	<li><a href="#" data-target="last">&raquo;</a></li>
+	   			</ul>';
+		return $data;   	
+	}  
 }
 ?>

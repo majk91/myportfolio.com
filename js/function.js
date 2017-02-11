@@ -279,6 +279,15 @@ function servisSize(){
 //		var borderVal = e.type == "focus" ? "medium solid green" : "";
 //        $(this).css("border", borderVal);
 //	});
+$('form').find('input, textarea, select').blur(function(event) {
+	$this = $(this).closest('form');
+	validator($this);
+});
+
+$('form').find('input, textarea, select').focus(function( event ) {
+	$this = $(this).removeClass('error');
+});
+
 $('form').submit(function( event ) {
 	$this = $(this);
 	if($this.attr('id')=='form_qestions'){
@@ -310,14 +319,21 @@ $rules = {
 }
 $rulesDescripts = {
 	required: 'Поле должно быть заполнено!',
-	email: 'Вы ввели некоректные данные!',
-	phone: 'Вы ввели некоректные данные!',
+	email: 'Введите коректные данные!',
+	phone: 'Введите коректные данные!',
 	max: 'Количество символов больше 300!'
 }
 function showErrors($arr){
 	$('.warning').empty();
 	for (var $i = 0; $i < $arr.length; $i++) {
-		$el=$( "input[name~='"+$arr[$i]['name']+"']");///'input, textarea, select'
+		if($( "input[name~='"+$arr[$i]['name']+"']").attr('name')){
+			$el=$( "input[name~='"+$arr[$i]['name']+"']");
+		}else if($("textarea[name~='"+$arr[$i]['name']+"']").attr('name')){
+			$el=$("textarea[name~='"+$arr[$i]['name']+"']");
+			console.log($el);
+		}else if($("select[name~='"+$arr[$i]['name']+"']").attr('name')){
+			$el=$("select[name~='"+$arr[$i]['name']+"']");
+		}
 		$rulMess = $rulesDescripts[$arr[$i]['error']];
 		$el.parent().find('.warning').append("<div>"+$rulMess+"</div>");
 		if($('.warning').html()){
@@ -347,9 +363,7 @@ function validator($this){
 		showErrors($errors);
 	}
 }
-$('form').find('input, textarea, select').focus(function( event ) {
-	$this = $(this).removeClass('error');
-});
+
 //------------------------------------validator  (end)------------------------//
 
 //------------------------------------admin functions  (start)---------------//
@@ -441,7 +455,7 @@ function dellContaktInput() {
 				$('#' + $('[rel = page-1]').attr('rel')).addClass('active');
 			}else{
 				$('#pagination').find('li').eq($('#pagination').find('li').length-2).addClass('active');
-				$('#page-navigator').find('div').eq($('#page-navigator').find('div').length-1).addClass('active');
+				$('#page-navigator > div').eq($('#page-navigator > div').length-1).addClass('active');
 			}
 			
 		}
