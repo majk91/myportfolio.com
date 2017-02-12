@@ -876,8 +876,18 @@ input[type="file" i]::-webkit-file-upload-button, button{
 	position: absolute;
     bottom: 60px;
     right: 17px;
-    border: 5px solid #111111;
+    border: 10px solid #111111;
     width: 30%;
+    border-radius: 10px;
+}
+.img-client img{
+	width:60%;
+}
+#slider-content p{
+	margin: 0px;
+}
+#slider-show-modal p{
+	margin: 10px 0 0 0;
 }
 .hid{
 	position: relative;
@@ -924,7 +934,7 @@ input[type="file" i]::-webkit-file-upload-button, button{
     border-radius: 20px 0px 0 0;
     z-index: 1;
 }
-.show-modal, #form-add-wrap{
+.show-modal, #form-add-wrap, #form-update-review-wrap{
 	display: none;
     width: 100vw;
     height: 100vh;
@@ -1025,8 +1035,6 @@ hr{
 	background-color: #f9888a;
 	margin-bottom: 10px;
 }
-
-
 #settings .glyphicon{
 	font-size: 40px;
 }
@@ -1038,7 +1046,7 @@ hr{
     display: inline-block;
     border-radius: 5px;
 }
-#form-add-wrap .form-group{
+#form-add-wrap .form-group, #form-update-review-wrap .form-group{
     background: #ededed
 }
 .but-del:hover,.but-show:hover, .del:hover, .servis-del:hover, .save:hover, .servis-save:hover{

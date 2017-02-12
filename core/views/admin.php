@@ -109,7 +109,7 @@
 								                		<div class="border-form">
 								                			<h4>Большое фото на главной:</h4>
 											    			<div class="show-favicon">
-											    				<img src="/<?php echo selectItem('main_settings', 'my_photo')?> " alt="" width="90%">
+											    				<img src="/<?php echo selectItem('main_settings', 'my_photo')?> " alt="" width="50%">
 											    			</div>
 														</div>
 						                        	</div>
@@ -316,7 +316,7 @@
 										<div class="row">
 					                       	<div class="col-xs-12">
 												<div class="form-group">
-													<h4>Отзывы клиентов</h4>
+													<h4>Отзыв клиента</h4>
 													<label for="set_clientTtem_name">ФИО:</label>
 													<input type="text" id="set_clientTtem_name" name="set_clientTtem_name" class="form-control" placeholder="Пупкин И.И.">
 					                        		<label for="set_client_work">Где работает:</label>
@@ -334,33 +334,9 @@
 					                    </div>
 									</div>
 									<div class="col-xs-6">
-										<div class="row">
-					                       	<div class="col-xs-12">
-												<div class="form-group">
-													<h4>Отзывы клиентов:</h4>
-								                	<div class="row">
-								                		<div class="col-xs-6">
-															<p>Ф.И.О.</p>
-															<p><?php echo selectItem('main_settings', 'my_name') ?>
-															</p>
-								                		</div>
-								                		<div class="col-xs-6">
-															<p>Организация:</p>
-															<p><?php echo selectItem('main_settings', 'profession') ?>
-															</p>
-								                		</div>
-								                		<div class="col-xs-6">
-								                			<p>Должность:</p>
-															<p><?php echo selectItem('main_settings', 'profession') ?>
-															</p>
-								                		</div>
-								                		<div class="col-xs-12">
-								                			<p>Текст отзыва:</p>
-															<p><?php echo selectItem('main_settings', 'profession') ?>
-															</p>
-								                		</div>
-								                	</div>
-												</div>
+										<div class="form-group">
+											<div class="row">
+												<?php echo showReview() ?>
 											</div>
 										</div>
 									</div>
@@ -372,13 +348,13 @@
 					                </div>
 								</div>
 							</form><!--.admin-myClients-->
+								<div id="slider-show-modal" class='show-modal'></div>
+								<div id="slider-show-informer" class='show-informer'></div>
 						</div><!--#slider-content-->
 						<div class="tab-pane" id="messages">
 							<div class="messeges-box">
 								<?php selectMessege() ?>
 							</div>
-							<div id="messeges-show-modal" class='show-modal'></div>
-							<div id="messeges-show-informer" class='show-informer'></div>
 						</div>
 						<div class="tab-pane" id="settings">
 							<form class="admin-plus" method="POST" enctype="multipart/form-data" >
@@ -448,4 +424,6 @@
 				</div>
     		</div>
     	</div>
+				<div id="messeges-show-modal" class='show-modal'></div>
+				<div id="messeges-show-informer" class='show-informer'></div>
     </div><!--#admin-wrap-->

@@ -58,6 +58,20 @@ $( document ).ready(function() {
 		$messege = 'Вы действительно хотите безвозвратно удалить пример работы?';
 		checkingClientMess(0, $(this) , $messege, '#main-content-show-modal', '#main-content-show-informer');
 	});
+//удалить логотип клиента
+	$('#slider-content .del').on('click', function(){
+		$messege = 'Вы действительно хотите безвозвратно удалить логотип клиента из БД?'
+		checkingClientMess(0, $(this), $messege, '#slider-show-modal', '#slider-show-informer');
+	});
+//удалить логотип клиента
+	$('#slider-content .review-del').on('click', function(){
+		$messege = 'Вы действительно хотите безвозвратно удалить отзыв клиента из БД?'
+		checkingClientMess(0, $(this), $messege, '#slider-show-modal', '#slider-show-informer');
+	});
+	$('#slider-content .rewiev-update').on('click', function(){
+		$messege = 'Вы действительно хотите изменить отзыв клиента?'
+		checkingClientMess(1, $(this), $messege, '#slider-show-modal', '#slider-show-informer');
+	});
 
 	$( window ).scroll(function(){
 		bottomUpDown();
@@ -495,7 +509,7 @@ function dellContaktInput() {
 //функция для обработки сообщений от клиентов
 		function checkingClientMess(setting, thisItem, mess, idModal, idInformer){
 			gatherPattern(mess, idModal);
-			if(setting){
+			//if(setting){
 				$('.messeges-but-ok').on('click', function(){
 					pullAjax(setting, thisItem, idModal, idInformer);
 					$(idModal).css("display","none").html( " " );
@@ -506,8 +520,8 @@ function dellContaktInput() {
 				$('.messeges-exit').on('click', function(){
 					$(idModal).css("display","none").html( " " );
 				});
-			}else{
-				$('.messeges-but-ok').on('click', function(){
+			//}else{
+			/*	$('.messeges-but-ok').on('click', function(){
 					pullAjax(setting, thisItem, idModal, idInformer);
 					$(idModal).css("display","none").html( " " );
 				});
@@ -517,8 +531,8 @@ function dellContaktInput() {
 				$('.messeges-exit').on('click', function(){
 					$(idModal).css("display","none").html( " " );
 					return true;
-				});
-			}
+				});*/
+			//}
 		};
 		function pullAjax(setting, thisItem, idModal, idInformer){
 			var menuId = thisItem.attr("data-check_mess");
@@ -537,7 +551,7 @@ function dellContaktInput() {
 				});
 			}else if(idModal == "#settings-show-modal"){
 				thisItem.parent().parent().parent().parent().remove();
-				if(thisItem.attr('class')=='servis-save'){
+				if(thisItem.attr('class').split(' ')[0] =='servis-save'){
 					addDialog(thisItem);
 				}else if(thisItem.attr('class')=='servis-del'){
 					var request = $.ajax({
@@ -565,6 +579,7 @@ function dellContaktInput() {
 					});
 				}
 			}else if(idModal == "#main-content-show-modal"){/*--------------------изменения то что было перенес в конец файла---------------------------*/
+				thisItem.parent().remove();
 				var request = $.ajax({
 					url: "../functionAJAX.php",
 					type: "POST",
@@ -572,13 +587,42 @@ function dellContaktInput() {
 						id : menuId,
 						idModal: idModal,
 				},
-					success: ifSuccessSettongs
+					success: ifSuccessSettongSlider
 				});
-				console.log(thisItem.first());
+			}else if(idModal == "#slider-show-modal"){
+				if(thisItem.attr('class').split(' ')[0]=='del'){
+					console.log('bggfgfgf');
+					thisItem.closest('.review-box').remove();
+					var request = $.ajax({
+						url: "../functionAJAX.php",
+						type: "POST",
+						data: {							
+							id : menuId,
+							idModal: idModal,
+							thisItem: thisItem.attr('class')
+					},
+						success: ifSuccess
+					});
+				}else{
+					if(setting){
+						addDialogReview(thisItem);
+					}else{
+						console.log('bggfgfgf');
+						thisItem.closest('.review-box').remove();
+						var request = $.ajax({
+							url: "../functionAJAX.php",
+							type: "POST",
+							data: {							
+								id : menuId,
+								idModal: idModal,
+								thisItem: thisItem.attr('class')
+						},
+							success: ifSuccess
+						});
+					}
+				}
 			}
-
-
-			 
+		 
 			function ifSuccess(data){
 				$("#messeges-show-informer").css({"height": '90px', "transition": "all ease 2.15s"}).html('<p>'+data+'</p>');
 
@@ -596,6 +640,17 @@ function dellContaktInput() {
 
 				setTimeout(function(){
 					$("#settings-show-informer").css({
+						"height": '0px',
+						"transition": "all .3s ease 2.15s"
+					});
+					
+				}, 3000);
+			}
+			function ifSuccessSettongSlider(data){
+				$("#main-content-show-informer").css({"height": '90px', "transition": "all ease 2.15s"}).html('<p>'+data+'</p>');
+
+				setTimeout(function(){
+					$("#main-content-show-informer").css({
 						"height": '0px',
 						"transition": "all .3s ease 2.15s"
 					});
@@ -652,6 +707,40 @@ function dellContaktInput() {
 			$('#settings').append( $sourse ).find('#form-add-wrap').css("display","block");
 			$('.messeges-exit').on('click', function(){
 				$('#form-add-wrap').remove();
+			});
+		};
+		function addDialogReview($this){
+			$idItem= $this.attr('data-check_mess');
+			$el=$this.parent().parent();
+			$fio= $el.find('.review-fio').html();
+			$position = $el.find('.review-position').html();
+			$company = $el.find('.review-company').html();
+			$text = $el.find('.review-text').html();
+	$sourse ='<div id="form-update-review-wrap">\n';
+  		$sourse +='<form class="form-update-review" method="POST" enctype="multipart/form-data">\n';
+  			$sourse +='<div class="row">\n';
+                $sourse +='<div class="col-xs-6 col-xs-offset-3">\n';
+	                $sourse +='<div class="form-group">\n';
+	                	$sourse +='<h4>Вы можете изменить отзыв:</h4>\n';
+	                	$sourse +='<input type="hidden" name="id-item" value="'+$idItem+'">\n';
+						$sourse +='<label for="set_fio">Изменить имя:</label>\n';
+						$sourse +='<input type="text" id="set_fio" class="form-control" name="set_fio" placeholder="Jon Dou" value="'+$fio+'">\n';
+		                $sourse +='<label for="set_position">Изменить должность:</label>\n';
+		                $sourse +='<input type="text" id="set_position" class="form-control" name="set_position" placeholder="Директор" value="'+$position+'">\n';
+		                $sourse +='<label for="set_company">Изменить название:</label>\n';
+		                $sourse +='<input type="text" id="set_company" class="form-control" name="set_company" placeholder="Компания" value="'+$company+'">\n';
+		                $sourse +='<label for="review-text">Изменить тозыв</label>\n';
+		                $sourse +='<textarea id="review-text" class="form-control" name="review-text" rows="10" style="width: 100%" value="">'+$text+'</textarea>\n';
+					$sourse +='</div>\n';
+					$sourse +='<button id="send-review" formmethod="post" name="send-review" value="send-review" class="btn btn-success">Сохранить изменения</button>\n';
+  					$sourse +='<div class="messeges-exit"></div>\n';
+                $sourse +='</div>\n';
+            $sourse +='</div>\n';
+  		$sourse +='</form>\n';
+  	$sourse +='</div>\n';
+			$('#slider-content').append( $sourse ).find('#form-update-review-wrap').css("display","block");
+			$('.messeges-exit').on('click', function(){
+				$('#form-update-review-wrap').remove();
 			});
 		};
 					

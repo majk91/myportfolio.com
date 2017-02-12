@@ -3,15 +3,22 @@
 function showMenyFunctions(){
 	if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
-	echo '<div id="massege-box" title="Системное сообщение"><p>';
-	pushData();
-	updateData();
-	updateDataContact();
-	pushDataBigSlider();
-	pushClientsData();
-	updateServisItem();
-	newServis();
-	echo "</p></div>";
+		echo '<div id="massege-box" title="Системное сообщение"><p>';
+		pushData();
+		updateData();
+		updateDataContact();
+		pushDataBigSlider();
+		pushClientsData();
+		updateServisItem();
+		newServis();
+		updateReview();
+		echo "</p></div>";
+		foreach ($_POST as $key => $value) {
+			$_POST[$key]=0;
+		}
+		foreach ($_FILES as $key => $value) {
+			$_FILES[$key]=0;
+		}
 	}
 }
 	/**
@@ -548,26 +555,23 @@ function showClientsAdmin(){
 	if (mysqli_num_rows($res) > 0) {
 		$data = '';
 	    while($row = mysqli_fetch_assoc($res)) {
-	    	$data .='<div class="col-xs-6">
-						<p>Назваие компании:</p>
-						<p>'.$row['name'].'</p>
-                	</div>
-                	<div class="col-xs-6">
-						<p>Логотип:</p>
-						<div class="img-client">
-							<img src="/file_upload/client_logo/'.$row['photo_logo'].'" alt="'.$row['name'].'">
-						</div>
-                	</div>
-                	<div class="col-xs-12 button-box">
-						<div class="row">
-							<div class="col-xs-6">
+	    	$data .='<div class="row slider-client-item">
+						<div class="col-xs-12">
+			    			<div class="col-xs-3">
+								<p>Назваие компании:</p>
+								<p>'.$row['name'].'</p>
+		                	</div>
+		                	<div class="col-xs-5">
+								<p>Логотип:</p>
+								<div class="img-client">
+									<img src="/file_upload/client_logo/'.$row['photo_logo'].'" alt="'.$row['name'].'">
+								</div>
+		                	</div>
+		                	<div class="col-xs-4 button-box">
 								<div class="del hover-but" data-check_mess="'.$row['id'].'"><p> Удалить данные</p></div>
 							</div>
-							<div class="col-xs-6">
-								<div class="save hover-but" data-check_mess="'.$row['id'].'"><p>Редактировать данные</p></div>
-							</div>
 						</div>
-					</div>
+	    			</div>
                 	<div class="col-xs-12"><hr></div>';
 	    }
 	    return $data;
@@ -624,6 +628,34 @@ function newServis(){
 		}
 	}
 }
+function updateReview(){
+	if($_SERVER['REQUEST_METHOD'] == 'POST'){
+		if($_POST['send-review']){
+			$formData = [
+				'fio' => getSaveData(htmlspecialchars(trim($_POST['set_fio']))),
+				'position' => getSaveData(htmlspecialchars(trim($_POST['set_position']))),
+				'company' => getSaveData(htmlspecialchars(trim($_POST['set_company']))),
+				'text' => getSaveData(htmlspecialchars(trim($_POST['set_text']))),
+				'id_item' => $_POST['id-item']
+			];
+
+			$count = '';
+			foreach ($formData as $key => $value) {
+				$count .=$value;
+			}
+			if($count==''){
+				echo 'Поля должны быть заполнены!';
+				return folse;
+			}else{
+				echo 'Отзыв обновлен!';
+			}
+			$sql = "UPDATE `clients_reviews` SET name='{$formData['fio']}', position='{$formData['position']}', company_name='{$formData['company']}', review='{$formData['text']}' WHERE id='{$formData['id_item']}' ";
+			$res = insertUpdateDelete($sql);
+		}
+	}
+}
+
+
 function showServises(){
 	$sql = "SELECT * FROM settings_list";
 	$res = selectData($sql);
@@ -655,7 +687,7 @@ function showWorksAdmin(){
 	    	if($i%12){
 				$data .= '<div class="wrap">
 					<img src="../file_upload/gallery_desctop/'.$row['big_photo'].'" alt="'.$row['name'].'">
-					<div class="trash" data-check_mess="100000"></div>
+					<div class="trash" data-check_mess="'.$row['id'].'"></div>
 					<div class="magnifier" data-target="message'.($i-1).'"></div>
 				</div>
 				<div id="dialog-message'.($i-1).'" class="hid" title="'.$row['name'].'">
@@ -664,9 +696,11 @@ function showWorksAdmin(){
 							<img src="../file_upload/gallery_desctop/'.$row['big_photo'].'" alt="'.$row['name'].'">
 						</div>
 						<div class="dialog-image-smoll">
+							<img src="../image/phon-header.png" alt="'.$row['name'].'">
 							<img src="../file_upload/gallery_mobile/'.$row['smoll_photo'].'?>" alt="'.$row['name'].'">
+							<img src="../image/phon-foother.png" alt="'.$row['name'].'">
 						</div>
-						<a href="'.$row['domen'].'">Перейти на сайт</a>
+						<a href="http://'.$row['domen'].'" target="_blank">Перейти на сайт</a>
 					</div>
 					<p>
 						<span>Заказчик: '.$row['customer'].'</span><br>
@@ -687,9 +721,11 @@ function showWorksAdmin(){
 							<img src="../file_upload/gallery_desctop/'.$row['big_photo'].'" alt="'.$row['name'].'">
 						</div>
 						<div class="dialog-image-smoll">
+							<img src="../image/phon-header.png" alt="'.$row['name'].'">
 							<img src="../file_upload/gallery_mobile/'.$row['smoll_photo'].'?>" alt="'.$row['name'].'">
+							<img src="../image/phon-foother.png" alt="'.$row['name'].'">
 						</div>
-						<a href="'.$row['domen'].'">Перейти на сайт</a>
+						<a href="http://'.$row['domen'].'" target="_blank">Перейти на сайт</a>
 					</div>
 					<p>
 						<span>Заказчик: '.$row['customer'].'</span><br>
@@ -721,6 +757,42 @@ function showWorksPagination(){
 	    }
 		$data .= '	<li><a href="#" data-target="last">&raquo;</a></li>
 	   			</ul>';
+		return $data;   	
+	}  
+}
+function showReview(){
+	$sql = "SELECT * FROM clients_reviews ";
+	$res = selectData($sql);
+	if (mysqli_num_rows($res) > 0) {
+		$data = '';
+	    while($row = mysqli_fetch_assoc($res)) {
+	$data .='<div class="col-xs-12 review-box">
+				<h4>Отзыв клиента:</h4>
+			   	<div class="row">
+			    	<div class="col-xs-3">
+						<p>Ф.И.О.</p>
+						<p class="review-fio">'.$row['name'].'</p>
+		        	</div>
+		       		<div class="col-xs-3">
+						<p>Организация:</p>
+						<p class="review-company">'.$row['company_name'].'</p>
+		    		</div>
+			        <div class="col-xs-3">
+		    	       	<p>Должность:</p>
+						<p class="review-position">'.$row['position'].'</p>
+			        </div>
+			        <div class="col-xs-3 button-box">
+						<div class="review-del hover-but" data-check_mess="'.$row['id'].'"><p>Удалить</p></div>
+						<div class="rewiev-update hover-but" data-check_mess="'.$row['id'].'"><p>Изменить</p></div>
+					</div>
+		    	    <div class="col-xs-12">
+			    	   	<p>Текст отзыва:</p>
+						<p class="review-text">'.$row['review'].'</p>
+				    </div>
+				</div>
+			</div>
+			<div class="col-xs-12"><hr></div>';
+	    }
 		return $data;   	
 	}  
 }

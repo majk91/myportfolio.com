@@ -40,8 +40,20 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 		$idItem = $_POST['id'];
 		$sql = "DELETE FROM gallery_settings WHERE id=$idItem";
 		$res = insertUpdateDelete($sql);
-		sendEmailUser($idItem, $_POST['param']);
 		echo "Работа удалена из галереи";
+	}else if($_POST['idModal']=='#slider-show-modal'){
+		$thisItem1 = $_POST['thisItem'][0]+$_POST['thisItem'][1]+$_POST['thisItem'][2];
+		if($thisItem1=='del'){
+			$idItem = $_POST['id'];
+			$sql = "DELETE FROM clients_logo WHERE id=$idItem";
+			$res = insertUpdateDelete($sql);
+			echo "Клиент удален из Базы";
+		}else{
+			$idItem = $_POST['id'];
+			$sql = "DELETE FROM clients_reviews WHERE id=$idItem";
+			$res = insertUpdateDelete($sql);
+			echo "Отзыв клиента удален";
+		}
 	}
 }
 ?>
