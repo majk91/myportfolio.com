@@ -14,6 +14,7 @@
                         <div class="form-wrap">
                         	<form id="form_qestions" class="input-box" method="POST" >
                         		<div class="row">
+                        			<input type='hidden' name='sessid' value='<?=$_SESSION['sessid']?>'>
 	                        		<div class="col-xs-12 col-md-6">
 	                        			<label for="inputName" class="control-label">ФИО: <sup>*</sup></label>
 										<input type="text" class="form-item" name="name" placeholder="Иванов Иван" id="inputName" data-rule ="required">

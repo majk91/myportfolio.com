@@ -8,7 +8,13 @@
                         <div class="first-line"></div>
                         <div class="second-line"></div>
                         <div class="client-slider">
-                            <?php require_once("parts/apps/mySlider.php") ?>
+                            <div class="slider" id="slider1">
+                                <div class="slider-content">
+                                    <?php echo selectClientLogo() ?>
+                                </div>
+                                <button class="slider-button slider-button-prev" data-action="left"></button>
+                                <button class="slider-button slider-button-next" data-action="right"></button>
+                            </div><!--#slider1-->
                         </div><!--.client-slider-->
                     </div><!--.all-title-wrap-->
                 </div>

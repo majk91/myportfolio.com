@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?php selectItem("main_settings", "my_name") ?></title>
 
+    <link href="https://fonts.googleapis.com/css?family=Pattaya" rel="stylesheet">
     <link rel="shortcut icon" href="" type="<?php echo "/".selectItem("main_settings", "favicon") ?>">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link href="../includes/bootstrap/css/bootstrap.min.css" rel="stylesheet">

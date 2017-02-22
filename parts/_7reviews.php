@@ -13,24 +13,11 @@
             <div id="carousel-example-generic1" class="carousel slide" data-ride="carousel">
                 <!-- Indicators -->
                 <ol class="carousel-indicators slider2-indicat">
-                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                    <?php echo getIndicators('clients_reviews') ?>
                 </ol>
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner comment-box">
-                    <div class="item active">
-                        <h3>This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</h3>
-                        <p><span>Jon Dou,</span> Cupiditate, odio.</p>
-                    </div>
-                    <div class="item">
-                        <h3>This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</h3>
-                        <p><span>Jon Dou,</span> Cupiditate, odio.</p>
-                    </div>
-                    <div class="item">
-                        <h3>This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</h3>
-                        <p><span>Jon Dou,</span> Cupiditate, odio.</p>
-                    </div>
+                    <?php echo showReviewSite() ?>
                 </div>
                 <!-- Controls -->
                 <a class="left carousel-control" href="#carousel-example-generic1" data-slide="prev">

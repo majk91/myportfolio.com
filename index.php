@@ -1,5 +1,6 @@
 <?php
     session_start();
+
     require_once 'core/configs/main.php';
     require_once 'core/library/main.php';
     require_once 'core/library/validator.php';

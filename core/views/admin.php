@@ -299,10 +299,7 @@
 						                        	<div class="col-xs-12">
 								                		<div class="border-form">
 								                			<h4>Информация о клиентах:</h4>
-
-								                			<div class="row">
 								                				<?php echo showClientsAdmin() ?>
-								                			</div>
 														</div>
 						                        	</div>
 				                        		</div>

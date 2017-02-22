@@ -2,9 +2,6 @@
 	function action_index(){
 		renderView('index', []);
 	};
-	function action_contacts(){
-		echo "contact page";
-	}
 	function action_registration(){
 		if($_SERVER['REQUEST_METHOD'] == 'POST'){
 			$formData = [

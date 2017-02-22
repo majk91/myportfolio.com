@@ -42,8 +42,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 		$res = insertUpdateDelete($sql);
 		echo "Работа удалена из галереи";
 	}else if($_POST['idModal']=='#slider-show-modal'){
-		$thisItem1 = $_POST['thisItem'][0]+$_POST['thisItem'][1]+$_POST['thisItem'][2];
-		if($thisItem1=='del'){
+		if($_POST['thisItem']=='del'){
 			$idItem = $_POST['id'];
 			$sql = "DELETE FROM clients_logo WHERE id=$idItem";
 			$res = insertUpdateDelete($sql);

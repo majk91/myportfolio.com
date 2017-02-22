@@ -35,7 +35,7 @@
 						<div id="carousel-example-generic" class="carousel slide hidden-xs" data-ride="carousel">
 							<!-- Indicators desktop-->
 							<ol class="carousel-indicators hidden-xs">
-								<?php getIndicators(); ?>
+								<?php getIndicators('gallery_settings'); ?>
 							</ol>
 							<!-- Wrapper for slides desktop -->
 							<div class="carousel-inner ">

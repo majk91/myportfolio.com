@@ -25,6 +25,12 @@ $( document ).ready(function() {
 		var value = $("#"+data).position()['top'];
 	 	animatedUpOrDown(value);
 	});
+	$( "#footer .nav a"  ).click(function(event) {
+		event.preventDefault();
+		var data = $( this ).attr('data-name');
+		var value = $("#"+data).position()['top'];
+	 	animatedUpOrDown(value);
+	});
 
 //Функции обработки сообщений от клиентов AJAX - методом		
 	$('#messages .but-show').on('click', function(){
@@ -293,16 +299,17 @@ function servisSize(){
 //		var borderVal = e.type == "focus" ? "medium solid green" : "";
 //        $(this).css("border", borderVal);
 //	});
-$('form').find('input, textarea, select').blur(function(event) {
+$('form#form_qestions').find('input, textarea, select').blur(function(event) {
 	$this = $(this).closest('form');
 	validator($this);
 });
 
-$('form').find('input, textarea, select').focus(function( event ) {
+$('form#form_qestions').find('input, textarea, select').focus(function( event ) {
 	$this = $(this).removeClass('error');
+	$this.parent().find('.warning').empty();
 });
 
-$('form').submit(function( event ) {
+$('form#form_qestions').submit(function( event ) {
 	$this = $(this);
 	if($this.attr('id')=='form_qestions'){
 		validator($this);
@@ -591,15 +598,14 @@ function dellContaktInput() {
 				});
 			}else if(idModal == "#slider-show-modal"){
 				if(thisItem.attr('class').split(' ')[0]=='del'){
-					console.log('bggfgfgf');
-					thisItem.closest('.review-box').remove();
+					thisItem.closest('.slider-client-item').remove();
 					var request = $.ajax({
 						url: "../functionAJAX.php",
 						type: "POST",
 						data: {							
 							id : menuId,
 							idModal: idModal,
-							thisItem: thisItem.attr('class')
+							thisItem: thisItem.attr('class').split(' ')[0]
 					},
 						success: ifSuccess
 					});
@@ -607,7 +613,6 @@ function dellContaktInput() {
 					if(setting){
 						addDialogReview(thisItem);
 					}else{
-						console.log('bggfgfgf');
 						thisItem.closest('.review-box').remove();
 						var request = $.ajax({
 							url: "../functionAJAX.php",
@@ -615,7 +620,7 @@ function dellContaktInput() {
 							data: {							
 								id : menuId,
 								idModal: idModal,
-								thisItem: thisItem.attr('class')
+								thisItem: thisItem.attr('class').split(' ')[0]
 						},
 							success: ifSuccess
 						});

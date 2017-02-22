@@ -30,6 +30,8 @@ function showMenyFunctions(){
 
 		$link = @mysqli_connect($config['host'], $config['user'], $config['password'], $config['db_name']);
 
+		mysqli_set_charset( $link, 'utf8');
+
 		if(!$link){
 			//вместо echo инклюдом подключить файлик в котором красивая картинка, надпись, текст
 			echo "нужна страничка о том что нет доступа к базе данных! ";
@@ -350,6 +352,31 @@ function selectContact(){
 	    echo "0 results";
 	}
 };
+function selectClientLogo(){
+	$sql = "SELECT * FROM clients_logo";
+	$res = selectData($sql);
+	$result="";
+	if (mysqli_num_rows($res) > 0) {
+		while($row = mysqli_fetch_assoc($res)) {
+			if($row["photo_logo"]){
+				$result .='<div class="slider-item">
+						<img src="/file_upload/client_logo/'.$row["photo_logo"].'" alt="'.$row["name"].'">
+					</div>';
+			}else{
+				$result .='<div class="slider-item">
+						<div>
+							<p>'.$row["name"].'</p>
+						</div>
+					</div>';			
+			}
+		}
+	    return $result;
+	} else {
+	    return '<div class="slider-item">
+	    	<p>Здесь будет логотип моего клиента</p>
+		</div>';
+	}
+}
 function getClient(){
 	if($_SERVER['REQUEST_METHOD'] == 'POST'){
 		if($_POST['send-btn']){
@@ -366,7 +393,6 @@ function getClient(){
 				$sql = "INSERT INTO `lid`(name, phone, email, comment) VALUES ('{$formData['name']}', '{$formData['tel']}', '{$formData['email']}', '{$formData['massege']}')";
 
 				$res = insertUpdateDelete($sql);
-				echo " Спасибо за ваш запрос! С Вами свяжуться в ближайшее время";
 				$sql = "SELECT * FROM users ";
 				$res = selectData($sql);
 			    $i=0;
@@ -387,15 +413,16 @@ function getClient(){
 		    			$i--;
 		   					
 		    		}
-		    	}
+		    	};
 				sendEmail($admin_email, $formData['name'], $formData['tel'], $formData['email'], $formData['massege']);
+				echo " Спасибо за ваш запрос! С Вами свяжуться в ближайшее время";
 			}else{
 				echo "Поля должны быть заполнены!";
 			}
-	    	
 	    }
 	}
 }
+
 function selectMessege(){
 	$sql = "SELECT * FROM lid ";
 	$res = selectData($sql);
@@ -486,25 +513,62 @@ function showPictures($row_name, $row_url, $set){
 			return $print;
 		};
 }
-function getIndicators(){
-	$dir = opendir('file_upload/gallery_desctop');
+function getIndicators($param){
+	$sql = "SELECT * FROM $param";
+	$res = selectData($sql);
 	$count = 0;
-	while($file = readdir($dir)){
-	    if($file == '.' || $file == '..' || is_dir('path/to/dir' . $file)){
-	        continue;
-	    }
-	    $count++;
+	if (mysqli_num_rows($res) > 0) {
+	    while($row = mysqli_fetch_assoc($res)) {
+	    	$count++;
+	    };
 	}
-	$i = intval($count/9);
-	$j = 0;
-	while ( $j <= $i) {
-		if($j){
-			echo '<li data-target="#carousel-example-generic" data-slide-to="'.$j.'"></li>';
-		}else{
-			echo '<li data-target="#carousel-example-generic" data-slide-to="'.$j.'" class="active"></li>';
+	if ($param =='gallery_settings'){
+		$i = intval($count/9);
+		$j = 0;
+		while ( $j <= $i) {
+			if($j){
+				echo '<li data-target="#carousel-example-generic" data-slide-to="'.$j.'"></li>';
+			}else{
+				echo '<li data-target="#carousel-example-generic" data-slide-to="'.$j.'" class="active"></li>';
+			}				
+			$j++;					
 		}
-		$j++;					
+	}else if($param =='clients_reviews'){
+		$i=1;
+		echo '<li data-target="#carousel-example-generic1" data-slide-to="0" class="active"></li>';
+		while ( $i <= $count-1) {
+			echo '<li data-target="#carousel-example-generic1" data-slide-to="'.$i.'"></li>';
+			$i++;
+		}
 	}
+}
+function showReviewSite(){
+	$sql = "SELECT * FROM clients_reviews";
+	$res = selectData($sql);
+	$data = '';
+	$i= 0;
+	if (mysqli_num_rows($res) > 0) {
+	    while($row = mysqli_fetch_assoc($res)) {
+	    	if($i==0){
+	    		$data .= '<div class="item active">
+            	    <h3>'.$row['review'].'</h3>
+            	    <p><span>'.$row['name'].', </span> '.$row['company_name'].', '.$row['position'].'.</p>
+            	</div>';
+	    	}else{
+	    		$data .= '<div class="item">
+            	    <h3>'.$row['review'].'</h3>
+            	    <p><span>'.$row['name'].',</span> '.$row['company_name'].', '.$row['position'].'.</p>
+            	</div>';
+	    	}
+	    	$i++;
+	    }
+	}else{
+		$data .= '<div class="item active">
+            	    <h3>Здесь будет отзыв клиента о владельце сайта или его работе</h3>
+            	    <p><span>Имя клиента, </span> Организация, должность</p>
+            	</div>';
+	}
+	return $data;
 }
 function showUsers(){
 	$sql = "SELECT * FROM users";
@@ -571,8 +635,8 @@ function showClientsAdmin(){
 								<div class="del hover-but" data-check_mess="'.$row['id'].'"><p> Удалить данные</p></div>
 							</div>
 						</div>
-	    			</div>
-                	<div class="col-xs-12"><hr></div>';
+                		<div class="col-xs-12"><hr></div>
+	    			</div>';
 	    }
 	    return $data;
 	}
@@ -796,4 +860,8 @@ function showReview(){
 		return $data;   	
 	}  
 }
+
+//function setSessid() {
+//	$_SESSION['sessid'] = 1;
+//}
 ?>
