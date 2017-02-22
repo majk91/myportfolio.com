@@ -2,8 +2,8 @@
 	function show404(){
 		header("HTTP/1.1 404 Not Found");
 		//todo zamena
-		require_once("/parts/_1.top_set.php");
-		echo '<?php //require_once("/parts/_1.top_set.php") ?>
+		require_once("parts/_1.top_set.php");
+		echo '<?php //require_once("parts/_1.top_set.php") ?>
 	<div class="container">
 		<div class="row" style="height: 60vh">
 			<div class="col-xs-12" style="text-align: center;">
@@ -12,7 +12,7 @@
 			</div>
 		</div>
 	</div>';
-require_once("/parts/_9footer.php");
+require_once("parts/_9footer.php");
 	}
 	function renderView($viewName, $formErrors){
 		include 'core/views/'.$viewName.'.php';

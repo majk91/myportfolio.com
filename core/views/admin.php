@@ -1,4 +1,4 @@
-<?php require_once("/parts/_1.top_set.php") ?>
+<?php require_once("parts/_1.top_set.php") ?>
 	<div id="admin-wrap">
     	<div class="container">
     		<div class="row admin_all_box" >
@@ -50,7 +50,7 @@
 								                		<div class="border-form">
 								                			<h4>Favicon:</h4>
 								                			<div class="show-favicon">
-								                				<img src="/<?php echo selectItem('main_settings', 'favicon') ?>" alt="">
+								                				<img src="<?php echo selectItem('main_settings', 'favicon') ?>" alt="">
 								                			</div>
 														</div>
 						                        	</div>
@@ -109,7 +109,7 @@
 								                		<div class="border-form">
 								                			<h4>Большое фото на главной:</h4>
 											    			<div class="show-favicon">
-											    				<img src="/<?php echo selectItem('main_settings', 'my_photo')?> " alt="" width="50%">
+											    				<img src="<?php echo selectItem('main_settings', 'my_photo')?> " alt="" width="50%">
 											    			</div>
 														</div>
 						                        	</div>

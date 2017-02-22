@@ -1,8 +1,8 @@
 <?php
 	return [
-		'host' => 'localhost',
-		'user' => 'root',
-		'password' => '',
-		'db_name'=>'myPortfolio_db'
+		'host' => 'wseo00.mysql.ukraine.com.ua',
+		'user' => 'wseo00_db',
+		'password' => 'd8Q9bPnx',
+		'db_name'=>'wseo00_db'
 	]
 ?>

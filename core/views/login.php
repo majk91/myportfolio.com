@@ -1,4 +1,4 @@
-<?php require_once("/parts/_1.top_set.php") ?>
+<?php require_once("parts/_1.top_set.php") ?>
 	<div class="container" id="login-controls">
 		<div class="row">
 			<div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3">
